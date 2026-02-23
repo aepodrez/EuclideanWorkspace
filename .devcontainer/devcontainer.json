@@ -1,0 +1,10 @@
+{
+  "name": "Euclidean Workspace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# Terraform secrets — single source of truth for all modules, never commit
+terraform.tfvars
+terraform.tfvars.json
+
+# macOS
+.DS_Store
+
+# Claude internal files
+.claude/
+
+# Generated portfolio outputs
+*.csv

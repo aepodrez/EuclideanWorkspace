@@ -358,7 +358,20 @@ Output ONLY the markdown document. Do not output JSON."""
             # Local worker: use the MLX server as before.
             text = _stream_llm_raw(reflection_prompt, max_tokens=2000, retries=2)
         text = re.sub(r"^```(?:markdown)?\s*|\s*```$", "", text.strip())
-        return text.strip()
+        text = text.strip()
+        # Reject degenerate outputs (raw chain-of-thought dumps with no section
+        # structure) — a week-wide review found 8-17% of stored reflections were
+        # unusable CoT leaks. One retry, then skip rather than store garbage.
+        if "## " not in text:
+            log.warning("Reflection lacks section headers (%d chars) — retrying once", len(text))
+            if getattr(_use_nemotron, "active", False) and OPENROUTER_API_KEY:
+                return ""  # don't burn a second OpenRouter call on the reflection
+            text = _stream_llm_raw(reflection_prompt, max_tokens=2000, retries=1)
+            text = re.sub(r"^```(?:markdown)?\s*|\s*```$", "", text.strip()).strip()
+            if "## " not in text:
+                log.warning("Reflection still degenerate after retry — skipping store")
+                return ""
+        return text
     except Exception as exc:
         log.warning("Failed to get reflection from LLM: %s — continuing without it", exc)
         return ""

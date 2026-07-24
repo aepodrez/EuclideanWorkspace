@@ -1,0 +1,1586 @@
+"SIC4","NAICS6","SIC_Description","NAICS_Description","Establishments","Employees","Annual_Payroll","Est_weight","Emp_weight","Pay_weight"
+"0111","111140","Wheat","Wheat Farming",1805,3921,66214685,1,1,1
+"0112","111160","Rice","Rice Farming",937,3073,56298059,1,1,1
+"0115","111150","Corn","Corn Farming",1194,10973,234139377,1,1,1
+"0116","111110","Soybeans","Soybean Farming",377,2567,53196828,1,1,1
+"0119","111120","Cash Grains, Not Elsewhere Classified","Oilseed (except Soybean) Farming",40,179,3829013,0.01,0.01,0.01
+"0119","111130","Cash Grains, Not Elsewhere Classified","Dry Pea and Bean Farming",99,335,5998540,0.03,0.02,0.02
+"0119","111150","Cash Grains, Not Elsewhere Classified","Corn Farming",1194,10973,234139377,0.41,0.6,0.63
+"0119","111191","Cash Grains, Not Elsewhere Classified","Oilseed and Grain Combination Farming",940,4207,80135696,0.33,0.23,0.22
+"0119","111199","Cash Grains, Not Elsewhere Classified","All Other Grain Farming",611,2518,48454400,0.21,0.14,0.13
+"0131","111920","Cotton","Cotton Farming",3738,23642,363528758,1,1,1
+"0132","111910","Tobacco","Tobacco Farming",510,5649,76307346,1,1,1
+"0133","111930","Sugarcane and Sugar Beets","Sugarcane Farming",328,6904,176628485,0.57,0.82,0.86
+"0133","111991","Sugarcane and Sugar Beets","Sugar Beet Farming",248,1559,28375817,0.43,0.18,0.14
+"0134","111211","Irish Potatoes","Potato Farming",1013,12622,219985124,1,1,1
+"0139","111199","Field Crops, Except Cash Grain","All Other Grain Farming",611,2518,48454400,0.04,0.01,0.02
+"0139","111211","Field Crops, Except Cash Grain","Potato Farming",1013,12622,219985124,0.07,0.07,0.08
+"0139","111219","Field Crops, Except Cash Grain","Other Vegetable (except Potato) and Melon Farming",3987,83446,1302625398,0.28,0.48,0.47
+"0139","111940","Field Crops, Except Cash Grain","Hay Farming",1133,5872,107886417,0.08,0.03,0.04
+"0139","111992","Field Crops, Except Cash Grain","Peanut Farming",154,1017,15118495,0.01,0.01,0.01
+"0139","111998","Field Crops, Except Cash Grain","All Other Miscellaneous Crop Farming",7444,67384,1086382368,0.52,0.39,0.39
+"0139","112519","Field Crops, Except Cash Grain","Other Animal Aquaculture",86,396,6598229,0.01,0,0
+"0161","111211","Vegetables and Melons","Potato Farming",1013,12622,219985124,0.2,0.13,0.14
+"0161","111219","Vegetables and Melons","Other Vegetable (except Potato) and Melon Farming",3987,83446,1302625398,0.8,0.87,0.86
+"0171","111333","Berry Crops","Strawberry Farming",584,18884,243311629,0.41,0.65,0.6
+"0171","111334","Berry Crops","Berry (except Strawberry) Farming",849,10173,162770561,0.59,0.35,0.4
+"0172","111332","Grapes","Grape Vineyards",3922,42191,630920429,1,1,1
+"0173","111335","Tree Nuts","Tree Nut Farming",2021,12621,198605491,1,1,1
+"0174","111310","Citrus Fruits","Orange Groves",831,8435,166684879,0.67,0.64,0.66
+"0174","111320","Citrus Fruits","Citrus (except Orange) Groves",407,4783,86151493,0.33,0.36,0.34
+"0175","111331","Deciduous Tree Fruits","Apple Orchards",3166,38158,454671259,0.49,0.53,0.5
+"0175","111339","Deciduous Tree Fruits","Other Noncitrus Fruit Farming",3329,34135,447844528,0.51,0.47,0.5
+"0179","111336","Fruits and Tree Nuts, Not Elsewhere Classified","Fruit and Tree Nut Combination Farming",501,6673,95902956,0.13,0.16,0.18
+"0179","111339","Fruits and Tree Nuts, Not Elsewhere Classified","Other Noncitrus Fruit Farming",3329,34135,447844528,0.87,0.84,0.82
+"0181","111421","Ornamental Nursery Products","Nursery and Tree Production",5263,91138,1690721676,0.63,0.63,0.64
+"0181","111422","Ornamental Nursery Products","Floriculture Production",3032,54098,941184472,0.37,0.37,0.36
+"0182","111411","Food Crops Grown Under Cover","Mushroom Production",242,14149,305923265,0.51,0.75,0.8
+"0182","111419","Food Crops Grown Under Cover","Other Food Crops Grown Under Cover",232,4635,78543584,0.49,0.25,0.2
+"0191","111998","General Farms, Primarily Crop","All Other Miscellaneous Crop Farming",7444,67384,1086382368,0.99,0.99,0.99
+"0191","112519","General Farms, Primarily Crop","Other Animal Aquaculture",86,396,6598229,0.01,0.01,0.01
+"0211","112112","Beef Cattle Feedlots","Cattle Feedlots",1022,14663,351610835,1,1,1
+"0212","112111","Beef Cattle, Except Feedlots","Beef Cattle Ranching and Farming",5657,27651,501743414,1,1,1
+"0213","112210","Hogs","Hog and Pig Farming",1613,20929,455517906,1,1,1
+"0214","112410","Sheep and Goats","Sheep Farming",257,1324,19421816,0.84,0.87,0.86
+"0214","112420","Sheep and Goats","Goat Farming",48,202,3277549,0.16,0.13,0.14
+"0219","112990","General Livestock, Not Elsewhere Classified","All Other Animal Production",1457,9353,186777343,1,1,1
+"0241","112111","Dairy Farms","Beef Cattle Ranching and Farming",5657,27651,501743414,0.53,0.37,0.37
+"0241","112120","Dairy Farms","Dairy Cattle and Milk Production",5030,46762,859895154,0.47,0.63,0.63
+"0251","112320","Broiler, Fryer, and Roaster Chickens","Broilers and Other Meat Type Chicken Production",293,8702,190411753,1,1,1
+"0252","112310","Chicken Eggs","Chicken Egg Production",611,16482,325647719,1,1,1
+"0253","112330","Turkeys and Turkey Eggs","Turkey Production",505,9234,205965054,1,1,1
+"0254","112340","Poultry Hatcheries","Poultry Hatcheries",319,8838,187233652,1,1,1
+"0259","112390","Poultry and Eggs, Not Elsewhere Classified","Other Poultry Production",152,1797,33465884,1,1,1
+"0271","112930","Fur-Bearing Animal and Rabbits","Fur-Bearing Animal and Rabbit Production",104,893,14068001,1,1,1
+"0272","112920","Horses and Other Equines","Horse and Other Equine Production",1228,6655,122180749,1,1,1
+"0273","112511","Animal Aquaculture","Finfish Farming and Fish Hatcheries",519,5268,113949517,0.73,0.8,0.8
+"0273","112512","Animal Aquaculture","Shellfish Farming",104,953,21856276,0.15,0.14,0.15
+"0273","112519","Animal Aquaculture","Other Animal Aquaculture",86,396,6598229,0.12,0.06,0.05
+"0279","112519","Animal Specialties, Not Elsewhere Classified","Other Animal Aquaculture",86,396,6598229,0.05,0.04,0.03
+"0279","112910","Animal Specialties, Not Elsewhere Classified","Apiculture",300,1476,28474654,0.16,0.13,0.13
+"0279","112990","Animal Specialties, Not Elsewhere Classified","All Other Animal Production",1457,9353,186777343,0.79,0.83,0.84
+"0291","112990","General Farms, Primarily Animals","All Other Animal Production",1457,9353,186777343,1,1,1
+"0711","115112","Soil Preparation Services","Soil Preparation, Planting, and Cultivating",3443,23131,489602674,1,1,1
+"0721","115112","Crop Planting and Protection","Soil Preparation, Planting, and Cultivating",3443,23131,489602674,1,1,1
+"0722","115113","Crop Harvesting","Crop Harvesting, Primarily by Machine",1018,13099,207834987,1,1,1
+"0723","115114","Crop Preparation Services for Market","Postharvest Crop Activities (except Cotton Ginning)",1926,65142,1150123735,0.52,0.64,0.51
+"0723","311119","Crop Preparation Services for Market","Other Animal Food Manufacturing",1804,35960,1108241244,0.48,0.36,0.49
+"0724","115111","Cotton Ginning","Cotton Ginning",1081,11938,254356059,1,1,1
+"0741","541940","Veterinary Services for Livestock","Veterinary Services",23138,187329,3656573502,1,1,1
+"0742","541940","Veterinary Services, Specialties","Veterinary Services",23138,187329,3656573502,1,1,1
+"0751","115210","Livestock Services, Except Veterinary","Support Activities for Animal Production",3900,22508,429515448,0.64,0.13,0.11
+"0751","311611","Livestock Services, Except Veterinary","Animal (except Poultry) Slaughtering",2233,148413,3537179465,0.36,0.87,0.89
+"0752","115210","Animal Specialty Services","Support Activities for Animal Production",3900,22508,429515448,0.37,0.47,0.56
+"0752","812910","Animal Specialty Services","Pet Care (except Veterinary) Services",6662,25475,341457426,0.63,0.53,0.44
+"0761","115115","Farm Labor Contractors","Farm Labor Contractors and Crew Leaders",2605,169674,1495731525,1,1,1
+"0762","115116","Farm Management Services","Farm Management Services",1024,17127,313222445,1,1,1
+"0781","541320","Landscape Counseling and Planning","Landscape Architectural Services",6161,29924,864013512,0.48,0.51,0.39
+"0781","541690","Landscape Counseling and Planning","Other Scientific and Technical Consulting Services",6610,29147,1349847117,0.52,0.49,0.61
+"0782","561730","Lawn and Garden Services","Landscaping Services",69126,417243,7780878720,1,1,1
+"0783","561730","Ornamental Shrub and Tree Services","Landscaping Services",69126,417243,7780878720,1,1,1
+"0811","111421","Timber Tracts","Nursery and Tree Production",5263,91138,1690721676,0.89,0.89,0.82
+"0811","113110","Timber Tracts","Timber Tract Operations",654,10765,375858471,0.11,0.11,0.18
+"0831","111998","Forest Products","All Other Miscellaneous Crop Farming",7444,67384,1086382368,0.96,0.96,0.96
+"0831","112519","Forest Products","Other Animal Aquaculture",86,396,6598229,0.01,0.01,0.01
+"0831","113210","Forest Products","Forest Nurseries and Gathering of Forest Products",191,2099,36273500,0.02,0.03,0.03
+"0851","115310","Forestry Services","Support Activities for Forestry",2127,14379,358807497,1,1,1
+"0912","114111","Finfish","Finfish Fishing",1927,4986,226560674,1,1,1
+"0913","114112","Shellfish","Shellfish Fishing",1132,3514,104312649,1,1,1
+"0919","111998","Miscellaneous Marine Products","All Other Miscellaneous Crop Farming",7444,67384,1086382368,0.85,0.93,0.89
+"0919","112512","Miscellaneous Marine Products","Shellfish Farming",104,953,21856276,0.01,0.01,0.02
+"0919","112519","Miscellaneous Marine Products","Other Animal Aquaculture",86,396,6598229,0.01,0.01,0.01
+"0919","114112","Miscellaneous Marine Products","Shellfish Fishing",1132,3514,104312649,0.13,0.05,0.09
+"0919","114119","Miscellaneous Marine Products","Other Marine Fishing",15,109,2595010,0,0,0
+"0921","112511","Fish Hatcheries and Preserves","Finfish Farming and Fish Hatcheries",519,5268,113949517,0.83,0.85,0.84
+"0921","112512","Fish Hatcheries and Preserves","Shellfish Farming",104,953,21856276,0.17,0.15,0.16
+"0971","114210","Hunting, Trapping, Game Propagation","Hunting and Trapping",346,2322,35567693,1,1,1
+"2037","311411","Frozen fruits & vegetables","Frozen Fruit, Juice, and Vegetable Manufacturing",317,48544,1209864999,1,1,1
+"2038","311412","Frozen specialties, n.e.c.","Frozen Specialty Food Manufacturing",511,53580,1354877898,1,1,1
+"2041","311211","Flour & other grain mill products","Flour Milling",367,15273,565985694,1,1,1
+"2043","311230","Cereal breakfast foods","Breakfast Cereal Manufacturing",60,15641,812957869,0.17,0.55,0.63
+"2043","311920","Cereal breakfast foods","Coffee and Tea Manufacturing",302,12915,484025540,0.83,0.45,0.37
+"2044","311212","Rice milling","Rice Milling",92,5063,157830118,1,1,1
+"2045","311822","Blended & prepared flour","Flour Mixes and Dough Manufacturing from Purchased Flour",263,13813,445647122,1,1,1
+"2046","311221","Wet corn milling","Wet Corn Milling",73,9659,469578031,1,1,1
+"2047","311111","Dog & cat food","Dog and Cat Food Manufacturing",253,19453,839807920,1,1,1
+"2048","311119","Prepared feeds, n.e.c.","Other Animal Food Manufacturing",1804,35960,1108241244,0.45,0.2,0.24
+"2048","311611","Prepared feeds, n.e.c.","Animal (except Poultry) Slaughtering",2233,148413,3537179465,0.55,0.8,0.76
+"2051","311812","Bread, cake, & related products","Commercial Bakeries",2832,148266,4405491774,1,1,1
+"2052","311812","Cookies & crackers","Commercial Bakeries",2832,148266,4405491774,0.79,0.66,0.64
+"2052","311821","Cookies & crackers","Cookie and Cracker Manufacturing",380,40389,1306193473,0.11,0.18,0.19
+"2052","311919","Cookies & crackers","Other Snack Food Manufacturing",365,35466,1121332819,0.1,0.16,0.16
+"2053","311813","Frozen bakery products, except bread","Frozen Cakes, Pies, and Other Pastries Manufacturing",165,9375,266162890,1,1,1
+"2061","311311","Raw cane sugar","Sugarcane Mills",42,4771,165948959,1,1,1
+"2062","311312","Cane sugar refining","Cane Sugar Refining",32,3665,184978623,1,1,1
+"2063","311313","Beet sugar","Beet Sugar Manufacturing",52,8034,261930195,1,1,1
+"2064","311330","Candy & other confectionery products & chewing gum","Confectionery Manufacturing from Purchased Chocolate",1644,46461,1223760410,0.72,0.63,0.59
+"2064","311340","Candy & other confectionery products & chewing gum","Nonchocolate Confectionery Manufacturing",635,27114,859958094,0.28,0.37,0.41
+"2066","311320","Chocolate & cocoa products","Chocolate and Confectionery Manufacturing from Cacao Beans",62,8383,329348887,1,1,1
+"2068","311911","Salted & roasted nuts & seeds","Roasted Nuts and Peanut Butter Manufacturing",203,11130,316635115,1,1,1
+"2074","311223","Cottonseed oil mills","Other Oilseed Processing",88,4138,133923681,0.49,0.42,0.38
+"2074","311225","Cottonseed oil mills","Fats and Oils Refining and Blending",90,5781,214657844,0.51,0.58,0.62
+"2075","311222","Soybean oil mills","Soybean Processing",112,10319,400896534,0.55,0.64,0.65
+"2075","311225","Soybean oil mills","Fats and Oils Refining and Blending",90,5781,214657844,0.45,0.36,0.35
+"2076","311223","Vegetable oil mills, n.e.c.","Other Oilseed Processing",88,4138,133923681,0.49,0.42,0.38
+"2076","311225","Vegetable oil mills, n.e.c.","Fats and Oils Refining and Blending",90,5781,214657844,0.51,0.58,0.62
+"2077","311225","Animal & marine fats & oils","Fats and Oils Refining and Blending",90,5781,214657844,0.06,0.08,0.12
+"2077","311613","Animal & marine fats & oils","Rendering and Meat Byproduct Processing",256,9814,312468132,0.16,0.14,0.18
+"2077","311711","Animal & marine fats & oils","Seafood Canning",229,7166,173098289,0.14,0.1,0.1
+"2077","311712","Animal & marine fats & oils","Fresh and Frozen Seafood Processing",1020,46635,1025251370,0.64,0.67,0.59
+"2079","311225","Shortening & cooking oils","Fats and Oils Refining and Blending",90,5781,214657844,1,1,1
+"2082","312120","Malt beverages","Breweries",417,30909,1622745999,1,1,1
+"2083","311213","Malt","Malt Manufacturing",34,1328,62577490,1,1,1
+"2084","312130","Wines, brandy, & brandy spirits","Wineries",810,20014,582893472,1,1,1
+"2085","312140","Distilled liquor, except brandy","Distilleries",59,7567,428031525,1,1,1
+"2086","312111","Bottled & canned soft drinks","Soft Drink Manufacturing",713,81137,2894434431,0.41,0.78,0.79
+"2086","312112","Bottled & canned soft drinks","Bottled Water Manufacturing",1007,22545,763153045,0.59,0.22,0.21
+"2087","311930","Flavoring extracts & syrups, n.e.c.","Flavoring Syrup and Concentrate Manufacturing",186,6095,325005075,0.14,0.13,0.18
+"2087","311942","Flavoring extracts & syrups, n.e.c.","Spice and Extract Manufacturing",438,14433,573380233,0.34,0.3,0.32
+"2087","311999","Flavoring extracts & syrups, n.e.c.","All Other Miscellaneous Food Manufacturing",663,27555,906032498,0.52,0.57,0.5
+"2091","311711","Canned & cured seafood","Seafood Canning",229,7166,173098289,1,1,1
+"2092","311712","Fresh or frozen seafood","Fresh and Frozen Seafood Processing",1020,46635,1025251370,1,1,1
+"2095","311920","Roasted coffee","Coffee and Tea Manufacturing",302,12915,484025540,0.41,0.47,0.46
+"2095","311942","Roasted coffee","Spice and Extract Manufacturing",438,14433,573380233,0.59,0.53,0.54
+"2096","311919","Potato chips & similar snacks","Other Snack Food Manufacturing",365,35466,1121332819,1,1,1
+"2097","312113","Manufactured ice","Ice Manufacturing",696,7649,168629324,1,1,1
+"2098","311823","Macaroni & spaghetti","Dry Pasta Manufacturing",307,10745,334974473,1,1,1
+"2099","311340","Food preparations, n.e.c.","Nonchocolate Confectionery Manufacturing",635,27114,859958094,0.17,0.18,0.19
+"2099","311423","Food preparations, n.e.c.","Dried and Dehydrated Food Manufacturing",205,14262,395495609,0.05,0.09,0.09
+"2099","311830","Food preparations, n.e.c.","Tortilla Manufacturing",416,13716,257921320,0.11,0.09,0.06
+"2099","311911","Food preparations, n.e.c.","Roasted Nuts and Peanut Butter Manufacturing",203,11130,316635115,0.05,0.07,0.07
+"2099","311920","Food preparations, n.e.c.","Coffee and Tea Manufacturing",302,12915,484025540,0.08,0.08,0.1
+"2099","311941","Food preparations, n.e.c.","Mayonnaise, Dressing, and Other Prepared Sauce Manufacturing",338,11959,391394584,0.09,0.08,0.08
+"2099","311942","Food preparations, n.e.c.","Spice and Extract Manufacturing",438,14433,573380233,0.12,0.09,0.12
+"2099","311991","Food preparations, n.e.c.","Perishable Prepared Food Manufacturing",572,20113,445482704,0.15,0.13,0.1
+"2099","311999","Food preparations, n.e.c.","All Other Miscellaneous Food Manufacturing",663,27555,906032498,0.18,0.18,0.2
+"2111","312221","Cigarettes","Cigarette Manufacturing",27,22993,1396391665,1,1,1
+"2121","312229","Cigars","Other Tobacco Product Manufacturing",253,7834,272673458,1,1,1
+"2131","312229","Chewing & smoking tobacco","Other Tobacco Product Manufacturing",253,7834,272673458,1,1,1
+"2141","312210","Tobacco stemming & redrying","Tobacco Stemming and Redrying",32,5429,126361506,0.11,0.41,0.32
+"2141","312229","Tobacco stemming & redrying","Other Tobacco Product Manufacturing",253,7834,272673458,0.89,0.59,0.68
+"2211","313210","Weaving mills, cotton","Broadwoven Fabric Mills",959,142912,3856319674,1,1,1
+"2221","313210","Weaving mills, synthetics","Broadwoven Fabric Mills",959,142912,3856319674,1,1,1
+"2231","313210","Weaving & finishing mills, wool","Broadwoven Fabric Mills",959,142912,3856319674,0.23,0.55,0.55
+"2231","313311","Weaving & finishing mills, wool","Broadwoven Fabric Finishing Mills",1961,63621,1774930461,0.47,0.25,0.25
+"2231","313312","Weaving & finishing mills, wool","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,0.29,0.2,0.2
+"2241","313221","Narrow fabric mills","Narrow Fabric Mills",357,20749,491574623,1,1,1
+"2251","315111","Women’s hosiery, except socks","Sheer Hosiery Mills",143,17809,459984312,1,1,1
+"2252","315111","Hosiery, n.e.c.","Sheer Hosiery Mills",143,17809,459984312,0.29,0.4,0.47
+"2252","315119","Hosiery, n.e.c.","Other Hosiery and Sock Mills",350,26979,510634488,0.71,0.6,0.53
+"2253","315191","Knit outerwear mills","Outerwear Knitting Mills",542,36703,766874656,1,1,1
+"2254","315192","Knit underwear mills","Underwear and Nightwear Knitting Mills",54,14015,294587574,1,1,1
+"2257","313241","Circular knit fabric mills","Weft Knit Fabric Mills",283,21387,570840899,0.19,0.29,0.29
+"2257","313312","Circular knit fabric mills","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,0.81,0.71,0.71
+"2258","313249","Lace & warp knit fabric mills","Other Knit Fabric and Lace Mills",196,14308,422385329,0.14,0.22,0.23
+"2258","313312","Lace & warp knit fabric mills","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,0.86,0.78,0.77
+"2259","313249","Knitting mills, n.e.c.","Other Knit Fabric and Lace Mills",196,14308,422385329,0.25,0.22,0.28
+"2259","315191","Knitting mills, n.e.c.","Outerwear Knitting Mills",542,36703,766874656,0.68,0.56,0.52
+"2259","315192","Knitting mills, n.e.c.","Underwear and Nightwear Knitting Mills",54,14015,294587574,0.07,0.22,0.2
+"2261","313311","Finishing plants, cotton","Broadwoven Fabric Finishing Mills",1961,63621,1774930461,1,1,1
+"2262","313311","Finishing plants, synthetics","Broadwoven Fabric Finishing Mills",1961,63621,1774930461,1,1,1
+"2269","313312","Finishing plants, n.e.c.","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,1,1,1
+"2273","314110","Carpets & rugs","Carpet and Rug Mills",581,52799,1411948753,1,1,1
+"2281","313111","Yarn spinning mills","Yarn Spinning Mills",431,62648,1532609505,1,1,1
+"2282","313112","Yarn throwing & winding mills","Yarn Texturizing, Throwing, and Twisting Mills",160,16556,446577685,0.12,0.24,0.24
+"2282","313312","Yarn throwing & winding mills","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,0.88,0.76,0.76
+"2284","313113","Thread mills","Thread Mills",80,5155,127657835,0.06,0.09,0.08
+"2284","313312","Thread mills","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,0.94,0.91,0.92
+"2295","313320","Coated fabrics, not rubberized","Fabric Coating Mills",320,13418,464502346,1,1,1
+"2296","314992","Tire cord & fabric","Tire Cord and Tire Fabric Mills",36,6989,205275613,1,1,1
+"2297","313230","Nonwoven fabrics","Nonwoven Fabric Mills",196,17977,676432565,1,1,1
+"2298","314991","Cordage & twine","Rope, Cordage, and Twine Mills",215,6303,154631009,1,1,1
+"2299","313111","Textile goods, n.e.c.","Yarn Spinning Mills",431,62648,1532609505,0.07,0.18,0.17
+"2299","313113","Textile goods, n.e.c.","Thread Mills",80,5155,127657835,0.01,0.01,0.01
+"2299","313210","Textile goods, n.e.c.","Broadwoven Fabric Mills",959,142912,3856319674,0.16,0.41,0.42
+"2299","313221","Textile goods, n.e.c.","Narrow Fabric Mills",357,20749,491574623,0.06,0.06,0.05
+"2299","313230","Textile goods, n.e.c.","Nonwoven Fabric Mills",196,17977,676432565,0.03,0.05,0.07
+"2299","313312","Textile goods, n.e.c.","Textile and Fabric Finishing (except Broadwoven Fabric) Mills",1214,51875,1390891928,0.21,0.15,0.15
+"2299","314999","Textile goods, n.e.c.","All Other Miscellaneous Textile Product Mills",2654,46715,999006780,0.45,0.13,0.11
+"2311","315211","Men’s & boys’ suits & coats","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.56,0.7,0.67
+"2311","315222","Men’s & boys’ suits & coats","Men's and Boys' Cut and Sew Suit, Coat, and Overcoat Manufacturing",1192,28811,551194136,0.44,0.3,0.33
+"2321","315211","Shirts, men’s & boys’","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.7,0.72,0.71
+"2321","315223","Shirts, men’s & boys’","Men's and Boys' Cut and Sew Shirt (except Work Shirt) Manufacturing",666,26565,469216390,0.3,0.28,0.29
+"2322","315211","Men’s & boys’ underwear & nightwear","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.93,0.86,0.84
+"2322","315221","Men’s & boys’ underwear & nightwear","Men's and Boys' Cut and Sew Underwear and Nightwear Manufacturing",114,11306,216250238,0.07,0.14,0.16
+"2323","315993","Men’s & boys’ neckwear","Men's and Boys' Neckwear Manufacturing",94,3901,92425669,1,1,1
+"2325","315211","Men’s & boys’ trousers & slacks","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.85,0.57,0.54
+"2325","315224","Men’s & boys’ trousers & slacks","Men's and Boys' Cut and Sew Trouser, Slack, and Jean Manufacturing",264,51086,966369103,0.15,0.43,0.46
+"2326","315211","Men’s & boys’ work clothing","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.86,0.72,0.7
+"2326","315225","Men’s & boys’ work clothing","Men's and Boys' Cut and Sew Work Clothing Manufacturing",240,26989,483924949,0.14,0.28,0.3
+"2329","315211","Men’s & boys’ clothing, n.e.c.","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.54,0.53,0.49
+"2329","315228","Men’s & boys’ clothing, n.e.c.","Men's and Boys' Cut and Sew Other Outerwear Manufacturing",512,30575,549122072,0.18,0.23,0.24
+"2329","315299","Men’s & boys’ clothing, n.e.c.","All Other Cut and Sew Apparel Manufacturing",804,31253,625158358,0.28,0.24,0.27
+"2331","315212","Women’s blouses & waists","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.93,0.91,0.88
+"2331","315232","Women’s blouses & waists","Women's and Girls' Cut and Sew Blouse and Shirt Manufacturing",507,14633,308603879,0.07,0.09,0.12
+"2335","315212","Women’s dresses","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.83,0.85,0.76
+"2335","315233","Women’s dresses","Women's and Girls' Cut and Sew Dress Manufacturing",1393,25354,688043728,0.17,0.15,0.24
+"2337","315212","Women’s suits & coats","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.94,0.91,0.85
+"2337","315234","Women’s suits & coats","Women's and Girls' Cut and Sew Suit, Coat, Tailored Jacket, and Skirt Manufacturing",390,14573,377686926,0.06,0.09,0.15
+"2339","315212","Women’s outerwear, n.e.c.","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.63,0.57,0.5
+"2339","315239","Women’s outerwear, n.e.c.","Women's and Girls' Cut and Sew Other Outerwear Manufacturing",2326,59096,1121071572,0.22,0.23,0.26
+"2339","315299","Women’s outerwear, n.e.c.","All Other Cut and Sew Apparel Manufacturing",804,31253,625158358,0.08,0.12,0.14
+"2339","315999","Women’s outerwear, n.e.c.","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,0.08,0.08,0.1
+"2341","315211","Women’s & children’s underwear","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.17,0.27,0.28
+"2341","315212","Women’s & children’s underwear","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.76,0.57,0.53
+"2341","315221","Women’s & children’s underwear","Men's and Boys' Cut and Sew Underwear and Nightwear Manufacturing",114,11306,216250238,0.01,0.04,0.05
+"2341","315231","Women’s & children’s underwear","Women's and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",292,18679,368594124,0.03,0.07,0.09
+"2341","315291","Women’s & children’s underwear","Infants' Cut and Sew Apparel Manufacturing",147,10030,209289920,0.02,0.04,0.05
+"2342","315212","Brassieres & allied garments","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.96,0.89,0.85
+"2342","315231","Brassieres & allied garments","Women's and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",292,18679,368594124,0.04,0.11,0.15
+"2353","315991","Hats, caps, & millinery","Hat, Cap, and Millinery Manufacturing",316,15936,298553403,1,1,1
+"2361","315212","Girls’ & children’s dresses & blouses","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.71,0.66,0.56
+"2361","315223","Girls’ & children’s dresses & blouses","Men's and Boys' Cut and Sew Shirt (except Work Shirt) Manufacturing",666,26565,469216390,0.07,0.12,0.12
+"2361","315232","Girls’ & children’s dresses & blouses","Women's and Girls' Cut and Sew Blouse and Shirt Manufacturing",507,14633,308603879,0.05,0.07,0.08
+"2361","315233","Girls’ & children’s dresses & blouses","Women's and Girls' Cut and Sew Dress Manufacturing",1393,25354,688043728,0.15,0.11,0.18
+"2361","315291","Girls’ & children’s dresses & blouses","Infants' Cut and Sew Apparel Manufacturing",147,10030,209289920,0.02,0.05,0.05
+"2369","315212","Girls’ & children’s outerwear, n.e.c.","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.56,0.39,0.33
+"2369","315221","Girls’ & children’s outerwear, n.e.c.","Men's and Boys' Cut and Sew Underwear and Nightwear Manufacturing",114,11306,216250238,0.01,0.03,0.03
+"2369","315222","Girls’ & children’s outerwear, n.e.c.","Men's and Boys' Cut and Sew Suit, Coat, and Overcoat Manufacturing",1192,28811,551194136,0.1,0.08,0.08
+"2369","315224","Girls’ & children’s outerwear, n.e.c.","Men's and Boys' Cut and Sew Trouser, Slack, and Jean Manufacturing",264,51086,966369103,0.02,0.14,0.15
+"2369","315228","Girls’ & children’s outerwear, n.e.c.","Men's and Boys' Cut and Sew Other Outerwear Manufacturing",512,30575,549122072,0.04,0.08,0.08
+"2369","315231","Girls’ & children’s outerwear, n.e.c.","Women's and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",292,18679,368594124,0.02,0.05,0.06
+"2369","315234","Girls’ & children’s outerwear, n.e.c.","Women's and Girls' Cut and Sew Suit, Coat, Tailored Jacket, and Skirt Manufacturing",390,14573,377686926,0.03,0.04,0.06
+"2369","315239","Girls’ & children’s outerwear, n.e.c.","Women's and Girls' Cut and Sew Other Outerwear Manufacturing",2326,59096,1121071572,0.2,0.16,0.17
+"2369","315291","Girls’ & children’s outerwear, n.e.c.","Infants' Cut and Sew Apparel Manufacturing",147,10030,209289920,0.01,0.03,0.03
+"2371","315292","Fur goods","Fur and Leather Apparel Manufacturing",232,2575,73052993,1,1,1
+"2381","315992","Fabric gloves & mittens","Glove and Mitten Manufacturing",126,6533,131573131,1,1,1
+"2384","315211","Robes & dressing gowns","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.18,0.28,0.29
+"2384","315212","Robes & dressing gowns","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.78,0.6,0.56
+"2384","315221","Robes & dressing gowns","Men's and Boys' Cut and Sew Underwear and Nightwear Manufacturing",114,11306,216250238,0.01,0.05,0.06
+"2384","315231","Robes & dressing gowns","Women's and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",292,18679,368594124,0.03,0.08,0.09
+"2385","315211","Waterproof outer garments","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.11,0.18,0.17
+"2385","315212","Waterproof outer garments","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.49,0.39,0.33
+"2385","315222","Waterproof outer garments","Men's and Boys' Cut and Sew Suit, Coat, and Overcoat Manufacturing",1192,28811,551194136,0.09,0.08,0.08
+"2385","315228","Waterproof outer garments","Men's and Boys' Cut and Sew Other Outerwear Manufacturing",512,30575,549122072,0.04,0.08,0.08
+"2385","315234","Waterproof outer garments","Women's and Girls' Cut and Sew Suit, Coat, Tailored Jacket, and Skirt Manufacturing",390,14573,377686926,0.03,0.04,0.06
+"2385","315239","Waterproof outer garments","Women's and Girls' Cut and Sew Other Outerwear Manufacturing",2326,59096,1121071572,0.17,0.16,0.17
+"2385","315291","Waterproof outer garments","Infants' Cut and Sew Apparel Manufacturing",147,10030,209289920,0.01,0.03,0.03
+"2385","315999","Waterproof outer garments","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,0.06,0.05,0.06
+"2386","315292","Leather & sheepglined clothing","Fur and Leather Apparel Manufacturing",232,2575,73052993,1,1,1
+"2387","315999","Apparel belts","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,1,1,1
+"2389","315212","Apparel & accessories, n.e.c.","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.78,0.68,0.61
+"2389","315231","Apparel & accessories, n.e.c.","Women's and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",292,18679,368594124,0.03,0.09,0.1
+"2389","315299","Apparel & accessories, n.e.c.","All Other Cut and Sew Apparel Manufacturing",804,31253,625158358,0.09,0.14,0.17
+"2389","315999","Apparel & accessories, n.e.c.","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,0.09,0.09,0.12
+"2391","314121","Curtains & draperies","Curtain and Drapery Mills",2253,25713,469658385,1,1,1
+"2392","314129","Housefurnishings, n.e.c.","Other Household Textile Product Mills",931,49710,1049818450,0.53,0.62,0.59
+"2392","314911","Housefurnishings, n.e.c.","Textile Bag Mills",454,14454,287314862,0.26,0.18,0.16
+"2392","339994","Housefurnishings, n.e.c.","Broom, Brush, and Mop Manufacturing",368,16411,440058512,0.21,0.2,0.25
+"2393","314911","Textile bags","Textile Bag Mills",454,14454,287314862,1,1,1
+"2394","314912","Canvas & related products","Canvas and Related Product Mills",1833,20585,475286466,1,1,1
+"2395","314999","Pleating & stitching","All Other Miscellaneous Textile Product Mills",2654,46715,999006780,0.24,0.18,0.23
+"2395","315211","Pleating & stitching","Men's and Boys' Cut and Sew Apparel Contractors",1527,68383,1140921658,0.14,0.26,0.26
+"2395","315212","Pleating & stitching","Women's, Girls', and Infants' Cut and Sew Apparel Contractors",6665,145652,2173334271,0.61,0.56,0.5
+"2396","314999","Automotive & apparel trimmings","All Other Miscellaneous Textile Product Mills",2654,46715,999006780,0.3,0.22,0.17
+"2396","315999","Automotive & apparel trimmings","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,0.09,0.09,0.07
+"2396","323113","Automotive & apparel trimmings","Commercial Screen Printing",4931,73342,1763666396,0.55,0.34,0.31
+"2396","336360","Automotive & apparel trimmings","Motor Vehicle Seating and Interior Trim Manufacturing",571,74542,2561434801,0.06,0.35,0.45
+"2397","313222","Schiffli machine embroideries","Schiffli Machine Embroidery",249,3393,75443071,1,1,1
+"2399","314999","Fabricated textile products, n.e.c.","All Other Miscellaneous Textile Product Mills",2654,46715,999006780,0.66,0.33,0.25
+"2399","315999","Fabricated textile products, n.e.c.","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,0.2,0.14,0.1
+"2399","336360","Fabricated textile products, n.e.c.","Motor Vehicle Seating and Interior Trim Manufacturing",571,74542,2561434801,0.14,0.53,0.64
+"2411","113310","Logging","Logging",14242,82295,2049041431,1,1,1
+"2421","321113","Sawmills & planing mills, general","Sawmills",4602,122065,3361075344,0.44,0.51,0.54
+"2421","321912","Sawmills & planing mills, general","Cut Stock, Resawing Lumber, and Planing",884,22987,518388435,0.09,0.1,0.08
+"2421","321918","Sawmills & planing mills, general","Other Millwork (including Flooring)",2685,58691,1538340884,0.26,0.24,0.25
+"2421","321999","Sawmills & planing mills, general","All Other Miscellaneous Wood Product Manufacturing",2199,37199,816494291,0.21,0.15,0.13
+"2426","321912","Hardwood dimension & flooring mills","Cut Stock, Resawing Lumber, and Planing",884,22987,518388435,0.14,0.13,0.11
+"2426","321918","Hardwood dimension & flooring mills","Other Millwork (including Flooring)",2685,58691,1538340884,0.44,0.34,0.34
+"2426","337215","Hardwood dimension & flooring mills","Showcase, Partition, Shelving, and Locker Manufacturing",2565,91299,2512348550,0.42,0.53,0.55
+"2429","321113","Special product sawmills, n.e.c.","Sawmills",4602,122065,3361075344,0.43,0.54,0.6
+"2429","321920","Special product sawmills, n.e.c.","Wood Container and Pallet Manufacturing",3800,68585,1421270146,0.36,0.3,0.25
+"2429","321999","Special product sawmills, n.e.c.","All Other Miscellaneous Wood Product Manufacturing",2199,37199,816494291,0.21,0.16,0.15
+"2431","321911","Millwork","Wood Window and Door Manufacturing",1423,66298,1801672428,0.35,0.53,0.54
+"2431","321918","Millwork","Other Millwork (including Flooring)",2685,58691,1538340884,0.65,0.47,0.46
+"2434","337110","Wood kitchen cabinets","Wood Kitchen Cabinet and Countertop Manufacturing",12212,127911,3056849477,1,1,1
+"2435","321211","Hardwood veneer & plywood","Hardwood Veneer and Plywood Manufacturing",357,26359,675412538,1,1,1
+"2436","321212","Softwood veneer & plywood","Softwood Veneer and Plywood Manufacturing",192,26291,827387099,1,1,1
+"2439","321113","Structural wood members, n.e.c.","Sawmills",4602,122065,3361075344,0.69,0.66,0.68
+"2439","321213","Structural wood members, n.e.c.","Engineered Wood Member (except Truss) Manufacturing",170,8345,237252656,0.03,0.04,0.05
+"2439","321214","Structural wood members, n.e.c.","Truss Manufacturing",1016,32114,805625561,0.15,0.17,0.16
+"2439","321912","Structural wood members, n.e.c.","Cut Stock, Resawing Lumber, and Planing",884,22987,518388435,0.13,0.12,0.11
+"2441","321920","Nailed wood boxes & shook","Wood Container and Pallet Manufacturing",3800,68585,1421270146,1,1,1
+"2448","321920","Wood pallets & skids","Wood Container and Pallet Manufacturing",3800,68585,1421270146,1,1,1
+"2449","321920","Wood containers, n.e.c.","Wood Container and Pallet Manufacturing",3800,68585,1421270146,1,1,1
+"2451","321991","Mobile homes","Manufactured Home (Mobile Home) Manufacturing",436,69401,1966297293,1,1,1
+"2452","321992","Prefabricated wood buildings","Prefabricated Wood Building Manufacturing",809,23528,637671172,1,1,1
+"2491","321114","Wood preserving","Wood Preservation",529,12368,333777344,1,1,1
+"2493","321219","Reconstituted wood products","Reconstituted Wood Product Manufacturing",253,20905,706894841,1,1,1
+"2499","321912","Wood products, n.e.c.","Cut Stock, Resawing Lumber, and Planing",884,22987,518388435,0.08,0.08,0.08
+"2499","321920","Wood products, n.e.c.","Wood Container and Pallet Manufacturing",3800,68585,1421270146,0.33,0.25,0.21
+"2499","321999","Wood products, n.e.c.","All Other Miscellaneous Wood Product Manufacturing",2199,37199,816494291,0.19,0.13,0.12
+"2499","332321","Wood products, n.e.c.","Metal Window and Door Manufacturing",1667,84204,2293745093,0.15,0.3,0.34
+"2499","339999","Wood products, n.e.c.","All Other Miscellaneous Manufacturing",2909,64690,1701595590,0.25,0.23,0.25
+"2511","337122","Wood household furniture","Nonupholstered Wood Household Furniture Manufacturing",4466,124543,2652865413,1,1,1
+"2512","337121","Upholstered household furniture","Upholstered Household Furniture Manufacturing",1949,96674,2262948303,1,1,1
+"2514","337124","Metal household furniture","Metal Household Furniture Manufacturing",344,13698,485695173,1,1,1
+"2515","337121","Mattresses & bedsprings","Upholstered Household Furniture Manufacturing",1949,96674,2262948303,0.7,0.77,0.74
+"2515","337910","Mattresses & bedsprings","Mattress Manufacturing",829,28880,791852822,0.3,0.23,0.26
+"2517","337129","Wood TV & radio cabinets","Wood Television, Radio, and Sewing Machine Cabinet Manufacturing",158,3561,83634553,1,1,1
+"2519","337125","Household furniture, n.e.c.","Household Furniture (except Wood and Metal) Manufacturing",271,7624,179636297,1,1,1
+"2521","337211","Wood office furniture","Wood Office Furniture Manufacturing",746,31843,952195393,1,1,1
+"2522","337214","Office furniture, except wood","Office Furniture (except Wood) Manufacturing",439,39585,1517948909,1,1,1
+"2531","336360","Public building & related furniture","Motor Vehicle Seating and Interior Trim Manufacturing",571,74542,2561434801,0.36,0.63,0.67
+"2531","337127","Public building & related furniture","Institutional Furniture Manufacturing",803,32024,907758690,0.5,0.27,0.24
+"2531","339942","Public building & related furniture","Lead Pencil and Art Good Manufacturing",223,11594,326063160,0.14,0.1,0.09
+"2541","337110","Wood partitions & fixtures","Wood Kitchen Cabinet and Countertop Manufacturing",12212,127911,3056849477,0.79,0.55,0.51
+"2541","337212","Wood partitions & fixtures","Custom Architectural Woodwork and Millwork Manufacturing",752,12471,408637994,0.05,0.05,0.07
+"2541","337215","Wood partitions & fixtures","Showcase, Partition, Shelving, and Locker Manufacturing",2565,91299,2512348550,0.17,0.39,0.42
+"2542","337215","Partitions & fixtures, except wood","Showcase, Partition, Shelving, and Locker Manufacturing",2565,91299,2512348550,1,1,1
+"2591","337920","Drapery hardware, blinds, & shades","Blind and Shade Manufacturing",604,23693,578943668,1,1,1
+"2599","337127","Furniture & fixtures, n.e.c.","Institutional Furniture Manufacturing",803,32024,907758690,0.27,0.26,0.22
+"2599","339113","Furniture & fixtures, n.e.c.","Surgical Appliance and Supplies Manufacturing",2128,93450,3308261510,0.73,0.74,0.78
+"2611","322110","Pulp mills","Pulp Mills",50,8251,445999896,1,1,1
+"2621","322121","Paper mills","Paper (except Newsprint) Mills",455,134380,6740772178,0.86,0.88,0.87
+"2621","322122","Paper mills","Newsprint Mills",73,17863,991133980,0.14,0.12,0.13
+"2631","322130","Paperboard mills","Paperboard Mills",283,48323,2468658705,1,1,1
+"2652","322213","Setup paperboard boxes","Setup Paperboard Box Manufacturing",171,7029,173417032,1,1,1
+"2653","322211","Corrugated & solid fiber boxes","Corrugated and Solid Fiber Box Manufacturing",1988,136557,4954536164,1,1,1
+"2655","322214","Fiber cans, drums, & similar products","Fiber Can, Tube, Drum, and Similar Products Manufacturing",325,14325,521367939,1,1,1
+"2656","322215","Sanitary food containers","Nonfolding Sanitary Food Container Manufacturing",108,18099,556177343,1,1,1
+"2657","322212","Folding paperboard boxes","Folding Paperboard Box Manufacturing",529,46279,1747602154,1,1,1
+"2671","322221","Papercoated & laminated, packaging","Coated and Laminated Packaging Paper and Plastics Film Manufacturing",256,18643,745668095,0.72,0.8,0.82
+"2671","326112","Papercoated & laminated, packaging","Unsupported Plastics Packaging Film and Sheet Manufacturing",98,4735,169054420,0.28,0.2,0.18
+"2672","322222","Papercoated & laminated, n.e.c.","Coated and Laminated Paper Manufacturing",711,41881,1691887436,1,1,1
+"2673","322223","Bagsplastics, laminated, & coated","Plastics, Foil, and Coated Paper Bag Manufacturing",183,15956,510317582,0.32,0.39,0.41
+"2673","326111","Bagsplastics, laminated, & coated","Unsupported Plastics Bag Manufacturing",388,25040,745382784,0.68,0.61,0.59
+"2674","322224","Bagsuncoated paper & multiwall","Uncoated Paper and Multiwall Bag Manufacturing",167,17728,515163888,1,1,1
+"2675","322226","Diegcut paper & board","Surface-Coated Paperboard Manufacturing",89,2728,80422727,0.09,0.07,0.07
+"2675","322231","Diegcut paper & board","Die-Cut Paper and Paperboard Office Supplies Manufacturing",280,13874,425113336,0.27,0.35,0.35
+"2675","322299","Diegcut paper & board","All Other Converted Paper Product Manufacturing",654,22822,715873303,0.64,0.58,0.59
+"2676","322121","Sanitary paper products","Paper (except Newsprint) Mills",455,134380,6740772178,0.68,0.77,0.8
+"2676","322291","Sanitary paper products","Sanitary Paper Product Manufacturing",216,40468,1724590268,0.32,0.23,0.2
+"2677","322232","Envelopes","Envelope Manufacturing",276,24942,830111425,1,1,1
+"2678","322233","Stationery products","Stationery, Tablet, and Related Product Manufacturing",125,7644,243203101,1,1,1
+"2679","322222","Converted paper products, n.e.c.","Coated and Laminated Paper Manufacturing",711,41881,1691887436,0.43,0.53,0.6
+"2679","322231","Converted paper products, n.e.c.","Die-Cut Paper and Paperboard Office Supplies Manufacturing",280,13874,425113336,0.17,0.18,0.15
+"2679","322299","Converted paper products, n.e.c.","All Other Converted Paper Product Manufacturing",654,22822,715873303,0.4,0.29,0.25
+"2711","511110","Newspapers","Newspaper Publishers",9469,418781,12789567461,1,1,1
+"2721","511120","Periodicals","Periodical Publishers",8007,154583,7393113203,1,1,1
+"2731","511130","Book publishing","Book Publishers",3804,86382,3599797840,0.82,0.94,0.94
+"2731","512230","Book publishing","Music Publishers",850,5129,246565300,0.18,0.06,0.06
+"2732","323117","Book printing","Books Printing",584,42354,1393504886,1,1,1
+"2741","511140","Miscellaneous publishing","Database and Directory Publishers",2344,52998,2187771104,0.5,0.71,0.73
+"2741","511199","Miscellaneous publishing","All Other Publishers",1451,16340,563268241,0.31,0.22,0.19
+"2741","512230","Miscellaneous publishing","Music Publishers",850,5129,246565300,0.18,0.07,0.08
+"2752","323110","Commercial printing, lithographic","Commercial Lithographic Printing",14986,321182,11384688346,0.53,0.78,0.83
+"2752","323114","Commercial printing, lithographic","Quick Printing",13415,92418,2400116132,0.47,0.22,0.17
+"2754","323111","Commercial printing, gravure","Commercial Gravure Printing",493,20580,731989926,1,1,1
+"2759","323112","Commercial printing, n.e.c.","Commercial Flexographic Printing",1861,48959,1607768329,0.08,0.17,0.2
+"2759","323113","Commercial printing, n.e.c.","Commercial Screen Printing",4931,73342,1763666396,0.2,0.26,0.22
+"2759","323114","Commercial printing, n.e.c.","Quick Printing",13415,92418,2400116132,0.55,0.32,0.3
+"2759","323115","Commercial printing, n.e.c.","Digital Printing",921,19509,707311503,0.04,0.07,0.09
+"2759","323119","Commercial printing, n.e.c.","Other Commercial Printing",3433,51470,1574493154,0.14,0.18,0.2
+"2761","323116","Manifold business forms","Manifold Business Forms Printing",1113,60270,2036536710,1,1,1
+"2771","323110","Greeting cards","Commercial Lithographic Printing",14986,321182,11384688346,0.58,0.6,0.64
+"2771","323111","Greeting cards","Commercial Gravure Printing",493,20580,731989926,0.02,0.04,0.04
+"2771","323112","Greeting cards","Commercial Flexographic Printing",1861,48959,1607768329,0.07,0.09,0.09
+"2771","323113","Greeting cards","Commercial Screen Printing",4931,73342,1763666396,0.19,0.14,0.1
+"2771","323119","Greeting cards","Other Commercial Printing",3433,51470,1574493154,0.13,0.1,0.09
+"2771","511191","Greeting cards","Greeting Card Publishers",103,18077,627184345,0,0.03,0.04
+"2782","323116","Blankbooks & looseleaf binders","Manifold Business Forms Printing",1113,60270,2036536710,0.8,0.76,0.78
+"2782","323118","Blankbooks & looseleaf binders","Blankbook, Looseleaf Binders, and Devices Manufacturing",286,19240,560653853,0.2,0.24,0.22
+"2789","323121","Bookbinding & related work","Tradebinding and Related Work",1256,29855,713064850,1,1,1
+"2791","323122","Typesetting","Prepress Services",3300,51450,2155999379,1,1,1
+"2796","323122","Platemaking services","Prepress Services",3300,51450,2155999379,1,1,1
+"2812","325181","Alkalies & chlorine","Alkalies and Chlorine Manufacturing",66,9581,537881817,1,1,1
+"2813","325120","Industrial gases","Industrial Gas Manufacturing",623,26382,1675887960,1,1,1
+"2816","325131","Inorganic pigments","Inorganic Dye and Pigment Manufacturing",148,13115,630510437,0.78,0.85,0.83
+"2816","325182","Inorganic pigments","Carbon Black Manufacturing",42,2342,127514979,0.22,0.15,0.17
+"2819","325131","Industrial inorganic chemicals, n.e.c.","Inorganic Dye and Pigment Manufacturing",148,13115,630510437,0.07,0.13,0.12
+"2819","325188","Industrial inorganic chemicals, n.e.c.","All Other Basic Inorganic Chemical Manufacturing",648,44387,2405974928,0.31,0.43,0.46
+"2819","325998","Industrial inorganic chemicals, n.e.c.","All Other Miscellaneous Chemical Product and Preparation Manufacturing",1293,42261,2058952407,0.61,0.41,0.39
+"2819","331311","Industrial inorganic chemicals, n.e.c.","Alumina Refining",16,3447,170509173,0.01,0.03,0.03
+"2821","325211","Plastics materials & resins","Plastics Material and Resin Manufacturing",884,73009,3975287137,1,1,1
+"2822","325212","Synthetic rubber","Synthetic Rubber Manufacturing",186,16253,775094661,1,1,1
+"2823","325221","Cellulosic manmade fibers","Cellulosic Organic Fiber Manufacturing",35,17522,806500256,1,1,1
+"2824","325222","Organic fibers, noncellulosic","Noncellulosic Organic Fiber Manufacturing",143,38145,1768698584,1,1,1
+"2833","325411","Medicinals & botanicals","Medicinal and Botanical Manufacturing",341,21378,1295756429,1,1,1
+"2834","325412","Pharmaceutical preparations","Pharmaceutical Preparation Manufacturing",1213,193566,11982752544,1,1,1
+"2835","325412","Diagnostic substances","Pharmaceutical Preparation Manufacturing",1213,193566,11982752544,0.81,0.94,0.95
+"2835","325413","Diagnostic substances","In-Vitro Diagnostic Substance Manufacturing",292,12297,575909740,0.19,0.06,0.05
+"2836","325414","Biological products, except diagnostic","Biological Product (except Diagnostic) Manufacturing",392,18446,867366963,1,1,1
+"2841","325611","Soap & other detergents","Soap and Other Detergent Manufacturing",636,34900,1539898080,1,1,1
+"2842","325612","Polishes & sanitation goods","Polish and Other Sanitation Good Manufacturing",1059,30640,1384875924,1,1,1
+"2843","325613","Surface active agents","Surface Active Agent Manufacturing",185,8077,366665884,1,1,1
+"2844","325611","Toilet preparations","Soap and Other Detergent Manufacturing",636,34900,1539898080,0.43,0.37,0.42
+"2844","325620","Toilet preparations","Toilet Preparation Manufacturing",860,58791,2142678035,0.57,0.63,0.58
+"2851","325510","Paints & allied products","Paint and Coating Manufacturing",1370,52381,2220562796,1,1,1
+"2861","325191","Gum & wood chemicals","Gum and Wood Chemical Manufacturing",95,2487,91345833,1,1,1
+"2865","325110","Cyclic crudes & intermediates","Petrochemical Manufacturing",173,40565,2666501765,0.49,0.72,0.76
+"2865","325132","Cyclic crudes & intermediates","Synthetic Organic Dye and Pigment Manufacturing",144,11881,600925173,0.41,0.21,0.17
+"2865","325192","Cyclic crudes & intermediates","Cyclic Crude and Intermediate Manufacturing",37,3754,256253907,0.1,0.07,0.07
+"2869","325110","Industrial organic chemicals, n.e.c.","Petrochemical Manufacturing",173,40565,2666501765,0.09,0.26,0.28
+"2869","325120","Industrial organic chemicals, n.e.c.","Industrial Gas Manufacturing",623,26382,1675887960,0.32,0.17,0.18
+"2869","325188","Industrial organic chemicals, n.e.c.","All Other Basic Inorganic Chemical Manufacturing",648,44387,2405974928,0.33,0.28,0.25
+"2869","325193","Industrial organic chemicals, n.e.c.","Ethyl Alcohol Manufacturing",51,2454,135606040,0.03,0.02,0.01
+"2869","325199","Industrial organic chemicals, n.e.c.","All Other Basic Organic Chemical Manufacturing",458,45227,2622420264,0.23,0.28,0.28
+"2873","325311","Nitrogenous fertilizers","Nitrogenous Fertilizer Manufacturing",226,11007,548856515,1,1,1
+"2874","325312","Phosphatic fertilizers","Phosphatic Fertilizer Manufacturing",101,9475,430039261,1,1,1
+"2875","325314","Fertilizers, mixing only","Fertilizer (Mixing Only) Manufacturing",606,9499,286735467,1,1,1
+"2879","325320","Agricultural chemicals, n.e.c.","Pesticide and Other Agricultural Chemical Manufacturing",320,21531,1181781579,1,1,1
+"2891","325520","Adhesives & sealants","Adhesive Manufacturing",776,24730,1104700875,1,1,1
+"2892","325920","Explosives","Explosives Manufacturing",121,7740,295983500,1,1,1
+"2893","325910","Printing ink","Printing Ink Manufacturing",625,15125,666249897,1,1,1
+"2895","325182","Carbon black","Carbon Black Manufacturing",42,2342,127514979,1,1,1
+"2899","311942","Chemical preparations, n.e.c.","Spice and Extract Manufacturing",438,14433,573380233,0.12,0.09,0.08
+"2899","325199","Chemical preparations, n.e.c.","All Other Basic Organic Chemical Manufacturing",458,45227,2622420264,0.13,0.29,0.35
+"2899","325510","Chemical preparations, n.e.c.","Paint and Coating Manufacturing",1370,52381,2220562796,0.38,0.34,0.3
+"2899","325998","Chemical preparations, n.e.c.","All Other Miscellaneous Chemical Product and Preparation Manufacturing",1293,42261,2058952407,0.36,0.27,0.28
+"2911","324110","Petroleum refining","Petroleum Refineries",673,78766,5285434475,1,1,1
+"2951","324121","Asphalt paving mixtures & blocks","Asphalt Paving Mixture and Block Manufacturing",914,14943,616943356,1,1,1
+"2952","324122","Asphalt felts & coatings","Asphalt Shingle and Coating Materials Manufacturing",292,13993,551193232,1,1,1
+"2992","324191","Lubricating oils & greases","Petroleum Lubricating Oil and Grease Manufacturing",458,11110,477985483,1,1,1
+"2999","324199","Petroleum & coal products, n.e.c.","All Other Petroleum and Coal Products Manufacturing",100,6930,324185854,1,1,1
+"3011","326211","Tires & inner tubes","Tire Manufacturing (except Retreading)",160,77196,3635307176,1,1,1
+"3021","316211","Rubber & plastics footwear","Rubber and Plastics Footwear Manufacturing",47,4851,119801254,1,1,1
+"3052","326220","Rubber & plastics hose & belting","Rubber and Plastics Hoses and Belting Manufacturing",315,29705,956515450,1,1,1
+"3053","339991","Gaskets, packing & sealing devices","Gasket, Packing, and Sealing Device Manufacturing",754,43000,1418250212,1,1,1
+"3061","326291","Mechanical rubber goods","Rubber Product Manufacturing for Mechanical Use",634,54962,1697626639,1,1,1
+"3069","313320","Fabricated rubber products, n.e.c.","Fabric Coating Mills",320,13418,464502346,0.26,0.22,0.22
+"3069","326192","Fabricated rubber products, n.e.c.","Resilient Floor Covering Manufacturing",75,9066,423670221,0.06,0.15,0.2
+"3069","326299","Fabricated rubber products, n.e.c.","All Other Rubber Product Manufacturing",819,38838,1190148447,0.67,0.63,0.57
+"3081","326113","Unsupported plastics film & sheet","Unsupported Plastics Film and Sheet (except Packaging) Manufacturing",805,60424,2234257802,1,1,1
+"3082","326121","Unsupported plastics profile shapes","Unsupported Plastics Profile Shape Manufacturing",696,34979,1179582250,1,1,1
+"3083","326130","Laminated plastics plate & sheet","Laminated Plastics Plate, Sheet, and Shape Manufacturing",494,26485,895213646,1,1,1
+"3084","326122","Plastics pipe","Plastics Pipe and Pipe Fitting Manufacturing",697,32595,978526144,1,1,1
+"3085","326160","Plastics bottles","Plastics Bottle Manufacturing",472,35337,1069758333,1,1,1
+"3086","326140","Plastics foam products","Polystyrene Foam Product Manufacturing",584,28413,834410470,0.48,0.45,0.45
+"3086","326150","Plastics foam products","Urethane and Other Foam Product (except Polystyrene) Manufacturing",639,34618,1010483814,0.52,0.55,0.55
+"3087","325991","Custom compound purchased resins","Custom Compounding of Purchased Resins",528,26006,929932165,1,1,1
+"3088","326191","Plastics plumbing fixtures","Plastics Plumbing Fixture Manufacturing",592,20761,504871307,1,1,1
+"3089","326122","Plastics products, n.e.c.","Plastics Pipe and Pipe Fitting Manufacturing",697,32595,978526144,0.07,0.07,0.08
+"3089","326199","Plastics products, n.e.c.","All Other Plastics Product Manufacturing",8137,387583,10965788208,0.85,0.87,0.88
+"3089","335121","Plastics products, n.e.c.","Residential Electric Lighting Fixture Manufacturing",710,23530,580708086,0.07,0.05,0.05
+"3111","316110","Leather tanning & finishing","Leather and Hide Tanning and Finishing",338,13848,417603966,1,1,1
+"3131","316999","Footwear cut stock & findings","All Other Leather Good Manufacturing",530,14424,280744073,0.17,0.23,0.2
+"3131","321999","Footwear cut stock & findings","All Other Miscellaneous Wood Product Manufacturing",2199,37199,816494291,0.72,0.59,0.57
+"3131","339993","Footwear cut stock & findings","Fastener, Button, Needle, and Pin Manufacturing",333,11166,330552781,0.11,0.18,0.23
+"3142","316212","House slippers","House Slipper Manufacturing",25,2318,52855089,1,1,1
+"3143","316213","Men’s footwear, except athletic","Men's Footwear (except Athletic) Manufacturing",191,19953,453144929,1,1,1
+"3144","316214","Women’s footwear, except athletic","Women's Footwear (except Athletic) Manufacturing",99,10096,204322522,1,1,1
+"3149","316219","Footwear, except rubber, n.e.c.","Other Footwear Manufacturing",102,5733,131458021,1,1,1
+"3151","315992","Leather gloves & mittens","Glove and Mitten Manufacturing",126,6533,131573131,1,1,1
+"3161","316991","Luggage","Luggage Manufacturing",286,10312,255028230,1,1,1
+"3171","316992","Women’s handbags & purses","Women's Handbag and Purse Manufacturing",165,3106,96517916,1,1,1
+"3172","316993","Personal leather goods, n.e.c.","Personal Leather Good (except Women's Handbag and Purse) Manufacturing",172,4020,75542550,1,1,1
+"3199","316999","Leather goods, n.e.c.","All Other Leather Good Manufacturing",530,14424,280744073,1,1,1
+"3211","327211","Flat glass","Flat Glass Manufacturing",202,16816,688807337,1,1,1
+"3221","327213","Glass containers","Glass Container Manufacturing",119,26298,1091879571,1,1,1
+"3229","327212","Pressed & blown glass, n.e.c.","Other Pressed and Blown Glass and Glassware Manufacturing",521,42144,1682679319,1,1,1
+"3231","327215","Products of purchased glass","Glass Product Manufacturing Made of Purchased Glass",1650,60108,1847967404,1,1,1
+"3241","327310","Cement, hydraulic","Cement Manufacturing",182,16199,766229106,1,1,1
+"3251","327121","Brick & structural clay tile","Brick and Structural Clay Tile Manufacturing",183,12885,367087203,1,1,1
+"3253","327122","Ceramic wall & floor tile","Ceramic Wall and Floor Tile Manufacturing",178,8706,233152094,1,1,1
+"3255","327124","Clay refractories","Clay Refractory Manufacturing",149,7878,287190063,1,1,1
+"3259","327123","Structural clay products, n.e.c.","Other Structural Clay Product Manufacturing",57,1888,54781403,1,1,1
+"3261","327111","Vitreous plumbing fixtures","Vitreous China Plumbing Fixture and China and Earthenware Bathroom Accessories Manufacturing",73,9740,310456033,1,1,1
+"3262","327112","Vitreous china food utensils","Vitreous China, Fine Earthenware, and Other Pottery Product Manufacturing",1638,24269,512418522,1,1,1
+"3263","327112","Fine earthenware food utensils","Vitreous China, Fine Earthenware, and Other Pottery Product Manufacturing",1638,24269,512418522,1,1,1
+"3264","327113","Porcelain electrical supplies","Porcelain Electrical Supply Manufacturing",129,9417,315913100,1,1,1
+"3269","327112","Pottery products, n.e.c.","Vitreous China, Fine Earthenware, and Other Pottery Product Manufacturing",1638,24269,512418522,1,1,1
+"3271","327331","Concrete brick & block","Concrete Block and Brick Manufacturing",851,19140,635690115,1,1,1
+"3272","327332","Concrete products, n.e.c.","Concrete Pipe Manufacturing",369,13135,433676119,0.11,0.17,0.18
+"3272","327390","Concrete products, n.e.c.","Other Concrete Product Manufacturing",2657,53956,1556352289,0.76,0.69,0.66
+"3272","327999","Concrete products, n.e.c.","All Other Miscellaneous Nonmetallic Mineral Product Manufacturing",466,11338,369193533,0.13,0.14,0.16
+"3273","327320","Readygmixed concrete","Ready-Mix Concrete Manufacturing",5211,107279,3639787217,1,1,1
+"3274","327410","Lime","Lime Manufacturing",84,4704,180179701,1,1,1
+"3275","327420","Gypsum products","Gypsum Product Manufacturing",347,16367,613021816,1,1,1
+"3281","327991","Cut stone & stone products","Cut Stone and Stone Product Manufacturing",1244,15474,400877413,1,1,1
+"3291","327910","Abrasive products","Abrasive Product Manufacturing",368,16925,587035389,0.12,0.19,0.21
+"3291","332999","Abrasive products","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.88,0.81,0.79
+"3292","327999","Asbestos products","All Other Miscellaneous Nonmetallic Mineral Product Manufacturing",466,11338,369193533,0.59,0.2,0.17
+"3292","336340","Asbestos products","Motor Vehicle Brake System Manufacturing",330,44281,1754404460,0.41,0.8,0.83
+"3295","327992","Minerals, ground or treated","Ground or Treated Mineral and Earth Manufacturing",128,4639,190497432,1,1,1
+"3296","327993","Mineral wool","Mineral Wool Manufacturing",308,22068,969682552,1,1,1
+"3297","327125","Nonclay refractories","Nonclay Refractory Manufacturing",192,9290,369133403,1,1,1
+"3299","327112","Nonmetallic mineral products, n.e.c.","Vitreous China, Fine Earthenware, and Other Pottery Product Manufacturing",1638,24269,512418522,0.67,0.47,0.34
+"3299","327420","Nonmetallic mineral products, n.e.c.","Gypsum Product Manufacturing",347,16367,613021816,0.14,0.31,0.41
+"3299","327999","Nonmetallic mineral products, n.e.c.","All Other Miscellaneous Nonmetallic Mineral Product Manufacturing",466,11338,369193533,0.19,0.22,0.25
+"3312","324199","Blast furnaces & steel mills","All Other Petroleum and Coal Products Manufacturing",100,6930,324185854,0.18,0.05,0.04
+"3312","331111","Blast furnaces & steel mills","Iron and Steel Mills",446,136289,7136101597,0.82,0.95,0.96
+"3313","331112","Electrometallurgical products","Electrometallurgical Ferroalloy Product Manufacturing",45,5433,233326523,0.15,0.36,0.38
+"3313","331492","Electrometallurgical products","Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",256,9682,378887464,0.85,0.64,0.62
+"3315","331222","Steel wire & related products","Steel Wire Drawing",160,10806,385593087,0.1,0.15,0.18
+"3315","332618","Steel wire & related products","Other Fabricated Wire Product Manufacturing",1477,60983,1781385086,0.9,0.85,0.82
+"3316","331221","Cold finishing of steel shapes","Rolled Steel Shape Manufacturing",508,31491,1362951683,1,1,1
+"3317","331210","Steel pipe & tubes","Iron and Steel Pipe and Tube Manufacturing from Purchased Steel",325,28352,1114777888,1,1,1
+"3321","331511","Gray iron foundries","Iron Foundries",633,85199,3365673518,1,1,1
+"3322","331511","Malleable iron foundries","Iron Foundries",633,85199,3365673518,1,1,1
+"3324","331512","Steel investment foundries","Steel Investment Foundries",143,16658,529907695,1,1,1
+"3325","331513","Steel foundries, n.e.c.","Steel Foundries (except Investment)",320,27711,915404241,1,1,1
+"3331","331411","Primary copper","Primary Smelting and Refining of Copper",13,4049,179804015,1,1,1
+"3334","331312","Primary aluminum","Primary Aluminum Production",56,20161,979280921,1,1,1
+"3339","331419","Primary nonferrous metals, n.e.c.","Primary Smelting and Refining of Nonferrous Metal (except Copper and Aluminum)",118,12544,582558330,1,1,1
+"3341","331314","Secondary nonferrous metals","Secondary Smelting and Alloying of Aluminum",174,8114,293603731,0.36,0.39,0.37
+"3341","331423","Secondary nonferrous metals","Secondary Smelting, Refining, and Alloying of Copper",49,2973,123633707,0.1,0.14,0.16
+"3341","331492","Secondary nonferrous metals","Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",256,9682,378887464,0.53,0.47,0.48
+"3351","331421","Copper rolling & drawing","Copper Rolling, Drawing, and Extruding",187,22946,897432924,1,1,1
+"3353","331315","Aluminum sheet, plate, & foil","Aluminum Sheet, Plate, and Foil Manufacturing",119,23825,1126229915,0.12,0.44,0.54
+"3353","332996","Aluminum sheet, plate, & foil","Fabricated Pipe and Pipe Fitting Manufacturing",842,30375,976103923,0.88,0.56,0.46
+"3354","331316","Aluminum extruded products","Aluminum Extruded Product Manufacturing",242,30346,1022787226,1,1,1
+"3355","331319","Aluminum rolling & drawing, n.e.c.","Other Aluminum Rolling and Drawing",134,13294,658445215,1,1,1
+"3356","331491","Nonferrous rolling & drawing, n.e.c.","Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",263,18733,782942464,1,1,1
+"3357","331319","Nonferrous wire drawing & insulating","Other Aluminum Rolling and Drawing",134,13294,658445215,0.16,0.15,0.17
+"3357","331422","Nonferrous wire drawing & insulating","Copper Wire (except Mechanical) Drawing",163,32483,1339105011,0.19,0.36,0.36
+"3357","331491","Nonferrous wire drawing & insulating","Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",263,18733,782942464,0.31,0.21,0.21
+"3357","335921","Nonferrous wire drawing & insulating","Fiber Optic Cable Manufacturing",109,12380,473235839,0.13,0.14,0.13
+"3357","335929","Nonferrous wire drawing & insulating","Other Communication and Energy Wire Manufacturing",187,14101,513968516,0.22,0.15,0.14
+"3363","331521","Aluminum diegcastings","Aluminum Die-Casting Foundries",358,37689,1252231971,1,1,1
+"3364","331522","Nonferrous diegcasting, except aluminum","Nonferrous (except Aluminum) Die-Casting Foundries",229,11461,354179153,1,1,1
+"3365","331524","Aluminum foundries","Aluminum Foundries (except Die-Casting)",640,25832,790124539,1,1,1
+"3366","331525","Copper foundries","Copper Foundries (except Die-Casting)",334,9433,292359699,1,1,1
+"3369","331528","Nonferrous foundries, n.e.c.","Other Nonferrous Foundries (except Die-Casting)",191,6149,209475438,1,1,1
+"3398","332811","Metal heat treating","Metal Heat Treating",755,19621,695363332,1,1,1
+"3399","331111","Primary metal products, n.e.c.","Iron and Steel Mills",446,136289,7136101597,0.19,0.63,0.73
+"3399","331314","Primary metal products, n.e.c.","Secondary Smelting and Alloying of Aluminum",174,8114,293603731,0.07,0.04,0.03
+"3399","331423","Primary metal products, n.e.c.","Secondary Smelting, Refining, and Alloying of Copper",49,2973,123633707,0.02,0.01,0.01
+"3399","331492","Primary metal products, n.e.c.","Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",256,9682,378887464,0.11,0.04,0.04
+"3399","332618","Primary metal products, n.e.c.","Other Fabricated Wire Product Manufacturing",1477,60983,1781385086,0.61,0.28,0.18
+"3411","332431","Metal cans","Metal Can Manufacturing",302,29245,1339797228,1,1,1
+"3412","332439","Metal barrels, drums, & pails","Other Metal Container Manufacturing",943,29499,888946655,1,1,1
+"3421","332211","Cutlery","Cutlery and Flatware (except Precious) Manufacturing",166,12888,641927845,1,1,1
+"3423","332212","Hand & edge tools, n.e.c.","Hand and Edge Tool Manufacturing",1311,52904,1824790669,1,1,1
+"3425","332213","Hand saws & saw blades","Saw Blade and Handsaw Manufacturing",184,8488,280005069,1,1,1
+"3429","332439","Hardware, n.e.c.","Other Metal Container Manufacturing",943,29499,888946655,0.44,0.28,0.26
+"3429","332510","Hardware, n.e.c.","Hardware Manufacturing",782,48064,1528873345,0.36,0.45,0.45
+"3429","332919","Hardware, n.e.c.","Other Metal Valve and Pipe Fitting Manufacturing",418,28890,982569315,0.2,0.27,0.29
+"3431","332998","Metal sanitary ware","Enameled Iron and Metal Sanitary Ware Manufacturing",108,13945,481907231,1,1,1
+"3432","332913","Plumbing fittings & brass goods","Plumbing Fixture Fitting and Trim Manufacturing",182,18838,674139903,0.06,0.21,0.23
+"3432","332999","Plumbing fittings & brass goods","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.94,0.79,0.77
+"3433","333414","Heating equipment, except electric","Heating Equipment (except Warm Air Furnaces) Manufacturing",414,23437,793212262,1,1,1
+"3441","332312","Fabricated structural metal","Fabricated Structural Metal Manufacturing",3204,89095,2991707136,1,1,1
+"3442","332321","Metal doors, sash, & trim","Metal Window and Door Manufacturing",1667,84204,2293745093,1,1,1
+"3443","332313","Fabricated plate work, boiler shops","Plate Work Manufacturing",1810,50835,1764867811,0.46,0.22,0.23
+"3443","332410","Fabricated plate work, boiler shops","Power Boiler and Heat Exchanger Manufacturing",330,24082,934211686,0.08,0.11,0.12
+"3443","332420","Fabricated plate work, boiler shops","Metal Tank (Heavy Gauge) Manufacturing",681,28472,999181438,0.17,0.12,0.13
+"3443","333415","Fabricated plate work, boiler shops","Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment Manufacturing",1145,124517,4098374566,0.29,0.55,0.53
+"3444","332322","Sheet metal work","Sheet Metal Work Manufacturing",3996,101147,3244269478,0.81,0.77,0.78
+"3444","332439","Sheet metal work","Other Metal Container Manufacturing",943,29499,888946655,0.19,0.23,0.22
+"3446","332323","Architectural metal work","Ornamental and Architectural Metal Work Manufacturing",2642,37665,1137379310,1,1,1
+"3448","332311","Prefabricated metal buildings","Prefabricated Metal Building and Component Manufacturing",847,30886,966334558,1,1,1
+"3449","332114","Miscellaneous metal work","Custom Roll Forming",133,4864,168521015,0.02,0.02,0.03
+"3449","332312","Miscellaneous metal work","Fabricated Structural Metal Manufacturing",3204,89095,2991707136,0.42,0.41,0.45
+"3449","332321","Miscellaneous metal work","Metal Window and Door Manufacturing",1667,84204,2293745093,0.22,0.39,0.35
+"3449","332323","Miscellaneous metal work","Ornamental and Architectural Metal Work Manufacturing",2642,37665,1137379310,0.35,0.17,0.17
+"3451","332721","Screw machine products","Precision Turned Product Manufacturing",1863,55012,1844277448,1,1,1
+"3452","332722","Bolts, nuts, rivets, & washers","Bolt, Nut, Screw, Rivet, and Washer Manufacturing",1063,55301,2146835513,1,1,1
+"3462","332111","Iron & steel forgings","Iron and Steel Forging",478,31109,1233096448,1,1,1
+"3463","332112","Nonferrous forgings","Nonferrous Forging",112,9381,412523410,1,1,1
+"3465","336370","Automotive stampings","Motor Vehicle Metal Stamping",809,115957,5280854677,1,1,1
+"3466","332115","Crowns & closures","Crown and Closure Manufacturing",43,4879,194605522,1,1,1
+"3469","332116","Metal stampings, n.e.c.","Metal Stamping",1847,71076,2431098465,0.94,0.9,0.91
+"3469","332214","Metal stampings, n.e.c.","Kitchen Utensil, Pot, and Pan Manufacturing",109,7711,242906505,0.06,0.1,0.09
+"3471","332813","Plating & polishing","Electroplating, Plating, Polishing, Anodizing, and Coloring",4509,97974,2891502354,1,1,1
+"3479","332812","Metal coating & allied services","Metal Coating, Engraving (except Jewelry and Silverware), and Allied Services to Manufacturers",2404,53568,1617672963,0.41,0.48,0.51
+"3479","339911","Metal coating & allied services","Jewelry (except Costume) Manufacturing",2332,40693,1137525330,0.39,0.37,0.36
+"3479","339912","Metal coating & allied services","Silverware and Hollowware Manufacturing",153,4363,115537452,0.03,0.04,0.04
+"3479","339914","Metal coating & allied services","Costume Jewelry and Novelty Manufacturing",1036,12821,291392086,0.17,0.12,0.09
+"3482","332992","Small arms ammunition","Small Arms Ammunition Manufacturing",134,9384,367977782,1,1,1
+"3483","332993","Ammunition, except small arms, n.e.c.","Ammunition (except Small Arms) Manufacturing",73,32931,1468934526,1,1,1
+"3484","332994","Small arms","Small Arms Manufacturing",240,11145,356704589,1,1,1
+"3489","332995","Ordnance & accessories, n.e.c.","Other Ordnance and Accessories Manufacturing",55,10341,470769390,1,1,1
+"3491","332911","Industrial valves","Industrial Valve Manufacturing",449,26967,1107684501,1,1,1
+"3492","332912","Fluid power valves & hose fittings","Fluid Power Valve and Hose Fitting Manufacturing",652,43439,1707406635,1,1,1
+"3493","332611","Steel springs, except wire","Spring (Heavy Gauge) Manufacturing",153,5186,169556043,1,1,1
+"3494","332919","Valves & pipe fittings, n.e.c.","Other Metal Valve and Pipe Fitting Manufacturing",418,28890,982569315,0.14,0.29,0.31
+"3494","332999","Valves & pipe fittings, n.e.c.","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.86,0.71,0.69
+"3495","332612","Wire springs","Spring (Light Gauge) Manufacturing",365,13897,488748522,0.64,0.59,0.58
+"3495","334518","Wire springs","Watch, Clock, and Part Manufacturing",207,9843,349544176,0.36,0.41,0.42
+"3496","332618","Miscellaneous fabricated wire products","Other Fabricated Wire Product Manufacturing",1477,60983,1781385086,1,1,1
+"3497","322225","Metal foil & leaf","Laminated Aluminum Foil Manufacturing for Flexible Packaging Uses",27,2171,77632423,0.01,0.03,0.03
+"3497","332999","Metal foil & leaf","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.99,0.97,0.97
+"3498","332996","Fabricated pipe & fittings","Fabricated Pipe and Pipe Fitting Manufacturing",842,30375,976103923,1,1,1
+"3499","332117","Fabricated metal products, n.e.c.","Powder Metallurgy Part Manufacturing",136,12449,422167058,0.02,0.04,0.05
+"3499","332439","Fabricated metal products, n.e.c.","Other Metal Container Manufacturing",943,29499,888946655,0.11,0.1,0.1
+"3499","332510","Fabricated metal products, n.e.c.","Hardware Manufacturing",782,48064,1528873345,0.09,0.16,0.17
+"3499","332919","Fabricated metal products, n.e.c.","Other Metal Valve and Pipe Fitting Manufacturing",418,28890,982569315,0.05,0.1,0.11
+"3499","332999","Fabricated metal products, n.e.c.","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.31,0.24,0.25
+"3499","337215","Fabricated metal products, n.e.c.","Showcase, Partition, Shelving, and Locker Manufacturing",2565,91299,2512348550,0.3,0.31,0.28
+"3499","339914","Fabricated metal products, n.e.c.","Costume Jewelry and Novelty Manufacturing",1036,12821,291392086,0.12,0.04,0.03
+"3511","333611","Turbines & turbine generator sets","Turbine and Turbine Generator Set Units Manufacturing",168,24379,1314241299,1,1,1
+"3519","333618","Internal combustion engines, n.e.c.","Other Engine Equipment Manufacturing",291,57457,2606492703,0.13,0.26,0.32
+"3519","336399","Internal combustion engines, n.e.c.","All Other Motor Vehicle Parts Manufacturing",1921,165643,5462135527,0.87,0.74,0.68
+"3523","332212","Farm machinery & equipment","Hand and Edge Tool Manufacturing",1311,52904,1824790669,0.2,0.26,0.25
+"3523","332323","Farm machinery & equipment","Ornamental and Architectural Metal Work Manufacturing",2642,37665,1137379310,0.41,0.19,0.16
+"3523","333111","Farm machinery & equipment","Farm Machinery and Equipment Manufacturing",1452,67434,2693874549,0.22,0.34,0.37
+"3523","333922","Farm machinery & equipment","Conveyor and Conveying Equipment Manufacturing",1109,43171,1644526942,0.17,0.21,0.23
+"3524","332212","Lawn & garden equipment","Hand and Edge Tool Manufacturing",1311,52904,1824790669,0.88,0.7,0.73
+"3524","333112","Lawn & garden equipment","Lawn and Garden Tractor and Home Lawn and Garden Equipment Manufacturing",175,22287,658283390,0.12,0.3,0.27
+"3531","333120","Construction machinery","Construction Machinery Manufacturing",831,77480,3519400811,0.54,0.61,0.66
+"3531","333923","Construction machinery","Overhead Traveling Crane, Hoist, and Monorail System Manufacturing",441,17858,651451251,0.29,0.14,0.12
+"3531","336510","Construction machinery","Railroad Rolling Stock Manufacturing",274,31491,1189590711,0.18,0.25,0.22
+"3532","333131","Mining machinery","Mining Machinery and Equipment Manufacturing",376,16531,647443197,1,1,1
+"3533","333132","Oil field machinery","Oil and Gas Field Machinery and Equipment Manufacturing",965,44959,2011079669,1,1,1
+"3534","333921","Elevators & moving stairways","Elevator and Moving Stairway Manufacturing",192,9417,368680523,1,1,1
+"3535","333922","Conveyors & conveying equipment","Conveyor and Conveying Equipment Manufacturing",1109,43171,1644526942,1,1,1
+"3536","333923","Hoists, cranes, & monorails","Overhead Traveling Crane, Hoist, and Monorail System Manufacturing",441,17858,651451251,1,1,1
+"3537","332439","Industrial trucks & tractors","Other Metal Container Manufacturing",943,29499,888946655,0.23,0.23,0.22
+"3537","332999","Industrial trucks & tractors","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.65,0.54,0.54
+"3537","333924","Industrial trucks & tractors","Industrial Truck, Tractor, Trailer, and Stacker Machinery Manufacturing",478,29394,988378512,0.12,0.23,0.24
+"3541","333512","Machine tools, metal cutting types","Machine Tool (Metal Cutting Types) Manufacturing",1504,45375,1968877043,1,1,1
+"3542","333513","Machine tools, metal forming types","Machine Tool (Metal Forming Types) Manufacturing",661,19182,766824612,1,1,1
+"3543","332997","Industrial patterns","Industrial Pattern Manufacturing",715,8057,329062313,1,1,1
+"3544","333511","Special dies, tools, jigs, & fixtures","Industrial Mold Manufacturing",3162,57071,2455567375,0.35,0.35,0.37
+"3544","333514","Special dies, tools, jigs, & fixtures","Special Die and Tool, Die Set, Jig, and Fixture Manufacturing",5819,103997,4251286597,0.65,0.65,0.63
+"3545","332212","Machine tool accessories","Hand and Edge Tool Manufacturing",1311,52904,1824790669,0.48,0.57,0.55
+"3545","333515","Machine tool accessories","Cutting Tool and Machine Tool Accessory Manufacturing",1399,40387,1486341646,0.52,0.43,0.45
+"3546","333991","Powergdriven handtools","Power-Driven Handtool Manufacturing",275,21663,783536356,1,1,1
+"3547","333516","Rolling mill machinery","Rolling Mill Machinery and Equipment Manufacturing",152,5855,254885756,1,1,1
+"3548","333992","Welding apparatus","Welding and Soldering Equipment Manufacturing",329,20907,928937440,0.4,0.35,0.43
+"3548","335311","Welding apparatus","Power, Distribution, and Specialty Transformer Manufacturing",484,38209,1230041032,0.6,0.65,0.57
+"3549","333518","Metalworking machinery, n.e.c.","Other Metalworking Machinery Manufacturing",388,13616,646257420,1,1,1
+"3552","333292","Textile machinery","Textile Machinery Manufacturing",609,14999,513792257,1,1,1
+"3553","333210","Woodworking machinery","Sawmill and Woodworking Machinery Manufacturing",393,11138,381392271,1,1,1
+"3554","333291","Paper industries machinery","Paper Industry Machinery Manufacturing",415,21442,940159867,1,1,1
+"3555","333293","Printing trades machinery","Printing Machinery and Equipment Manufacturing",670,23456,1050618569,1,1,1
+"3556","333294","Food products machinery","Food Product Machinery Manufacturing",772,25621,978175252,1,1,1
+"3559","333220","Special industry machinery, n.e.c.","Plastics and Rubber Industry Machinery Manufacturing",387,12689,525070794,0.11,0.09,0.09
+"3559","333295","Special industry machinery, n.e.c.","Semiconductor Machinery Manufacturing",219,23410,1575681672,0.06,0.17,0.26
+"3559","333298","Special industry machinery, n.e.c.","All Other Industrial Machinery Manufacturing",1296,37334,1558470619,0.35,0.27,0.25
+"3559","333319","Special industry machinery, n.e.c.","Other Commercial and Service Industry Machinery Manufacturing",1773,66140,2453447609,0.48,0.47,0.4
+"3561","333911","Pumps & pumping equipment","Pump and Pumping Equipment Manufacturing",655,34536,1472868809,1,1,1
+"3562","332991","Ball & roller bearings","Ball and Roller Bearing Manufacturing",233,42197,1757426161,1,1,1
+"3563","333912","Air & gas compressors","Air and Gas Compressor Manufacturing",391,26331,1090909536,1,1,1
+"3564","333411","Blowers & fans","Air Purification Equipment Manufacturing",502,19773,630076244,0.67,0.56,0.55
+"3564","333412","Blowers & fans","Industrial and Commercial Fan and Blower Manufacturing",251,15505,523794757,0.33,0.44,0.45
+"3565","333993","Packaging machinery","Packaging Machinery Manufacturing",696,24618,1024397934,1,1,1
+"3566","333612","Speed changers, drives, & gears","Speed Changer, Industrial High-Speed Drive, and Gear Manufacturing",339,17647,705242458,1,1,1
+"3567","333994","Industrial furnaces & ovens","Industrial Process Furnace and Oven Manufacturing",529,19205,719371945,1,1,1
+"3568","333613","Power transmission equipment, n.e.c.","Mechanical Power Transmission Equipment Manufacturing",359,21083,762359053,1,1,1
+"3569","333999","General industrial machinery, n.e.c.","All Other Miscellaneous General Purpose Machinery Manufacturing",1796,50956,1972074906,1,1,1
+"3571","334111","Electronic computers","Electronic Computer Manufacturing",915,146137,10418479036,1,1,1
+"3572","334112","Computer storage devices","Computer Storage Device Manufacturing",256,42446,2593875140,1,1,1
+"3575","334113","Computer terminals","Computer Terminal Manufacturing",122,20865,1345998930,1,1,1
+"3577","334119","Computer peripheral equipment, n.e.c.","Other Computer Peripheral Equipment Manufacturing",953,75598,4364385195,1,1,1
+"3578","333313","Calculating & accounting equipment","Office Machinery Manufacturing",186,14381,704927854,0.16,0.16,0.14
+"3578","334119","Calculating & accounting equipment","Other Computer Peripheral Equipment Manufacturing",953,75598,4364385195,0.84,0.84,0.86
+"3579","333313","Office machines, n.e.c.","Office Machinery Manufacturing",186,14381,704927854,0.3,0.4,0.51
+"3579","334518","Office machines, n.e.c.","Watch, Clock, and Part Manufacturing",207,9843,349544176,0.34,0.27,0.25
+"3579","339942","Office machines, n.e.c.","Lead Pencil and Art Good Manufacturing",223,11594,326063160,0.36,0.32,0.24
+"3581","333311","Automatic merchandising machines","Automatic Vending Machine Manufacturing",200,9369,296094519,1,1,1
+"3582","333312","Commercial laundry equipment","Commercial Laundry, Drycleaning, and Pressing Machine Manufacturing",92,5831,188675130,1,1,1
+"3585","333415","Refrigeration & heating equipment","Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment Manufacturing",1145,124517,4098374566,0.91,0.85,0.81
+"3585","336391","Refrigeration & heating equipment","Motor Vehicle Air-Conditioning Manufacturing",109,22656,950595672,0.09,0.15,0.19
+"3586","333913","Measuring & dispensing pumps","Measuring and Dispensing Pump Manufacturing",56,5409,195104423,1,1,1
+"3589","333319","Service industry machinery, n.e.c.","Other Commercial and Service Industry Machinery Manufacturing",1773,66140,2453447609,1,1,1
+"3592","336311","Carburetors, pistons, rings, & valves","Carburetor, Piston, Piston Ring, and Valve Manufacturing",209,22071,818066626,1,1,1
+"3593","333995","Fluid power cylinders & actuators","Fluid Power Cylinder and Actuator Manufacturing",463,19858,717048587,1,1,1
+"3594","333996","Fluid power pumps & motors","Fluid Power Pump and Motor Manufacturing",288,27086,1248385241,1,1,1
+"3596","333997","Scales & balances, except laboratory","Scale and Balance (except Laboratory) Manufacturing",152,5942,195578507,1,1,1
+"3599","332710","Industrial machinery, n.e.c.","Machine Shops",21557,249109,8408738703,0.78,0.57,0.56
+"3599","332999","Industrial machinery, n.e.c.","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.1,0.16,0.15
+"3599","333319","Industrial machinery, n.e.c.","Other Commercial and Service Industry Machinery Manufacturing",1773,66140,2453447609,0.06,0.15,0.16
+"3599","333999","Industrial machinery, n.e.c.","All Other Miscellaneous General Purpose Machinery Manufacturing",1796,50956,1972074906,0.06,0.12,0.13
+"3612","335311","Transformers","Power, Distribution, and Specialty Transformer Manufacturing",484,38209,1230041032,1,1,1
+"3613","335313","Switchgear & switchboard apparatus","Switchgear and Switchboard Apparatus Manufacturing",810,43293,1569836958,1,1,1
+"3621","335312","Motors & generators","Motor and Generator Manufacturing",750,77687,2537903517,1,1,1
+"3624","335991","Carbon & graphite products","Carbon and Graphite Product Manufacturing",128,10047,389655788,1,1,1
+"3625","335314","Relays & industrial controls","Relay and Industrial Control Manufacturing",1159,59908,2426399128,1,1,1
+"3629","335999","Electrical industrial apparatus, n.e.c.","All Other Miscellaneous Electrical Equipment and Component Manufacturing",770,31286,1060287372,1,1,1
+"3631","335221","Household cooking equipment","Household Cooking Appliance Manufacturing",115,19342,549721615,1,1,1
+"3632","335222","Household refrigerators & freezers","Household Refrigerator and Home Freezer Manufacturing",45,24300,838384750,1,1,1
+"3633","335224","Household laundry equipment","Household Laundry Equipment Manufacturing",47,14020,584063324,1,1,1
+"3634","333414","Electric housewares & fans","Heating Equipment (except Warm Air Furnaces) Manufacturing",414,23437,793212262,0.7,0.53,0.57
+"3634","335211","Electric housewares & fans","Electric Housewares and Household Fan Manufacturing",181,21110,609035777,0.3,0.47,0.43
+"3635","335212","Household vacuum cleaners","Household Vacuum Cleaner Manufacturing",58,10911,340058797,1,1,1
+"3639","333298","Household appliances, n.e.c.","All Other Industrial Machinery Manufacturing",1296,37334,1558470619,0.92,0.61,0.66
+"3639","335212","Household appliances, n.e.c.","Household Vacuum Cleaner Manufacturing",58,10911,340058797,0.04,0.18,0.14
+"3639","335228","Household appliances, n.e.c.","Other Major Household Appliance Manufacturing",60,13316,450146620,0.04,0.22,0.19
+"3641","335110","Electric lamps","Electric Lamp Bulb and Part Manufacturing",258,21311,900812302,1,1,1
+"3643","335931","Currentgcarrying wiring devices","Current-Carrying Wiring Device Manufacturing",722,63627,2256388773,1,1,1
+"3644","335932","Noncurrentgcarrying wiring devices","Noncurrent-Carrying Wiring Device Manufacturing",199,13784,447461190,1,1,1
+"3645","335121","Residential lighting fixtures","Residential Electric Lighting Fixture Manufacturing",710,23530,580708086,1,1,1
+"3646","335122","Commercial lighting fixtures","Commercial, Industrial, and Institutional Electric Lighting Fixture Manufacturing",399,26375,862727927,1,1,1
+"3647","336321","Vehicular lighting equipment","Vehicular Lighting Equipment Manufacturing",138,18684,757623794,1,1,1
+"3648","335129","Lighting equipment, n.e.c.","Other Lighting Equipment Manufacturing",351,13774,437135498,1,1,1
+"3651","334310","Household audio & video equipment","Audio and Video Equipment Manufacturing",792,53865,1981024132,1,1,1
+"3652","334612","Prerecorded records & tapes","Prerecorded Compact Disc (except Software), Tape, and Record Reproducing",697,28007,866777375,1,1,1
+"3661","334210","Telephone & telegraph apparatus","Telephone Apparatus Manufacturing",749,93183,5448061966,0.37,0.53,0.64
+"3661","334416","Telephone & telegraph apparatus","Electronic Coil, Transformer, and Other Inductor Manufacturing",418,19350,487446512,0.21,0.11,0.06
+"3661","334418","Telephone & telegraph apparatus","Printed Circuit Assembly (Electronic Assembly) Manufacturing",872,64801,2570863055,0.43,0.37,0.3
+"3663","334220","Radio & TV communications equipment","Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing",1376,123901,6000025234,1,1,1
+"3669","334290","Communications equipment, n.e.c.","Other Communications Equipment Manufacturing",670,29887,1208635687,1,1,1
+"3671","334411","Electron tubes","Electron Tube Manufacturing",111,22534,977624927,1,1,1
+"3672","334412","Printed circuit boards","Bare Printed Circuit Board Manufacturing",2117,122708,3878934619,1,1,1
+"3674","334413","Semiconductors & related devices","Semiconductor and Related Device Manufacturing",1464,263890,15971063156,1,1,1
+"3675","334414","Electronic capacitors","Electronic Capacitor Manufacturing",123,17266,494676748,1,1,1
+"3676","334415","Electronic resistors","Electronic Resistor Manufacturing",104,10244,292208591,1,1,1
+"3677","334416","Electronic coils & transformers","Electronic Coil, Transformer, and Other Inductor Manufacturing",418,19350,487446512,1,1,1
+"3678","334417","Electronic connectors","Electronic Connector Manufacturing",259,21531,708505473,1,1,1
+"3679","334220","Electronic components, n.e.c.","Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing",1376,123901,6000025234,0.29,0.31,0.36
+"3679","334418","Electronic components, n.e.c.","Printed Circuit Assembly (Electronic Assembly) Manufacturing",872,64801,2570863055,0.18,0.16,0.15
+"3679","334419","Electronic components, n.e.c.","Other Electronic Component Manufacturing",1512,94039,3510134138,0.31,0.23,0.21
+"3679","336322","Electronic components, n.e.c.","Other Motor Vehicle Electrical and Electronic Equipment Manufacturing",1060,123148,4710604493,0.22,0.3,0.28
+"3691","335911","Storage batteries","Storage Battery Manufacturing",167,24090,894942903,1,1,1
+"3692","335912","Primary batteries, dry & wet","Primary Battery Manufacturing",90,13978,565306596,1,1,1
+"3694","336322","Engine electrical equipment","Other Motor Vehicle Electrical and Electronic Equipment Manufacturing",1060,123148,4710604493,1,1,1
+"3695","334613","Magnetic & optical recording media","Magnetic and Optical Recording Media Manufacturing",224,15435,581388671,1,1,1
+"3699","332212","Electrical equipment & supplies, n.e.c.","Hand and Edge Tool Manufacturing",1311,52904,1824790669,0.1,0.07,0.05
+"3699","333292","Electrical equipment & supplies, n.e.c.","Textile Machinery Manufacturing",609,14999,513792257,0.05,0.02,0.01
+"3699","333293","Electrical equipment & supplies, n.e.c.","Printing Machinery and Equipment Manufacturing",670,23456,1050618569,0.05,0.03,0.03
+"3699","333314","Electrical equipment & supplies, n.e.c.","Optical Instrument and Lens Manufacturing",557,20525,980028990,0.04,0.03,0.03
+"3699","333315","Electrical equipment & supplies, n.e.c.","Photographic and Photocopying Equipment Manufacturing",428,27138,1582995526,0.03,0.04,0.04
+"3699","333319","Electrical equipment & supplies, n.e.c.","Other Commercial and Service Industry Machinery Manufacturing",1773,66140,2453447609,0.13,0.09,0.07
+"3699","333512","Electrical equipment & supplies, n.e.c.","Machine Tool (Metal Cutting Types) Manufacturing",1504,45375,1968877043,0.11,0.06,0.06
+"3699","333618","Electrical equipment & supplies, n.e.c.","Other Engine Equipment Manufacturing",291,57457,2606492703,0.02,0.08,0.07
+"3699","333992","Electrical equipment & supplies, n.e.c.","Welding and Soldering Equipment Manufacturing",329,20907,928937440,0.02,0.03,0.03
+"3699","334119","Electrical equipment & supplies, n.e.c.","Other Computer Peripheral Equipment Manufacturing",953,75598,4364385195,0.07,0.1,0.12
+"3699","334510","Electrical equipment & supplies, n.e.c.","Electromedical and Electrotherapeutic Apparatus Manufacturing",671,53415,2619022797,0.05,0.07,0.07
+"3699","334511","Electrical equipment & supplies, n.e.c.","Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",857,166810,9520028710,0.06,0.22,0.27
+"3699","334516","Electrical equipment & supplies, n.e.c.","Analytical Laboratory Instrument Manufacturing",659,33576,1704397681,0.05,0.04,0.05
+"3699","334519","Electrical equipment & supplies, n.e.c.","Other Measuring and Controlling Device Manufacturing",1074,33991,1441869761,0.08,0.05,0.04
+"3699","335129","Electrical equipment & supplies, n.e.c.","Other Lighting Equipment Manufacturing",351,13774,437135498,0.03,0.02,0.01
+"3699","335999","Electrical equipment & supplies, n.e.c.","All Other Miscellaneous Electrical Equipment and Component Manufacturing",770,31286,1060287372,0.06,0.04,0.03
+"3699","339114","Electrical equipment & supplies, n.e.c.","Dental Equipment and Supplies Manufacturing",570,15306,548371393,0.04,0.02,0.02
+"3711","336111","Motor vehicles & car bodies","Automobile Manufacturing",258,148188,9073190940,0.17,0.42,0.47
+"3711","336112","Motor vehicles & car bodies","Light Truck and Utility Vehicle Manufacturing",67,73122,4454318606,0.04,0.21,0.23
+"3711","336120","Motor vehicles & car bodies","Heavy Duty Truck Manufacturing",133,43373,2004830279,0.09,0.12,0.1
+"3711","336211","Motor vehicles & car bodies","Motor Vehicle Body Manufacturing",1029,81153,3103339697,0.67,0.23,0.16
+"3711","336992","Motor vehicles & car bodies","Military Armored Vehicle, Tank, and Tank Component Manufacturing",44,9790,539296057,0.03,0.03,0.03
+"3713","336211","Truck & bus bodies","Motor Vehicle Body Manufacturing",1029,81153,3103339697,1,1,1
+"3714","336211","Motor vehicle parts & accessories","Motor Vehicle Body Manufacturing",1029,81153,3103339697,0.17,0.13,0.12
+"3714","336312","Motor vehicle parts & accessories","Gasoline Engine and Engine Parts Manufacturing",974,77050,3455663727,0.16,0.12,0.13
+"3714","336322","Motor vehicle parts & accessories","Other Motor Vehicle Electrical and Electronic Equipment Manufacturing",1060,123148,4710604493,0.17,0.19,0.18
+"3714","336330","Motor vehicle parts & accessories","Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing",296,63051,3241604253,0.05,0.1,0.12
+"3714","336340","Motor vehicle parts & accessories","Motor Vehicle Brake System Manufacturing",330,44281,1754404460,0.05,0.07,0.07
+"3714","336350","Motor vehicle parts & accessories","Motor Vehicle Transmission and Power Train Parts Manufacturing",569,94082,4984640302,0.09,0.15,0.19
+"3714","336399","Motor vehicle parts & accessories","All Other Motor Vehicle Parts Manufacturing",1921,165643,5462135527,0.31,0.26,0.2
+"3715","336212","Truck trailers","Truck Trailer Manufacturing",518,32551,909817888,1,1,1
+"3716","336213","Motor homes","Motor Home Manufacturing",141,18132,534468096,1,1,1
+"3721","336411","Aircraft","Aircraft Manufacturing",442,279978,15260764650,1,1,1
+"3724","336412","Aircraft engines & engine parts","Aircraft Engine and Engine Parts Manufacturing",578,97607,5190203468,1,1,1
+"3728","332912","Aircraft parts & equipment, n.e.c.","Fluid Power Valve and Hose Fitting Manufacturing",652,43439,1707406635,0.22,0.22,0.21
+"3728","333995","Aircraft parts & equipment, n.e.c.","Fluid Power Cylinder and Actuator Manufacturing",463,19858,717048587,0.15,0.1,0.09
+"3728","333996","Aircraft parts & equipment, n.e.c.","Fluid Power Pump and Motor Manufacturing",288,27086,1248385241,0.1,0.14,0.15
+"3728","336413","Aircraft parts & equipment, n.e.c.","Other Aircraft Parts and Auxiliary Equipment Manufacturing",1596,102735,4521797389,0.53,0.53,0.55
+"3731","336611","Ship building & repairing","Ship Building and Repairing",593,118502,4582328872,1,1,1
+"3732","336612","Boat building & repairing","Boat Building",1210,48077,1259385193,0.13,0.62,0.66
+"3732","811490","Boat building & repairing","Other Personal and Household Goods Repair and Maintenance",8032,30015,645915522,0.87,0.38,0.34
+"3743","333911","Railroad equipment","Pump and Pumping Equipment Manufacturing",655,34536,1472868809,0.71,0.52,0.55
+"3743","336510","Railroad equipment","Railroad Rolling Stock Manufacturing",274,31491,1189590711,0.29,0.48,0.45
+"3751","336991","Motorcycles, bicycles, & parts","Motorcycle, Bicycle, and Parts Manufacturing",469,20574,729768549,1,1,1
+"3761","336414","Guided missiles & space vehicles","Guided Missile and Space Vehicle Manufacturing",67,56462,3405204897,1,1,1
+"3764","336415","Space propulsion units & parts","Guided Missile and Space Vehicle Propulsion Unit and Propulsion Unit Parts Manufacturing",48,13415,713933093,1,1,1
+"3769","336419","Space vehicle equipment, n.e.c.","Other Guided Missile and Space Vehicle Parts and Auxiliary Equipment Manufacturing",67,12036,692928236,1,1,1
+"3792","336214","Travel trailer & campers","Travel Trailer and Camper Manufacturing",801,32790,860375419,1,1,1
+"3795","336992","Tanks & tank components","Military Armored Vehicle, Tank, and Tank Component Manufacturing",44,9790,539296057,1,1,1
+"3799","332212","Transportation equipment, n.e.c.","Hand and Edge Tool Manufacturing",1311,52904,1824790669,0.54,0.54,0.6
+"3799","336214","Transportation equipment, n.e.c.","Travel Trailer and Camper Manufacturing",801,32790,860375419,0.33,0.34,0.28
+"3799","336999","Transportation equipment, n.e.c.","All Other Transportation Equipment Manufacturing",322,11787,354491938,0.13,0.12,0.12
+"3812","334511","Search & navigation equipment","Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",857,166810,9520028710,1,1,1
+"3821","339111","Laboratory apparatus & furniture","Laboratory Apparatus and Furniture Manufacturing",360,15286,576284671,1,1,1
+"3822","334512","Environmental controls","Automatic Environmental Control Manufacturing for Residential, Commercial, and Appliance Use",494,38199,1407386739,1,1,1
+"3823","334513","Process control instruments","Instruments and Related Products Manufacturing for Measuring, Displaying, and Controlling Industrial Process Variables",1840,69934,2991542159,1,1,1
+"3824","334514","Fluid meters & counting devices","Totalizing Fluid Meter and Counting Device Manufacturing",377,17954,684471206,1,1,1
+"3825","334416","Instruments to measure electricity","Electronic Coil, Transformer, and Other Inductor Manufacturing",418,19350,487446512,0.31,0.22,0.1
+"3825","334515","Instruments to measure electricity","Instrument Manufacturing for Measuring and Testing Electricity and Electrical Signals",945,69402,4158796259,0.69,0.78,0.9
+"3826","334516","Analytical instruments","Analytical Laboratory Instrument Manufacturing",659,33576,1704397681,1,1,1
+"3827","333314","Optical instruments & lenses","Optical Instrument and Lens Manufacturing",557,20525,980028990,1,1,1
+"3829","334519","Measuring & controlling devices, n.e.c.","Other Measuring and Controlling Device Manufacturing",1074,33991,1441869761,0.44,0.25,0.25
+"3829","339112","Measuring & controlling devices, n.e.c.","Surgical and Medical Instrument Manufacturing",1382,99676,4278371661,0.56,0.75,0.75
+"3841","339112","Surgical & medical instruments","Surgical and Medical Instrument Manufacturing",1382,99676,4278371661,1,1,1
+"3842","322121","Surgical appliances & supplies","Paper (except Newsprint) Mills",455,134380,6740772178,0.13,0.42,0.47
+"3842","322291","Surgical appliances & supplies","Sanitary Paper Product Manufacturing",216,40468,1724590268,0.06,0.13,0.12
+"3842","334510","Surgical appliances & supplies","Electromedical and Electrotherapeutic Apparatus Manufacturing",671,53415,2619022797,0.19,0.17,0.18
+"3842","339113","Surgical appliances & supplies","Surgical Appliance and Supplies Manufacturing",2128,93450,3308261510,0.61,0.29,0.23
+"3843","339114","Dental equipment & supplies","Dental Equipment and Supplies Manufacturing",570,15306,548371393,1,1,1
+"3844","334517","Xgray apparatus & tubes","Irradiation Apparatus Manufacturing",233,13138,737795451,1,1,1
+"3845","334510","Electromedical equipment","Electromedical and Electrotherapeutic Apparatus Manufacturing",671,53415,2619022797,1,1,1
+"3851","339115","Ophthalmic goods","Ophthalmic Goods Manufacturing",1409,37212,1174948174,1,1,1
+"3861","325992","Photographic equipment & supplies","Photographic Film, Paper, Plate, and Chemical Manufacturing",526,49316,2401372356,0.55,0.65,0.6
+"3861","333315","Photographic equipment & supplies","Photographic and Photocopying Equipment Manufacturing",428,27138,1582995526,0.45,0.35,0.4
+"3873","334518","Watches, clocks, & watchcases","Watch, Clock, and Part Manufacturing",207,9843,349544176,1,1,1
+"3911","339911","Jewelry, precious metal","Jewelry (except Costume) Manufacturing",2332,40693,1137525330,1,1,1
+"3914","332211","Silverware & plated ware","Cutlery and Flatware (except Precious) Manufacturing",166,12888,641927845,0.52,0.75,0.85
+"3914","339912","Silverware & plated ware","Silverware and Hollowware Manufacturing",153,4363,115537452,0.48,0.25,0.15
+"3915","339913","Jewelers’ materials & lapidary work","Jewelers' Material and Lapidary Work Manufacturing",524,5573,143281814,1,1,1
+"3931","339992","Musical instruments","Musical Instrument Manufacturing",597,15716,454207692,1,1,1
+"3942","339931","Dolls","Doll and Stuffed Toy Manufacturing",306,4146,83408383,1,1,1
+"3944","336991","Games, toys, & children’s vehicles","Motorcycle, Bicycle, and Parts Manufacturing",469,20574,729768549,0.33,0.41,0.45
+"3944","339932","Games, toys, & children’s vehicles","Game, Toy, and Children's Vehicle Manufacturing",934,29230,877314921,0.67,0.59,0.55
+"3949","339920","Sporting & athletic goods, n.e.c.","Sporting and Athletic Goods Manufacturing",2665,73215,2019276738,1,1,1
+"3951","339941","Pens & mechanical pencils","Pen and Mechanical Pencil Manufacturing",121,9906,330390941,1,1,1
+"3952","325998","Lead pencils & art goods","All Other Miscellaneous Chemical Product and Preparation Manufacturing",1293,42261,2058952407,0.56,0.49,0.63
+"3952","337127","Lead pencils & art goods","Institutional Furniture Manufacturing",803,32024,907758690,0.35,0.37,0.28
+"3952","339942","Lead pencils & art goods","Lead Pencil and Art Good Manufacturing",223,11594,326063160,0.1,0.14,0.1
+"3953","339943","Marking devices","Marking Device Manufacturing",649,9780,263568585,1,1,1
+"3955","339944","Carbon paper & inked ribbons","Carbon Paper and Inked Ribbon Manufacturing",155,5624,161925739,1,1,1
+"3961","339914","Costume jewelry","Costume Jewelry and Novelty Manufacturing",1036,12821,291392086,1,1,1
+"3965","339993","Fasteners, buttons, needles, & pins","Fastener, Button, Needle, and Pin Manufacturing",333,11166,330552781,1,1,1
+"3991","339994","Brooms & brushes","Broom, Brush, and Mop Manufacturing",368,16411,440058512,1,1,1
+"3993","339950","Signs & advertising displays","Sign Manufacturing",5720,67550,1975384359,1,1,1
+"3995","339995","Burial caskets","Burial Casket Manufacturing",185,8219,259424711,1,1,1
+"3996","326192","Hard surface floor coverings","Resilient Floor Covering Manufacturing",75,9066,423670221,1,1,1
+"3999","314999","Mfg industries, n.e.c.","All Other Miscellaneous Textile Product Mills",2654,46715,999006780,0.05,0.04,0.02
+"3999","316110","Mfg industries, n.e.c.","Leather and Hide Tanning and Finishing",338,13848,417603966,0.01,0.01,0.01
+"3999","321999","Mfg industries, n.e.c.","All Other Miscellaneous Wood Product Manufacturing",2199,37199,816494291,0.04,0.03,0.02
+"3999","322299","Mfg industries, n.e.c.","All Other Converted Paper Product Manufacturing",654,22822,715873303,0.01,0.02,0.02
+"3999","323110","Mfg industries, n.e.c.","Commercial Lithographic Printing",14986,321182,11384688346,0.3,0.25,0.28
+"3999","323111","Mfg industries, n.e.c.","Commercial Gravure Printing",493,20580,731989926,0.01,0.02,0.02
+"3999","323112","Mfg industries, n.e.c.","Commercial Flexographic Printing",1861,48959,1607768329,0.04,0.04,0.04
+"3999","323113","Mfg industries, n.e.c.","Commercial Screen Printing",4931,73342,1763666396,0.1,0.06,0.04
+"3999","323119","Mfg industries, n.e.c.","Other Commercial Printing",3433,51470,1574493154,0.07,0.04,0.04
+"3999","325998","Mfg industries, n.e.c.","All Other Miscellaneous Chemical Product and Preparation Manufacturing",1293,42261,2058952407,0.03,0.03,0.05
+"3999","326199","Mfg industries, n.e.c.","All Other Plastics Product Manufacturing",8137,387583,10965788208,0.16,0.3,0.27
+"3999","332212","Mfg industries, n.e.c.","Hand and Edge Tool Manufacturing",1311,52904,1824790669,0.03,0.04,0.05
+"3999","332999","Mfg industries, n.e.c.","All Other Miscellaneous Fabricated Metal Product Manufacturing",2654,70365,2200451230,0.05,0.05,0.05
+"3999","335121","Mfg industries, n.e.c.","Residential Electric Lighting Fixture Manufacturing",710,23530,580708086,0.01,0.02,0.01
+"3999","337127","Mfg industries, n.e.c.","Institutional Furniture Manufacturing",803,32024,907758690,0.02,0.02,0.02
+"3999","339999","Mfg industries, n.e.c.","All Other Miscellaneous Manufacturing",2909,64690,1701595590,0.06,0.05,0.04
+"4111","485111","Local & suburban transit","Mixed Mode Transit Systems",275,107388,4498429698,0.14,0.54,0.61
+"4111","485112","Local & suburban transit","Commuter Rail Systems",8,187,6461075,0,0,0
+"4111","485113","Local & suburban transit","Bus and Other Motor Vehicle Transit Systems",786,73923,2502443485,0.41,0.37,0.34
+"4111","485119","Local & suburban transit","Other Urban Transit Systems",39,625,12385256,0.02,0,0
+"4111","485999","Local & suburban transit","All Other Transit and Ground Passenger Transportation",797,18238,316214000,0.42,0.09,0.04
+"4119","485320","Other local passenger transportation","Limousine Service",3877,33646,609181560,0.24,0.09,0.1
+"4119","485410","Other local passenger transportation","School and Employee Bus Transportation",5206,170033,2526910218,0.32,0.47,0.41
+"4119","485991","Other local passenger transportation","Special Needs Transportation",1686,24761,426853813,0.11,0.07,0.07
+"4119","485999","Other local passenger transportation","All Other Transit and Ground Passenger Transportation",797,18238,316214000,0.05,0.05,0.05
+"4119","487110","Other local passenger transportation","Scenic and Sightseeing Transportation, Land",807,13362,271117130,0.05,0.04,0.04
+"4119","621910","Other local passenger transportation","Ambulance Services",3661,101495,2078036483,0.23,0.28,0.33
+"4121","485310","Taxi service","Taxi Service",3497,31751,519427561,1,1,1
+"4131","485210","Interurban & rural bus transportation","Interurban and Rural Bus Transportation",587,23017,538209455,1,1,1
+"4141","485510","Charter bus service, local","Charter Bus Industry",1675,33099,615831786,1,1,1
+"4142","485510","Charter bus service, interstate/interurban","Charter Bus Industry",1675,33099,615831786,1,1,1
+"4151","485410","School bus service","School and Employee Bus Transportation",5206,170033,2526910218,1,1,1
+"4173","488490","Bus terminal & service facilities","Other Support Activities for Road Transportation",1766,35775,1057669554,1,1,1
+"4212","484110","Local trucking without storage","General Freight Trucking, Local",26280,222499,6391544288,0.38,0.37,0.39
+"4212","484210","Local trucking without storage","Used Household and Office Goods Moving",7554,104807,2635177538,0.11,0.18,0.16
+"4212","484220","Local trucking without storage","Specialized Freight (except Used Goods) Trucking, Local",28043,172838,4611661009,0.4,0.29,0.28
+"4212","562111","Local trucking without storage","Solid Waste Collection",5477,73379,2149788923,0.08,0.12,0.13
+"4212","562112","Local trucking without storage","Hazardous Waste Collection",554,13309,472807320,0.01,0.02,0.03
+"4212","562119","Local trucking without storage","Other Waste Collection",1527,8280,224759262,0.02,0.01,0.01
+"4213","484121","Trucking, except local","General Freight Trucking, Long-Distance, Truckload",30655,484747,15232603850,0.59,0.53,0.53
+"4213","484122","Trucking, except local","General Freight Trucking, Long-Distance, Less Than Truckload",6879,224741,7969132316,0.13,0.25,0.28
+"4213","484210","Trucking, except local","Used Household and Office Goods Moving",7554,104807,2635177538,0.15,0.12,0.09
+"4213","484230","Trucking, except local","Specialized Freight (except Used Goods) Trucking, Long-Distance",6997,92375,3026559836,0.13,0.1,0.1
+"4214","484110","Local trucking with storage","General Freight Trucking, Local",26280,222499,6391544288,0.42,0.44,0.47
+"4214","484210","Local trucking with storage","Used Household and Office Goods Moving",7554,104807,2635177538,0.12,0.21,0.19
+"4214","484220","Local trucking with storage","Specialized Freight (except Used Goods) Trucking, Local",28043,172838,4611661009,0.45,0.35,0.34
+"4215","492110","Courier services, except by air","Couriers",8053,516496,15665017076,0.67,0.91,0.94
+"4215","492210","Courier services, except by air","Local Messengers and Local Delivery",4002,51966,1018387087,0.33,0.09,0.06
+"4221","493130","Farm product warehousing & storage facilities","Farm Product Warehousing and Storage",1010,11015,281521899,1,1,1
+"4222","493120","Refrigerated products warehousing","Refrigerated Warehousing and Storage",1325,37327,1101988333,1,1,1
+"4225","493110","General warehousing & storage","General Warehousing and Storage",8201,389667,11189566018,0.58,0.94,0.96
+"4225","531130","General warehousing & storage","Lessors of Miniwarehouses and Self-Storage Units",6049,25559,475480801,0.42,0.06,0.04
+"4226","493110","Other special warehousing & storage","General Warehousing and Storage",8201,389667,11189566018,0.72,0.84,0.83
+"4226","493120","Other special warehousing & storage","Refrigerated Warehousing and Storage",1325,37327,1101988333,0.12,0.08,0.08
+"4226","493190","Other special warehousing & storage","Other Warehousing and Storage",1901,35544,1116815844,0.17,0.08,0.08
+"4231","488490","Trucking terminal facilities","Other Support Activities for Road Transportation",1766,35775,1057669554,1,1,1
+"4412","483111","Deep sea freight transportation","Deep Sea Freight Transportation",394,14396,848931496,1,1,1
+"4424","483113","Coastal & intercoastal freight transportation","Coastal and Great Lakes Freight Transportation",231,10848,615457153,1,1,1
+"4432","483113","Great LakesSt. Lawrence Seaway freight transportation","Coastal and Great Lakes Freight Transportation",231,10848,615457153,1,1,1
+"4449","483211","Inland waterways freight transportation","Inland Water Freight Transportation",412,14717,580515971,1,1,1
+"4481","483112","Deep sea passenger transportation, except by ferry","Deep Sea Passenger Transportation",99,4275,152692723,0.49,0.42,0.43
+"4481","483114","Deep sea passenger transportation, except by ferry","Coastal and Great Lakes Passenger Transportation",104,5912,202055230,0.51,0.58,0.57
+"4482","483114","Ferry transportation","Coastal and Great Lakes Passenger Transportation",104,5912,202055230,0.4,0.7,0.75
+"4482","483212","Ferry transportation","Inland Water Passenger Transportation",155,2586,68461803,0.6,0.3,0.25
+"4489","483212","Water transportation of passengers, n.e.c.","Inland Water Passenger Transportation",155,2586,68461803,0.07,0.13,0.18
+"4489","487210","Water transportation of passengers, n.e.c.","Scenic and Sightseeing Transportation, Water",2016,16910,308706183,0.93,0.87,0.82
+"4491","488310","Marine cargo handling & operation of port & waterfront terminals","Port and Harbor Operations",353,21451,1102200402,0.31,0.34,0.44
+"4491","488320","Marine cargo handling & operation of port & waterfront terminals","Marine Cargo Handling",799,41541,1384143843,0.69,0.66,0.56
+"4492","483113","Towing & tugboat services","Coastal and Great Lakes Freight Transportation",231,10848,615457153,0.12,0.23,0.31
+"4492","483211","Towing & tugboat services","Inland Water Freight Transportation",412,14717,580515971,0.21,0.31,0.29
+"4492","488330","Towing & tugboat services","Navigational Services to Shipping",1359,21422,807368254,0.68,0.46,0.4
+"4493","713930","Marinas","Marinas",3886,26493,550245526,1,1,1
+"4499","488310","Other water transportation services","Port and Harbor Operations",353,21451,1102200402,0.09,0.32,0.4
+"4499","488330","Other water transportation services","Navigational Services to Shipping",1359,21422,807368254,0.36,0.32,0.29
+"4499","488390","Other water transportation services","Other Support Activities for Water Transportation",820,12149,426531515,0.21,0.18,0.15
+"4499","532411","Other water transportation services","Commercial Air, Rail, and Water Transportation Equipment Rental and Leasing",1289,11358,443394140,0.34,0.17,0.16
+"4512","481111","Scheduled air transportation","Scheduled Passenger Air Transportation",2385,481611,21641213011,0.82,0.96,0.97
+"4512","481112","Scheduled air transportation","Scheduled Freight Air Transportation",540,17531,598482953,0.18,0.04,0.03
+"4513","492110","Air courier services","Couriers",8053,516496,15665017076,1,1,1
+"4522","481211","Nonscheduled air transportation","Nonscheduled Chartered Passenger Air Transportation",1838,26692,899526474,0.27,0.19,0.26
+"4522","481212","Nonscheduled air transportation","Nonscheduled Chartered Freight Air Transportation",523,8464,325619342,0.08,0.06,0.09
+"4522","481219","Nonscheduled air transportation","Other Nonscheduled Air Transportation",417,3331,109476725,0.06,0.02,0.03
+"4522","487990","Nonscheduled air transportation","Scenic and Sightseeing Transportation, Other",306,4191,86038127,0.05,0.03,0.02
+"4522","621910","Nonscheduled air transportation","Ambulance Services",3661,101495,2078036483,0.54,0.7,0.59
+"4581","488111","Airport terminal services","Air Traffic Control",858,38438,2013558445,0.01,0.04,0.13
+"4581","488119","Airport terminal services","Other Airport Operations",1975,74123,1840886710,0.03,0.07,0.11
+"4581","488190","Airport terminal services","Other Support Activities for Air Transportation",3380,60354,1916621877,0.06,0.06,0.12
+"4581","561720","Airport terminal services","Janitorial Services",52607,828782,10329247223,0.89,0.83,0.64
+"4612","486110","Pipeline transportation of crude oil","Pipeline Transportation of Crude Oil",573,9097,555392163,1,1,1
+"4613","486910","Pipeline transportation of refined petroleum products","Pipeline Transportation of Refined Petroleum Products",398,4850,263519943,1,1,1
+"4619","486990","All other pipeline transportation","All Other Pipeline Transportation",28,332,16445584,1,1,1
+"4724","561510","Travel agencies","Travel Agencies",26744,170983,4328013522,1,1,1
+"4725","561520","Tour operators","Tour Operators",3632,35529,944457294,1,1,1
+"4729","488999","Arrangement of passenger transportation, n.e.c.","All Other Support Activities for Transportation",596,9900,283462548,0.14,0.12,0.14
+"4729","561599","Arrangement of passenger transportation, n.e.c.","All Other Travel Arrangement and Reservation Services",3654,70649,1746314279,0.86,0.88,0.86
+"4731","488510","Freight shipping services","Freight Transportation Arrangement",16242,158782,5836807518,0.45,0.68,0.59
+"4731","541618","Freight shipping services","Other Management Consulting Services",19908,73430,4069727810,0.55,0.32,0.41
+"4741","532411","Railroad car rental","Commercial Air, Rail, and Water Transportation Equipment Rental and Leasing",1289,11358,443394140,1,1,1
+"4783","488991","Packing & crating","Packing and Crating",1279,17215,394097379,1,1,1
+"4785","488390","Fixed facilities, inspection, & weighing services","Other Support Activities for Water Transportation",820,12149,426531515,0.32,0.25,0.29
+"4785","488490","Fixed facilities, inspection, & weighing services","Other Support Activities for Road Transportation",1766,35775,1057669554,0.68,0.75,0.71
+"4789","487110","Transportation services, n.e.c.","Scenic and Sightseeing Transportation, Land",807,13362,271117130,0.2,0.18,0.13
+"4789","488210","Transportation services, n.e.c.","Support Activities for Rail Transportation",830,16766,496071509,0.21,0.22,0.24
+"4789","488490","Transportation services, n.e.c.","Other Support Activities for Road Transportation",1766,35775,1057669554,0.44,0.47,0.5
+"4789","488999","Transportation services, n.e.c.","All Other Support Activities for Transportation",596,9900,283462548,0.15,0.13,0.13
+"4812","513321","Radiotelephone","Paging",1716,31774,1259525711,0.15,0.11,0.09
+"4812","513322","Radiotelephone","Cellular and Other Wireless Telecommunications",2890,107726,5057923134,0.25,0.36,0.35
+"4812","513330","Radiotelephone","Telecommunications Resellers",6738,156335,8014738845,0.59,0.53,0.56
+"4813","513310","Other telephone","Wired Telecommunications Carriers",16898,629844,32509908178,0.64,0.76,0.78
+"4813","513330","Other telephone","Telecommunications Resellers",6738,156335,8014738845,0.26,0.19,0.19
+"4813","561421","Other telephone","Telephone Answering Services",2705,47613,1067439126,0.1,0.06,0.03
+"4822","513310","Telegraph communications","Wired Telecommunications Carriers",16898,629844,32509908178,1,1,1
+"4832","513111","Radio broadcasting","Radio Networks",1272,25605,986373797,0.2,0.22,0.27
+"4832","513112","Radio broadcasting","Radio Stations",5200,88456,2657749287,0.8,0.78,0.73
+"4833","513120","Television broadcasting","Television Broadcasting",2185,129337,6485655923,1,1,1
+"4841","513210","Cable & other pay television broadcasting","Cable Networks",1636,64891,2856853043,0.31,0.38,0.45
+"4841","513220","Cable & other pay television broadcasting","Cable and Other Program Distribution",3604,106047,3515086646,0.69,0.62,0.55
+"4899","513322","Communication services, n.e.c.","Cellular and Other Wireless Telecommunications",2890,107726,5057923134,0.29,0.66,0.71
+"4899","513340","Communication services, n.e.c.","Satellite Telecommunications",951,19796,1125837318,0.1,0.12,0.16
+"4899","513390","Communication services, n.e.c.","Other Telecommunications",394,5411,285179503,0.04,0.03,0.04
+"4899","812990","Communication services, n.e.c.","All Other Personal Services",5691,31040,649449337,0.57,0.19,0.09
+"4911","221111","Electric services","Hydroelectric Power Generation",1317,86975,5030252821,0.17,0.16,0.17
+"4911","221112","Electric services","Fossil Fuel Electric Power Generation",1930,192206,10835428991,0.24,0.36,0.37
+"4911","221113","Electric services","Nuclear Electric Power Generation",119,51238,3281924874,0.01,0.1,0.11
+"4911","221119","Electric services","Other Electric Power Generation",411,12786,670235659,0.05,0.02,0.02
+"4911","221121","Electric services","Electric Bulk Power Transmission and Control",649,36379,1912359833,0.08,0.07,0.07
+"4911","221122","Electric services","Electric Power Distribution",3542,158034,7603004601,0.44,0.29,0.26
+"4941","221310","Water supply","Water Supply and Irrigation Systems",9025,127446,4157290230,1,1,1
+"4961","221330","Steam and airgconditioning supply","Steam and Air-Conditioning Supply",125,2011,97290245,1,1,1
+"4971","221310","Irrigation systems","Water Supply and Irrigation Systems",9025,127446,4157290230,1,1,1
+"5012","421110","Automobiles & other motor vehicles","Automobile and Other Motor Vehicle Wholesalers",5870,110807,4001071798,1,1,1
+"5013","421120","Motor vehicle supplies & new parts","Motor Vehicle Supplies and New Parts Wholesalers",13457,170227,5607533911,0.27,0.34,0.44
+"5013","441310","Motor vehicle supplies & new parts","Automotive Parts and Accessories Stores",36989,334340,7065756631,0.73,0.66,0.56
+"5014","421130","Tires & tubes","Tire and Tube Wholesalers",1506,15764,525200890,0.08,0.09,0.12
+"5014","441320","Tires & tubes","Tire Dealers",17818,154874,3912281450,0.92,0.91,0.88
+"5015","421140","Motor vehicle parts, used","Motor Vehicle Parts (Used) Wholesalers",3712,25819,596702621,1,1,1
+"5021","421210","Furniture","Furniture Wholesalers",4227,40158,1559925931,0.14,0.13,0.19
+"5021","442110","Furniture","Furniture Stores",26477,262727,6452908344,0.86,0.87,0.81
+"5023","421220","Home furnishings","Home Furnishing Wholesalers",5931,58775,2094471126,0.27,0.37,0.43
+"5023","442210","Home furnishings","Floor Covering Stores",16047,98398,2726616510,0.73,0.63,0.57
+"5031","421310","Lumber, plywood, millwork, & wood panels","Lumber, Plywood, Millwork, and Wood Panel Wholesalers",8394,112733,4033405008,0.25,0.29,0.34
+"5031","444190","Lumber, plywood, millwork, & wood panels","Other Building Material Dealers",24635,270228,7998073742,0.75,0.71,0.66
+"5032","421320","Brick, stone, & related construction materials","Brick, Stone, and Related Construction Material Wholesalers",3943,37162,1331416048,0.14,0.12,0.14
+"5032","444190","Brick, stone, & related construction materials","Other Building Material Dealers",24635,270228,7998073742,0.86,0.88,0.86
+"5033","421330","Roofing, siding, & insulation materials","Roofing, Siding, and Insulation Material Wholesalers",2227,23899,910858734,0.08,0.08,0.1
+"5033","444190","Roofing, siding, & insulation materials","Other Building Material Dealers",24635,270228,7998073742,0.92,0.92,0.9
+"5039","421390","Construction materials, nec","Other Construction Material Wholesalers",1891,16586,556494778,0.07,0.06,0.07
+"5039","444190","Construction materials, nec","Other Building Material Dealers",24635,270228,7998073742,0.93,0.94,0.93
+"5043","421410","Photographic equipment & supplies","Photographic Equipment and Supplies Wholesalers",1504,18659,1000198464,1,1,1
+"5044","421420","Office equipment","Office Equipment Wholesalers",5449,126537,5636212691,1,1,1
+"5045","421430","Computers & computer peripheral equipment & software","Computer and Computer Peripheral Equipment and Software Wholesalers",16865,243793,15957048223,0.38,0.38,0.54
+"5045","443120","Computers & computer peripheral equipment & software","Computer and Software Stores",21291,198489,8536366928,0.48,0.31,0.29
+"5045","454110","Computers & computer peripheral equipment & software","Electronic Shopping and Mail-Order Houses",5899,204048,4943435411,0.13,0.32,0.17
+"5046","421440","Commercial equipment, nec","Other Commercial Equipment Wholesalers",5499,48127,1752551288,1,1,1
+"5047","421450","Medical, dental, & hospital equipment & supplies","Medical, Dental, and Hospital Equipment and Supplies Wholesalers",16841,130494,6377744016,0.68,0.74,0.8
+"5047","446199","Medical, dental, & hospital equipment & supplies","All Other Health and Personal Care Stores",8050,46347,1566938122,0.32,0.26,0.2
+"5048","421460","Ophthalmic goods","Ophthalmic Goods Wholesalers",2221,19355,665530365,1,1,1
+"5049","421490","Professional equipment & supplies, nec","Other Professional Equipment and Supplies Wholesalers",3001,23604,1076792104,0.18,0.12,0.19
+"5049","453210","Professional equipment & supplies, nec","Office Supplies and Stationery Stores",13278,178403,4497636272,0.82,0.88,0.81
+"5051","421510","Metals service centers & offices","Metal Service Centers and Offices",8770,126085,5274996119,1,1,1
+"5052","421520","Coal & other minerals & ores","Coal and Other Mineral and Ore Wholesalers",362,2324,148305124,1,1,1
+"5063","421610","Electrical apparatus & equipment, wiring supplies & materials","Electrical Apparatus and Equipment, Wiring Supplies, and Construction Material Wholesalers",11695,139032,6059168652,0.32,0.34,0.43
+"5063","444190","Electrical apparatus & equipment, wiring supplies & materials","Other Building Material Dealers",24635,270228,7998073742,0.68,0.66,0.57
+"5064","421620","Electrical appliances, television & radio sets","Electrical Appliance, Television, and Radio Set Wholesalers",2825,29399,1230245971,1,1,1
+"5065","421690","Electronic parts & equipment, nec","Other Electronic Parts and Equipment Wholesalers",15342,177019,9603638867,1,1,1
+"5072","421710","Hardware","Hardware Wholesalers",6409,76826,2722170763,1,1,1
+"5074","421720","Plumbing & heating equipment & supplies","Plumbing and Heating Equipment and Supplies (Hydronics) Wholesalers",7272,81358,2971947734,0.23,0.23,0.27
+"5074","444190","Plumbing & heating equipment & supplies","Other Building Material Dealers",24635,270228,7998073742,0.77,0.77,0.73
+"5075","421730","Warm air heating & airgconditioning equipment & supplies","Warm Air Heating and Air-Conditioning Equipment and Supplies Wholesalers",4729,49147,2075980605,1,1,1
+"5078","421740","Refrigeration equipment & supplies","Refrigeration Equipment and Supplies Wholesalers",1297,12394,475440977,1,1,1
+"5082","421810","Construction & mining (except petroleum) machinery & equipment","Construction and Mining (except Oil Well) Machinery and Equipment Wholesalers",5015,78781,3271722423,1,1,1
+"5083","421820","Farm & garden machinery & equipment","Farm and Garden Machinery and Equipment Wholesalers",9618,101506,3013893240,0.61,0.75,0.81
+"5083","444210","Farm & garden machinery & equipment","Outdoor Power Equipment Stores",6171,33330,722163525,0.39,0.25,0.19
+"5084","421830","Industrial machinery & equipment","Industrial Machinery and Equipment Wholesalers",36537,329574,14390100440,1,1,1
+"5085","421830","Industrial supplies","Industrial Machinery and Equipment Wholesalers",36537,329574,14390100440,0.84,0.83,0.84
+"5085","421840","Industrial supplies","Industrial Supplies Wholesalers",7203,68651,2678178606,0.16,0.17,0.16
+"5087","421850","Service establishment equipment & supplies","Service Establishment Equipment and Supplies Wholesalers",7005,63816,1975790514,0.43,0.46,0.57
+"5087","446120","Service establishment equipment & supplies","Cosmetics, Beauty Supplies, and Perfume Stores",9436,74291,1467137512,0.57,0.54,0.43
+"5088","421860","Transportation equipment & supplies, except motor vehicles","Transportation Equipment and Supplies (except Motor Vehicle) Wholesalers",3805,32123,1505893795,1,1,1
+"5091","421910","Sporting & recreational goods & supplies","Sporting and Recreational Goods and Supplies Wholesalers",5424,43750,1479278866,1,1,1
+"5092","421920","Toys & hobby goods & supplies","Toy and Hobby Goods and Supplies Wholesalers",2165,22803,929187665,1,1,1
+"5093","421930","Scrap & waste materials","Recyclable Material Wholesalers",9078,111212,3156611330,1,1,1
+"5094","421940","Jewelry, watches, precious stones, & precious metals","Jewelry, Watch, Precious Stone, and Precious Metal Wholesalers",7061,40829,1447381166,1,1,1
+"5099","421990","Durable goods, nec","Other Miscellaneous Durable Goods Wholesalers",7936,51577,1907705092,1,1,1
+"5111","422110","Printing & writing paper","Printing and Writing Paper Wholesalers",1014,19179,987245136,1,1,1
+"5112","422120","Stationery & office supplies","Stationery and Office Supplies Wholesalers",5802,75093,2394773098,0.23,0.16,0.2
+"5112","453210","Stationery & office supplies","Office Supplies and Stationery Stores",13278,178403,4497636272,0.53,0.39,0.38
+"5112","454110","Stationery & office supplies","Electronic Shopping and Mail-Order Houses",5899,204048,4943435411,0.24,0.45,0.42
+"5113","422130","Industrial & personal service paper","Industrial and Personal Service Paper Wholesalers",6256,69595,3005165200,1,1,1
+"5122","422210","Drugs, drug proprietaries, & druggists’ sundries","Drugs and Druggists' Sundries Wholesalers",8989,138129,7240975508,1,1,1
+"5131","313311","Piece goods, notions, & other dry goods","Broadwoven Fabric Finishing Mills",1961,63621,1774930461,0.35,0.69,0.6
+"5131","422310","Piece goods, notions, & other dry goods","Piece Goods, Notions, and Other Dry Goods Wholesalers",3637,28950,1159084066,0.65,0.31,0.4
+"5136","422320","Men’s & boys’ clothing & furnishings","Men's and Boys' Clothing and Furnishings Wholesalers",3247,37179,1400693676,1,1,1
+"5137","422330","Women’s, children’s, & infants, clothing & accessories","Women's, Children's, and Infants' Clothing and Accessories Wholesalers",6640,62029,2465458885,1,1,1
+"5139","422340","Footwear","Footwear Wholesalers",2744,23809,1166134358,1,1,1
+"5141","422410","Groceries, generalgline","General Line Grocery Wholesalers",5375,213494,7486400697,1,1,1
+"5142","422420","Packaged frozen foods","Packaged Frozen Food Wholesalers",1628,28006,984027477,1,1,1
+"5143","422430","Dairy products, except dried or canned","Dairy Product (except Dried or Canned) Wholesalers",2083,31768,1054803173,1,1,1
+"5144","422440","Poultry & poultry products","Poultry and Poultry Product Wholesalers",722,11185,333376919,1,1,1
+"5145","422450","Confectionery","Confectionery Wholesalers",3382,44396,1424636535,1,1,1
+"5146","422460","Fish & seafoods","Fish and Seafood Wholesalers",2459,21564,632105845,1,1,1
+"5147","311612","Meats & meat products","Meat Processed from Carcasses",1588,102588,2795419813,0.38,0.76,0.72
+"5147","422470","Meats & meat products","Meat and Meat Product Wholesalers",2584,33254,1092753005,0.62,0.24,0.28
+"5148","422480","Fresh fruits & vegetables","Fresh Fruit and Vegetable Wholesalers",3816,69214,2064369115,1,1,1
+"5149","422490","Groceries & related products, nec","Other Grocery and Related Products Wholesalers",11457,189646,6521759253,1,1,1
+"5153","422510","Grain & field beans","Grain and Field Bean Wholesalers",4320,44879,1321542775,1,1,1
+"5154","422520","Livestock","Livestock Wholesalers",1637,25253,236450623,1,1,1
+"5159","422590","Farmgproduct raw materials, nec","Other Farm Product Raw Material Wholesalers",1088,9889,325251568,1,1,1
+"5162","422610","Plastics materials & basic forms & shapes","Plastics Materials and Basic Forms and Shapes Wholesalers",3470,24201,1044017874,1,1,1
+"5169","422690","Chemicals & allied products, nec","Other Chemical and Allied Products Wholesalers",12150,102307,5183068224,1,1,1
+"5171","422710","Petroleum bulk stations & terminals","Petroleum Bulk Stations and Terminals",2993,41663,1535114640,0.21,0.28,0.33
+"5171","454311","Petroleum bulk stations & terminals","Heating Oil Dealers",5602,57442,1778211888,0.38,0.39,0.38
+"5171","454312","Petroleum bulk stations & terminals","Liquefied Petroleum Gas (Bottled Gas) Dealers",5960,49009,1309981697,0.41,0.33,0.28
+"5172","422720","Petroleum & petroleum products, except bulk stations & terminals","Petroleum and Petroleum Products Wholesalers (except Bulk Stations and Terminals)",6523,72932,2672001215,1,1,1
+"5181","422810","Beer & ale","Beer and Ale Wholesalers",2387,71806,2566745472,1,1,1
+"5182","422820","Wine & distilled alcoholic beverages","Wine and Distilled Alcoholic Beverage Wholesalers",1779,44683,1956724061,1,1,1
+"5191","422910","Farm supplies","Farm Supplies Wholesalers",11205,110405,3378275535,0.45,0.46,0.58
+"5191","444220","Farm supplies","Nursery and Garden Centers",13912,127037,2445665043,0.55,0.54,0.42
+"5192","422920","Books, periodicals, & newspapers","Book, Periodical, and Newspaper Wholesalers",3329,54544,1603053334,1,1,1
+"5193","422930","Flowers, nursery stock, & florists’ supplies","Flower, Nursery Stock, and Florists' Supplies Wholesalers",3630,46327,1071467096,0.21,0.27,0.3
+"5193","444220","Flowers, nursery stock, & florists’ supplies","Nursery and Garden Centers",13912,127037,2445665043,0.79,0.73,0.7
+"5194","422940","Tobacco & tobacco products","Tobacco and Tobacco Product Wholesalers",1551,28770,965503268,1,1,1
+"5198","422950","Paints, varnishes, & supplies","Paint, Varnish, and Supplies Wholesalers",3284,27011,1038836257,0.31,0.37,0.48
+"5198","444120","Paints, varnishes, & supplies","Paint and Wallpaper Stores",7158,46306,1141830335,0.69,0.63,0.52
+"5199","422990","Nondurable goods, nec","Other Miscellaneous Nondurable Goods Wholesalers",11118,75073,2387405169,0.55,0.54,0.61
+"5199","541890","Nondurable goods, nec","Other Services Related to Advertising",9272,65000,1535592406,0.45,0.46,0.39
+"5211","444110","Lumber & other building materials dealers","Home Centers",11523,384672,8077365699,0.32,0.59,0.5
+"5211","444190","Lumber & other building materials dealers","Other Building Material Dealers",24635,270228,7998073742,0.68,0.41,0.5
+"5231","444120","Paint, glass, & wallpaper stores","Paint and Wallpaper Stores",7158,46306,1141830335,0.23,0.15,0.12
+"5231","444190","Paint, glass, & wallpaper stores","Other Building Material Dealers",24635,270228,7998073742,0.77,0.85,0.88
+"5251","444130","Hardware stores","Hardware Stores",18665,177432,3222644632,1,1,1
+"5261","444210","Retail nurseries, lawn & garden supply stores","Outdoor Power Equipment Stores",6171,33330,722163525,0.31,0.21,0.23
+"5261","444220","Retail nurseries, lawn & garden supply stores","Nursery and Garden Centers",13912,127037,2445665043,0.69,0.79,0.77
+"5271","453930","Mobile home dealers","Manufactured (Mobile) Home Dealers",5261,44776,1334824745,1,1,1
+"5311","452110","Department stores (excl leased depts) $$","Department Stores",11748,1800788,25972760921,0.71,0.75,0.74
+"5311","452910","Department stores (excl leased depts) $$","Warehouse Clubs and Superstores",4747,612583,9348096328,0.29,0.25,0.26
+"5331","452990","Variety stores","All Other General Merchandise Stores",23655,295951,3824704619,1,1,1
+"5399","452910","Miscellaneous general merchandise stores","Warehouse Clubs and Superstores",4747,612583,9348096328,0.17,0.67,0.71
+"5399","452990","Miscellaneous general merchandise stores","All Other General Merchandise Stores",23655,295951,3824704619,0.83,0.33,0.29
+"5411","445110","Grocery stores","Supermarkets and Other Grocery (except Convenience) Stores",59995,2393917,37699528777,0.32,0.6,0.63
+"5411","445120","Grocery stores","Convenience Stores",25322,147790,1730742806,0.14,0.04,0.03
+"5411","445210","Grocery stores","Meat Markets",6885,48802,870909560,0.04,0.01,0.01
+"5411","447110","Grocery stores","Gasoline Stations with Convenience Stores",89459,766064,9897837058,0.48,0.19,0.17
+"5411","452910","Grocery stores","Warehouse Clubs and Superstores",4747,612583,9348096328,0.03,0.15,0.16
+"5421","445210","Meat & fish (seafood) markets, including freezer provisioners","Meat Markets",6885,48802,870909560,0.42,0.36,0.33
+"5421","445220","Meat & fish (seafood) markets, including freezer provisioners","Fish and Seafood Markets",2583,14207,260233442,0.16,0.11,0.1
+"5421","454390","Meat & fish (seafood) markets, including freezer provisioners","Other Direct Selling Establishments",7017,71659,1523387504,0.43,0.53,0.57
+"5431","445230","Fruit & vegetable markets","Fruit and Vegetable Markets",4356,45653,909915007,1,1,1
+"5441","311330","Candy, nut, & confectionery stores","Confectionery Manufacturing from Purchased Chocolate",1644,46461,1223760410,0.27,0.47,0.5
+"5441","311340","Candy, nut, & confectionery stores","Nonchocolate Confectionery Manufacturing",635,27114,859958094,0.1,0.27,0.35
+"5441","445292","Candy, nut, & confectionery stores","Confectionery and Nut Stores",3853,25091,344129997,0.63,0.25,0.14
+"5451","445299","Dairy products stores","All Other Specialty Food Stores",10783,98868,2159831966,1,1,1
+"5461","311811","Retail bakeries","Retail Bakeries",8745,73775,915959284,0.21,0.19,0.23
+"5461","445291","Retail bakeries","Baked Goods Stores",2905,21538,351061345,0.07,0.06,0.09
+"5461","722213","Retail bakeries","Snack and Nonalcoholic Beverage Bars",29463,288485,2790138967,0.72,0.75,0.69
+"5499","445299","Miscellaneous food stores","All Other Specialty Food Stores",10783,98868,2159831966,0.61,0.72,0.76
+"5499","446191","Miscellaneous food stores","Food (Health) Supplement Stores",6903,37933,678172218,0.39,0.28,0.24
+"5511","441110","Motor vehicle dealers (new & used)","New Car Dealers",25948,1043025,37311785946,1,1,1
+"5521","441120","Motor vehicle dealers (used only)","Used Car Dealers",22874,94707,2391704827,1,1,1
+"5531","441310","Auto & home supply stores","Automotive Parts and Accessories Stores",36989,334340,7065756631,0.47,0.43,0.48
+"5531","441320","Auto & home supply stores","Tire Dealers",17818,154874,3912281450,0.23,0.2,0.26
+"5531","452990","Auto & home supply stores","All Other General Merchandise Stores",23655,295951,3824704619,0.3,0.38,0.26
+"5541","447110","Gasoline service stations","Gasoline Stations with Convenience Stores",89459,766064,9897837058,0.8,0.82,0.79
+"5541","447190","Gasoline service stations","Other Gasoline Stations",22415,167514,2591854724,0.2,0.18,0.21
+"5551","441222","Boat dealers","Boat Dealers",5423,38258,946637992,1,1,1
+"5561","441210","Recreational vehicle dealers","Recreational Vehicle Dealers",2809,27581,795054999,1,1,1
+"5571","441221","Motorcycle dealers","Motorcycle Dealers",4142,33696,841084681,1,1,1
+"5599","441229","Automotive dealers, not elsewhere classified","All Other Motor Vehicle Dealers",1787,10439,295722330,1,1,1
+"5611","448110","Men’s & boys’ clothing & accessory stores","Men's Clothing Stores",8638,76807,1438713313,1,1,1
+"5621","448120","Women’s clothing stores","Women's Clothing Stores",28416,245677,3236364184,1,1,1
+"5632","448150","Women’s accessory & specialty stores","Clothing Accessories Stores",6216,37592,551953998,0.28,0.26,0.25
+"5632","448190","Women’s accessory & specialty stores","Other Clothing Stores",15951,107017,1641875011,0.72,0.74,0.75
+"5641","448130","Children’s & infants’ wear stores","Children's and Infants' Clothing Stores",4657,48850,669691668,1,1,1
+"5651","448140","Family clothing stores","Family Clothing Stores",17041,350197,5014358919,1,1,1
+"5661","448210","Shoe stores","Shoe Stores",27961,204948,2977709156,1,1,1
+"5699","315999","Miscellaneous apparel & accessory stores","Other Apparel Accessories and Other Apparel Manufacturing",808,19964,414110812,0.04,0.12,0.16
+"5699","448150","Miscellaneous apparel & accessory stores","Clothing Accessories Stores",6216,37592,551953998,0.27,0.23,0.21
+"5699","448190","Miscellaneous apparel & accessory stores","Other Clothing Stores",15951,107017,1641875011,0.69,0.65,0.63
+"5712","337110","Furniture stores","Wood Kitchen Cabinet and Countertop Manufacturing",12212,127911,3056849477,0.27,0.21,0.21
+"5712","337121","Furniture stores","Upholstered Household Furniture Manufacturing",1949,96674,2262948303,0.04,0.16,0.16
+"5712","337122","Furniture stores","Nonupholstered Wood Household Furniture Manufacturing",4466,124543,2652865413,0.1,0.2,0.18
+"5712","442110","Furniture stores","Furniture Stores",26477,262727,6452908344,0.59,0.43,0.45
+"5713","442210","Floor covering stores","Floor Covering Stores",16047,98398,2726616510,1,1,1
+"5714","314121","Drapery, curtain, & upholstery stores","Curtain and Drapery Mills",2253,25713,469658385,0.19,0.28,0.34
+"5714","442291","Drapery, curtain, & upholstery stores","Window Treatment Stores",3171,12167,224444050,0.26,0.13,0.16
+"5714","451130","Drapery, curtain, & upholstery stores","Sewing, Needlework, and Piece Goods Stores",6568,53552,694635760,0.55,0.59,0.5
+"5719","442291","Miscellaneous homefurnishings stores","Window Treatment Stores",3171,12167,224444050,0.2,0.1,0.11
+"5719","442299","Miscellaneous homefurnishings stores","All Other Home Furnishings Stores",12442,112215,1820032706,0.8,0.9,0.89
+"5722","443111","Household appliance stores","Household Appliance Stores",12325,91637,2169723055,1,1,1
+"5731","441310","Radio, television, & consumer electronics stores","Automotive Parts and Accessories Stores",36989,334340,7065756631,0.65,0.64,0.61
+"5731","443112","Radio, television, & consumer electronics stores","Radio, Television, and Other Electronics Stores",19989,190982,4541297860,0.35,0.36,0.39
+"5734","443120","Computer & computer software stores","Computer and Software Stores",21291,198489,8536366928,1,1,1
+"5735","451220","Record & prerecorded tape stores","Prerecorded Tape, Compact Disc, and Record Stores",8237,80260,1052920299,1,1,1
+"5736","451140","Musical instrument stores","Musical Instrument and Supplies Stores",4501,31530,675856219,1,1,1
+"5812","711110","Eating places","Theater Companies and Dinner Theaters",3963,88809,1575927267,0.01,0.01,0.02
+"5812","722110","Eating places","Full-Service Restaurants",164092,3436202,38157775817,0.41,0.47,0.5
+"5812","722211","Eating places","Limited-Service Restaurants",164183,2920654,26276466959,0.41,0.4,0.34
+"5812","722212","Eating places","Cafeterias",6953,150744,1683791129,0.02,0.02,0.02
+"5812","722213","Eating places","Snack and Nonalcoholic Beverage Bars",29463,288485,2790138967,0.07,0.04,0.04
+"5812","722310","Eating places","Food Service Contractors",15078,321222,4362462210,0.04,0.04,0.06
+"5812","722320","Eating places","Caterers",12776,168566,1969463241,0.03,0.02,0.03
+"5813","722410","Drinking places (alcoholic beverages)","Drinking Places (Alcoholic Beverages)",58908,397781,3780651614,1,1,1
+"5912","446110","Drug stores & proprietary stores","Pharmacies and Drug Stores",40103,625081,12990236979,1,1,1
+"5921","445310","Liquor stores","Beer, Wine, and Liquor Stores",26076,138890,2388931635,1,1,1
+"5932","453310","Used merchandise stores","Used Merchandise Stores",16246,93380,1294588500,0.67,0.61,0.36
+"5932","522298","Used merchandise stores","All Other Nondepository Credit Intermediation",8010,58988,2298035943,0.33,0.39,0.64
+"5941","451110","Sporting goods stores & bicycle shops","Sporting Goods Stores",25300,196287,2986122637,1,1,1
+"5942","451211","Book stores","Book Stores",13013,143623,2125673159,1,1,1
+"5943","453210","Stationery stores","Office Supplies and Stationery Stores",13278,178403,4497636272,1,1,1
+"5944","448310","Jewelry stores","Jewelry Stores",26690,147793,3132079452,1,1,1
+"5945","451120","Hobby, toy, & game shops","Hobby, Toy, and Game Stores",9582,121009,1528871520,1,1,1
+"5946","443130","Camera & photographic supply stores","Camera and Photographic Supplies Stores",2799,22504,499395428,1,1,1
+"5947","453220","Gift, novelty, & souvenir shops","Gift, Novelty, and Souvenir Stores",36767,248009,3023827456,1,1,1
+"5948","448320","Luggage & leather goods stores","Luggage and Leather Goods Stores",2232,16998,290141986,1,1,1
+"5949","451130","Sewing, needlework, & piece goods stores","Sewing, Needlework, and Piece Goods Stores",6568,53552,694635760,1,1,1
+"5961","454110","Catalog & mailgorder houses","Electronic Shopping and Mail-Order Houses",5899,204048,4943435411,1,1,1
+"5962","454210","Automatic merchandising machine operators","Vending Machine Operators",6764,67576,1406901737,1,1,1
+"5963","454390","Direct selling establishments","Other Direct Selling Establishments",7017,71659,1523387504,0.88,0.94,0.95
+"5963","722330","Direct selling establishments","Mobile Food Services",923,4686,74020241,0.12,0.06,0.05
+"5983","454311","Fuel oil dealers","Heating Oil Dealers",5602,57442,1778211888,1,1,1
+"5984","454312","Liquefied petroleum gas (bottled gas) dealers","Liquefied Petroleum Gas (Bottled Gas) Dealers",5960,49009,1309981697,1,1,1
+"5989","454319","Fuel dealers, not elsewhere classified","Other Fuel Dealers",312,1147,29729636,1,1,1
+"5992","453110","Florists","Florists",25232,126548,1528716675,1,1,1
+"5993","453991","Tobacco stores & stands","Tobacco Stores",3478,23028,471442206,1,1,1
+"5994","451212","News dealers & newsstands","News Dealers and Newsstands",2038,9831,135750557,1,1,1
+"5995","446130","Optical goods stores","Optical Goods Stores",11084,68809,1509192155,1,1,1
+"5999","443112","Miscellaneous retail stores, not elsewhere classified","Radio, Television, and Other Electronics Stores",19989,190982,4541297860,0.27,0.37,0.39
+"5999","446120","Miscellaneous retail stores, not elsewhere classified","Cosmetics, Beauty Supplies, and Perfume Stores",9436,74291,1467137512,0.13,0.14,0.13
+"5999","446199","Miscellaneous retail stores, not elsewhere classified","All Other Health and Personal Care Stores",8050,46347,1566938122,0.11,0.09,0.13
+"5999","453910","Miscellaneous retail stores, not elsewhere classified","Pet and Pet Supplies Stores",7718,64641,998881796,0.1,0.12,0.09
+"5999","453920","Miscellaneous retail stores, not elsewhere classified","Art Dealers",7202,25920,556730593,0.1,0.05,0.05
+"5999","453998","Miscellaneous retail stores, not elsewhere classified","All Other Miscellaneous Store Retailers (except Tobacco Stores)",22012,120320,2478200850,0.3,0.23,0.21
+"6011","521110","Federal reserve banks","Monetary Authorities - Central Bank",89,22602,1012573384,1,1,1
+"6019","522320","Central reserve depository institutions, nec","Financial Transactions Processing, Reserve, and Clearinghouse Activities",1776,50542,1838388308,1,1,1
+"6021","522110","National commercial banks","Commercial Banking",49789,1238549,43492494578,0.97,0.9,0.88
+"6021","522210","National commercial banks","Credit Card Issuing",1620,137389,6046191092,0.03,0.1,0.12
+"6022","522110","State commercial banks","Commercial Banking",49789,1238549,43492494578,0.94,0.88,0.86
+"6022","522190","State commercial banks","Other Depository Credit Intermediation",1629,28742,984562638,0.03,0.02,0.02
+"6022","522210","State commercial banks","Credit Card Issuing",1620,137389,6046191092,0.03,0.1,0.12
+"6035","522120","Savings institutions, federally chartered","Savings Institutions",13282,222974,7291913056,1,1,1
+"6036","522120","Savings institutions, not federally chartered","Savings Institutions",13282,222974,7291913056,1,1,1
+"6061","522130","Credit unions, federally chartered","Credit Unions",12943,162271,3943952605,1,1,1
+"6062","522130","Credit unions, not federally chartered","Credit Unions",12943,162271,3943952605,1,1,1
+"6081","522110","Branches & agencies of foreign banks","Commercial Banking",49789,1238549,43492494578,0.85,0.95,0.93
+"6081","522293","Branches & agencies of foreign banks","International Trade Financing",495,9005,804707683,0.01,0.01,0.02
+"6081","522298","Branches & agencies of foreign banks","All Other Nondepository Credit Intermediation",8010,58988,2298035943,0.14,0.05,0.05
+"6082","522293","Foreign trade & international banking institutions","International Trade Financing",495,9005,804707683,0.05,0.11,0.1
+"6082","551112","Foreign trade & international banking institutions","Offices of Other Holding Companies",9172,76078,7532043151,0.95,0.89,0.9
+"6091","523991","Nondeposit trust facilities","Trust, Fiduciary, and Custody Activities",1011,22139,1156704227,1,1,1
+"6099","522110","Functions related to depository banking, nec","Commercial Banking",49789,1238549,43492494578,0.81,0.87,0.84
+"6099","522320","Functions related to depository banking, nec","Financial Transactions Processing, Reserve, and Clearinghouse Activities",1776,50542,1838388308,0.03,0.04,0.04
+"6099","522390","Functions related to depository banking, nec","Other Activities Related to Credit Intermediation",5710,74456,3044194908,0.09,0.05,0.06
+"6099","523130","Functions related to depository banking, nec","Commodity Contracts Dealing",1618,10190,897433234,0.03,0.01,0.02
+"6099","523991","Functions related to depository banking, nec","Trust, Fiduciary, and Custody Activities",1011,22139,1156704227,0.02,0.02,0.02
+"6099","523999","Functions related to depository banking, nec","Miscellaneous Financial Investment Activities",1311,21265,1431695601,0.02,0.02,0.03
+"6111","522292","Federal & federallygsponsored credit agencies","Real Estate Credit",16532,200591,9427907120,0.65,0.71,0.71
+"6111","522293","Federal & federallygsponsored credit agencies","International Trade Financing",495,9005,804707683,0.02,0.03,0.06
+"6111","522294","Federal & federallygsponsored credit agencies","Secondary Market Financing",588,11984,704233354,0.02,0.04,0.05
+"6111","522298","Federal & federallygsponsored credit agencies","All Other Nondepository Credit Intermediation",8010,58988,2298035943,0.31,0.21,0.17
+"6141","522120","Personal credit institutions","Savings Institutions",13282,222974,7291913056,0.38,0.41,0.34
+"6141","522210","Personal credit institutions","Credit Card Issuing",1620,137389,6046191092,0.05,0.25,0.28
+"6141","522220","Personal credit institutions","Sales Financing",8569,107158,5196854711,0.25,0.2,0.24
+"6141","522291","Personal credit institutions","Consumer Lending",11272,81783,2818000778,0.32,0.15,0.13
+"6153","522210","Shortgterm business credit institutions, except agricultural","Credit Card Issuing",1620,137389,6046191092,0.08,0.39,0.39
+"6153","522220","Shortgterm business credit institutions, except agricultural","Sales Financing",8569,107158,5196854711,0.43,0.3,0.34
+"6153","522298","Shortgterm business credit institutions, except agricultural","All Other Nondepository Credit Intermediation",8010,58988,2298035943,0.4,0.17,0.15
+"6153","522320","Shortgterm business credit institutions, except agricultural","Financial Transactions Processing, Reserve, and Clearinghouse Activities",1776,50542,1838388308,0.09,0.14,0.12
+"6159","522220","Miscellaneous business credit institutions","Sales Financing",8569,107158,5196854711,0.25,0.28,0.28
+"6159","522292","Miscellaneous business credit institutions","Real Estate Credit",16532,200591,9427907120,0.48,0.52,0.51
+"6159","522293","Miscellaneous business credit institutions","International Trade Financing",495,9005,804707683,0.01,0.02,0.04
+"6159","522294","Miscellaneous business credit institutions","Secondary Market Financing",588,11984,704233354,0.02,0.03,0.04
+"6159","522298","Miscellaneous business credit institutions","All Other Nondepository Credit Intermediation",8010,58988,2298035943,0.23,0.15,0.12
+"6162","522292","Mortgage bankers & loan correspondents","Real Estate Credit",16532,200591,9427907120,0.74,0.73,0.76
+"6162","522390","Mortgage bankers & loan correspondents","Other Activities Related to Credit Intermediation",5710,74456,3044194908,0.26,0.27,0.24
+"6163","522310","Loan brokers","Mortgage and Nonmortgage Loan Brokers",8036,47805,2073284289,1,1,1
+"6211","523110","Security brokers, dealers, & flotation companies","Investment Banking and Securities Dealing",6315,148242,19037067596,0.23,0.31,0.35
+"6211","523120","Security brokers, dealers, & flotation companies","Securities Brokerage",14031,280492,32597649124,0.51,0.59,0.59
+"6211","523910","Security brokers, dealers, & flotation companies","Miscellaneous Intermediation",5590,22003,1721952749,0.21,0.05,0.03
+"6211","523999","Security brokers, dealers, & flotation companies","Miscellaneous Financial Investment Activities",1311,21265,1431695601,0.05,0.05,0.03
+"6221","523130","Commodity contracts brokers & dealers","Commodity Contracts Dealing",1618,10190,897433234,0.55,0.46,0.52
+"6221","523140","Commodity contracts brokers & dealers","Commodity Contracts Brokerage",1328,12143,825862076,0.45,0.54,0.48
+"6231","523210","Security & commodity exchanges","Securities and Commodity Exchanges",232,8063,532248919,1,1,1
+"6282","523920","Investment advice","Portfolio Management",10635,75899,8647625817,0.57,0.62,0.65
+"6282","523930","Investment advice","Investment Advice",8014,45871,4742880671,0.43,0.38,0.35
+"6289","523991","Serv allied with the exchange of securities or commodities, nec","Trust, Fiduciary, and Custody Activities",1011,22139,1156704227,0.44,0.51,0.45
+"6289","523999","Serv allied with the exchange of securities or commodities, nec","Miscellaneous Financial Investment Activities",1311,21265,1431695601,0.56,0.49,0.55
+"6311","524113","Life insurance","Direct Life Insurance Carriers",9478,353468,16092122785,0.9,0.9,0.87
+"6311","524130","Life insurance","Reinsurance Carriers",1111,39265,2314281611,0.1,0.1,0.13
+"6321","524113","Accident & health insurance","Direct Life Insurance Carriers",9478,353468,16092122785,0.68,0.51,0.53
+"6321","524114","Accident & health insurance","Direct Health and Medical Insurance Carriers",3358,295273,11676832823,0.24,0.43,0.39
+"6321","524130","Accident & health insurance","Reinsurance Carriers",1111,39265,2314281611,0.08,0.06,0.08
+"6324","524114","Hospital & medical service plans","Direct Health and Medical Insurance Carriers",3358,295273,11676832823,0.75,0.88,0.83
+"6324","524130","Hospital & medical service plans","Reinsurance Carriers",1111,39265,2314281611,0.25,0.12,0.17
+"6331","524126","Fire, marine, & casualty insurance","Direct Property and Casualty Insurance Carriers",22482,483659,22197905239,0.95,0.92,0.91
+"6331","524130","Fire, marine, & casualty insurance","Reinsurance Carriers",1111,39265,2314281611,0.05,0.08,0.09
+"6351","524126","Surety insurance","Direct Property and Casualty Insurance Carriers",22482,483659,22197905239,0.95,0.92,0.91
+"6351","524130","Surety insurance","Reinsurance Carriers",1111,39265,2314281611,0.05,0.08,0.09
+"6361","524127","Title insurance","Direct Title Insurance Carriers",4958,66804,2492952539,0.82,0.63,0.52
+"6361","524130","Title insurance","Reinsurance Carriers",1111,39265,2314281611,0.18,0.37,0.48
+"6371","524292","Pension, health, & welfare funds","Third Party Administration of Insurance and Pension Funds",5016,102538,4093081034,1,1,1
+"6399","524128","Insurance carriers, nec","Other Direct Insurance (except Life, Health, and Medical) Carriers",899,17860,967988354,0.45,0.31,0.29
+"6399","524130","Insurance carriers, nec","Reinsurance Carriers",1111,39265,2314281611,0.55,0.69,0.71
+"6411","524210","Insurance agents, brokers, & services","Insurance Agencies and Brokerages",115288,548577,20656040529,0.89,0.74,0.7
+"6411","524291","Insurance agents, brokers, & services","Claims Adjusting",5299,52556,2461413125,0.04,0.07,0.08
+"6411","524292","Insurance agents, brokers, & services","Third Party Administration of Insurance and Pension Funds",5016,102538,4093081034,0.04,0.14,0.14
+"6411","524298","Insurance agents, brokers, & services","All Other Insurance Related Activities",4125,42619,2100164910,0.03,0.06,0.07
+"6512","531120","Operators of nonresidential buildings","Lessors of Nonresidential Buildings (except Miniwarehouses)",25224,158286,4901032349,0.94,0.77,0.82
+"6512","711310","Operators of nonresidential buildings","Promoters of Performing Arts, Sports, and Similar Events with Facilities",1605,46609,1069584781,0.06,0.23,0.18
+"6513","531110","Operators of apartment buildings","Lessors of Residential Buildings and Dwellings",68764,413575,8850425288,1,1,1
+"6514","531110","Operators of dwellings other than apartment buildings","Lessors of Residential Buildings and Dwellings",68764,413575,8850425288,1,1,1
+"6515","531190","Operators of residential mobile home sites","Lessors of Other Real Estate Property",11596,43415,844148651,1,1,1
+"6517","531190","Lessors of railroad property","Lessors of Other Real Estate Property",11596,43415,844148651,1,1,1
+"6519","531190","Lessors of real property, nec","Lessors of Other Real Estate Property",11596,43415,844148651,1,1,1
+"6531","531210","Real estate agents & managers","Offices of Real Estate Agents and Brokers",65037,241397,8222044934,0.46,0.32,0.37
+"6531","531311","Real estate agents & managers","Residential Property Managers",28252,244501,6113483126,0.2,0.32,0.27
+"6531","531312","Real estate agents & managers","Nonresidential Property Managers",12287,93372,3444511685,0.09,0.12,0.15
+"6531","531320","Real estate agents & managers","Offices of Real Estate Appraisers",11296,32195,1051078617,0.08,0.04,0.05
+"6531","531390","Real estate agents & managers","Other Activities Related to Real Estate",4298,21862,841320301,0.03,0.03,0.04
+"6531","812220","Real estate agents & managers","Cemeteries and Crematories",5441,46672,1028913837,0.04,0.06,0.05
+"6531","813990","Real estate agents & managers","Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",14988,83090,1574834172,0.11,0.11,0.07
+"6541","541191","Title abstract offices","Title Abstract and Settlement Offices",4990,37418,1186142023,1,1,1
+"6552","233110","Land subdividers & developers, except cemeteries","Land Subdivision and Land Development",12291,72017,2971989574,1,1,1
+"6553","812220","Cemetery subdividers & developers","Cemeteries and Crematories",5441,46672,1028913837,1,1,1
+"6712","551111","Offices of bank holding companies","Offices of Bank Holding Companies",774,23081,1683216982,1,1,1
+"6719","551112","Offices of holding companies, nec","Offices of Other Holding Companies",9172,76078,7532043151,1,1,1
+"6732","813211","Educational, religious, & charitable trusts","Grantmaking Foundations",3526,34039,1089228672,1,1,1
+"6733","523920","Trusts, except educational, religious, & charitable","Portfolio Management",10635,75899,8647625817,0.91,0.77,0.88
+"6733","523991","Trusts, except educational, religious, & charitable","Trust, Fiduciary, and Custody Activities",1011,22139,1156704227,0.09,0.23,0.12
+"6792","523910","Oil royalty traders","Miscellaneous Intermediation",5590,22003,1721952749,0.63,0.44,0.52
+"6792","533110","Oil royalty traders","Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)",3254,27581,1598608589,0.37,0.56,0.48
+"6794","533110","Patent owners & lessors","Lessors of Nonfinancial Intangible Assets (except Copyrighted Works)",3254,27581,1598608589,1,1,1
+"6798","525930","Real estate investment trusts","Real Estate Investment Trusts",708,3603,222834985,1,1,1
+"6799","523130","Investors, nec","Commodity Contracts Dealing",1618,10190,897433234,0.09,0.09,0.08
+"6799","523910","Investors, nec","Miscellaneous Intermediation",5590,22003,1721952749,0.31,0.2,0.15
+"6799","523920","Investors, nec","Portfolio Management",10635,75899,8647625817,0.6,0.7,0.77
+"7011","721110","Hotels & motels","Hotels (except Casino Hotels) and Motels",41841,1381075,22454623528,0.88,0.82,0.77
+"7011","721120","Hotels & motels","Casino Hotels",390,267362,6444587668,0.01,0.16,0.22
+"7011","721191","Hotels & motels","Bed-and-Breakfast Inns",2878,18930,215388735,0.06,0.01,0.01
+"7011","721199","Hotels & motels","All Other Traveler Accommodation",2218,13186,165633499,0.05,0.01,0.01
+"7021","721310","Rooming & boarding houses","Rooming and Boarding Houses",2674,14601,179951905,1,1,1
+"7032","721214","Sporting & recreational camps","Recreational and Vacation Camps (except Campgrounds)",2497,22461,330267060,1,1,1
+"7033","721211","Recreational vehicle parks & campsites","RV (Recreational Vehicle) Parks and Campgrounds",3731,21446,287382059,1,1,1
+"7041","721110","Organization hotels & lodging houses, on membership basis","Hotels (except Casino Hotels) and Motels",41841,1381075,22454623528,0.94,0.99,0.99
+"7041","721310","Organization hotels & lodging houses, on membership basis","Rooming and Boarding Houses",2674,14601,179951905,0.06,0.01,0.01
+"7211","812320","Power laundries, family & commercial","Drycleaning and Laundry Services (except Coin-Operated)",28637,218579,2900705411,1,1,1
+"7212","812320","Garment pressing & agents for laundries & drycleaners","Drycleaning and Laundry Services (except Coin-Operated)",28637,218579,2900705411,1,1,1
+"7213","812331","Linen supply","Linen Supply",1602,71594,1529737697,1,1,1
+"7215","812310","Coingoperated laundries & drycleaning","Coin-Operated Laundries and Drycleaners",11218,42863,501832774,1,1,1
+"7216","812320","Drycleaning plants","Drycleaning and Laundry Services (except Coin-Operated)",28637,218579,2900705411,1,1,1
+"7217","561740","Carpet & upholstery cleaning services","Carpet and Upholstery Cleaning Services",8870,43383,758360084,1,1,1
+"7218","812332","Industrial launderers","Industrial Launderers",1120,56191,1294384200,1,1,1
+"7219","811490","Other laundry, cleaning & garment services","Other Personal and Household Goods Repair and Maintenance",8032,30015,645915522,0.21,0.09,0.13
+"7219","812320","Other laundry, cleaning & garment services","Drycleaning and Laundry Services (except Coin-Operated)",28637,218579,2900705411,0.75,0.68,0.57
+"7219","812331","Other laundry, cleaning & garment services","Linen Supply",1602,71594,1529737697,0.04,0.22,0.3
+"7221","541921","Photographic studios, portrait","Photography Studios, Portrait",12520,71094,1104388727,1,1,1
+"7231","611511","Beauty shops","Cosmetology and Barber Schools",2316,15027,237524306,0.03,0.04,0.04
+"7231","812112","Beauty shops","Beauty Salons",68904,368583,5103122061,0.89,0.92,0.92
+"7231","812113","Beauty shops","Nail Salons",5879,17683,193877363,0.08,0.04,0.04
+"7241","611511","Barber shops","Cosmetology and Barber Schools",2316,15027,237524306,0.4,0.6,0.6
+"7241","812111","Barber shops","Barber Shops",3545,10073,159703235,0.6,0.4,0.4
+"7251","811430","Shoe repair shops & shoeshine parlors","Footwear and Leather Goods Repair",1897,4619,65813153,1,1,1
+"7261","812210","Funeral service & crematories","Funeral Homes and Funeral Services",13479,94989,2495823185,0.71,0.67,0.71
+"7261","812220","Funeral service & crematories","Cemeteries and Crematories",5441,46672,1028913837,0.29,0.33,0.29
+"7291","541213","Tax return preparation services","Tax Preparation Services",9603,60778,1092826685,1,1,1
+"7299","532220","Miscellaneous personal services, n.e.c.","Formal Wear and Costume Rental",2614,16863,272590506,0.03,0.02,0.03
+"7299","532299","Miscellaneous personal services, n.e.c.","All Other Consumer Goods Rental",3013,27416,715379782,0.04,0.04,0.07
+"7299","624410","Miscellaneous personal services, n.e.c.","Child Day Care Services",55347,594649,7281875870,0.72,0.82,0.76
+"7299","812191","Miscellaneous personal services, n.e.c.","Diet and Weight Reducing Centers",2649,23405,283520572,0.03,0.03,0.03
+"7299","812199","Miscellaneous personal services, n.e.c.","Other Personal Care Services",7700,30982,361602486,0.1,0.04,0.04
+"7299","812990","Miscellaneous personal services, n.e.c.","All Other Personal Services",5691,31040,649449337,0.07,0.04,0.07
+"7311","541810","Advertising agencies","Advertising Agencies",17356,172598,9456556864,1,1,1
+"7312","541850","Outdoor advertising services","Display Advertising",2293,28348,938054626,1,1,1
+"7313","541840","Radio, television, publishers’ advertising representatives","Media Representatives",2876,29875,1592924816,1,1,1
+"7319","541830","Advertising, n.e.c.","Media Buying Agencies",747,6879,336736023,0.05,0.06,0.1
+"7319","541850","Advertising, n.e.c.","Display Advertising",2293,28348,938054626,0.17,0.24,0.29
+"7319","541870","Advertising, n.e.c.","Advertising Material Distribution Services",1316,18993,463022137,0.1,0.16,0.14
+"7319","541890","Advertising, n.e.c.","Other Services Related to Advertising",9272,65000,1535592406,0.68,0.55,0.47
+"7322","561440","Adjustment & collection services","Collection Agencies",6325,100877,2755402698,0.86,0.92,0.92
+"7322","561491","Adjustment & collection services","Repossession Services",994,9063,241318310,0.14,0.08,0.08
+"7323","561450","Credit reporting services","Credit Bureaus",1884,33566,1117371352,1,1,1
+"7331","511140","Direct mail advertising services","Database and Directory Publishers",2344,52998,2187771104,0.42,0.39,0.47
+"7331","541860","Direct mail advertising services","Direct Mail Advertising",3177,83636,2485819969,0.58,0.61,0.53
+"7334","561439","Photocopying & duplicating services","Other Business Service Centers (including Copy Shops)",3997,58740,1424414165,1,1,1
+"7335","541922","Commercial photography","Commercial Photography",3943,13519,472787096,1,1,1
+"7336","541430","Commercial art & graphic design","Graphic Design Services",14878,66325,2728980699,1,1,1
+"7338","561410","Secretarial & court reporting services","Document Preparation Services",5626,34816,892815388,0.66,0.73,0.7
+"7338","561492","Secretarial & court reporting services","Court Reporting and Stenotype Services",2911,12693,375998698,0.34,0.27,0.3
+"7342","561710","Disinfecting & pest control services","Exterminating and Pest Control Services",10618,82012,2010822797,0.17,0.09,0.16
+"7342","561720","Disinfecting & pest control services","Janitorial Services",52607,828782,10329247223,0.83,0.91,0.84
+"7349","561720","Building cleaning & maintenance services, n.e.c.","Janitorial Services",52607,828782,10329247223,1,1,1
+"7352","532291","Medical equipment rental & leasing","Home Health Equipment Rental",3131,35818,1083625935,0.49,0.55,0.51
+"7352","532490","Medical equipment rental & leasing","Other Commercial and Industrial Machinery and Equipment Rental and Leasing",3245,29347,1053458253,0.51,0.45,0.49
+"7353","234990","Heavy construction equipment rental & leasing","All Other Heavy Construction",14072.1666666667,199558.333333333,7370903999.5,0.81,0.84,0.84
+"7353","532412","Heavy construction equipment rental & leasing","Construction, Mining, and Forestry Machinery and Equipment Rental and Leasing",3223,37829,1415717914,0.19,0.16,0.16
+"7359","532210","Equipment rental & leasing, n.e.c.","Consumer Electronics and Appliances Rental",4001,28780,835723757,0.15,0.13,0.11
+"7359","532299","Equipment rental & leasing, n.e.c.","All Other Consumer Goods Rental",3013,27416,715379782,0.11,0.12,0.09
+"7359","532310","Equipment rental & leasing, n.e.c.","General Rental Centers",7005,65894,2017999264,0.26,0.29,0.27
+"7359","532411","Equipment rental & leasing, n.e.c.","Commercial Air, Rail, and Water Transportation Equipment Rental and Leasing",1289,11358,443394140,0.05,0.05,0.06
+"7359","532412","Equipment rental & leasing, n.e.c.","Construction, Mining, and Forestry Machinery and Equipment Rental and Leasing",3223,37829,1415717914,0.12,0.16,0.19
+"7359","532420","Equipment rental & leasing, n.e.c.","Office Machinery and Equipment Rental and Leasing",1633,13638,713568099,0.06,0.06,0.09
+"7359","532490","Equipment rental & leasing, n.e.c.","Other Commercial and Industrial Machinery and Equipment Rental and Leasing",3245,29347,1053458253,0.12,0.13,0.14
+"7359","562991","Equipment rental & leasing, n.e.c.","Septic Tank and Related Services",3063,15846,409708672,0.12,0.07,0.05
+"7361","541612","Employment agencies","Human Resources and Executive Search Consulting Services",12546,90106,4935546859,0.58,0.26,0.46
+"7361","561310","Employment agencies","Employment Placement Agencies",9262,258635,5865256002,0.42,0.74,0.54
+"7363","561320","Help supply services","Temporary Help Services",25934,2268644,36729152081,0.78,0.83,0.82
+"7363","561330","Help supply services","Employee Leasing Services",7140,450335,7868351454,0.22,0.17,0.18
+"7371","541511","Computer programming services","Custom Computer Programming Services",35762,375921,22474382000,1,1,1
+"7372","511210","Software publishers","Software Publishers",9957,193166,15535028129,1,1,1
+"7373","541512","Computer systems integrators","Computer Systems Design Services",40083,368319,22556451355,1,1,1
+"7374","514210","Data processing services","Data Processing Services",10117,289761,12781049582,1,1,1
+"7375","514191","Ongline information services","On-Line Information Services",4526,66919,3401898712,1,1,1
+"7376","541513","Computer facilities management services","Computer Facilities Management Services",2045,92204,4481939104,1,1,1
+"7377","532420","Computer rental & leasing","Office Machinery and Equipment Rental and Leasing",1633,13638,713568099,1,1,1
+"7378","811212","Computer maintenance & repair","Computer and Office Machine Repair and Maintenance",5768,48747,1874621962,1,1,1
+"7379","334611","Computer related services, n.e.c.","Software Reproducing",892,23695,1707391521,0.02,0.05,0.06
+"7379","541512","Computer related services, n.e.c.","Computer Systems Design Services",40083,368319,22556451355,0.75,0.75,0.77
+"7379","541519","Computer related services, n.e.c.","Other Computer Related Services",12568,97706,5197354574,0.23,0.2,0.18
+"7381","561611","Detective, guard, & armored car services","Investigation Services",5031,54375,974285205,0.36,0.1,0.12
+"7381","561612","Detective, guard, & armored car services","Security Guards and Patrol Services",8343,479206,6737176582,0.59,0.85,0.81
+"7381","561613","Detective, guard, & armored car services","Armored Car Services",658,28434,629141832,0.05,0.05,0.08
+"7382","561621","Security systems services","Security Systems Services (except Locksmiths)",4289,69616,2089025948,1,1,1
+"7383","514110","News syndicates","News Syndicates",610,10297,608059511,1,1,1
+"7384","812921","Photofinishing laboratories","Photofinishing Laboratories (except One-Hour)",3168,55486,1387062395,0.49,0.75,0.83
+"7384","812922","Photofinishing laboratories","One-Hour Photofinishing",3363,18563,289719512,0.51,0.25,0.17
+"7389","512240","Business services, n.e.c.","Sound Recording Studios",2221,13223,406969981,0.02,0.01,0.01
+"7389","512290","Business services, n.e.c.","Other Sound Recording Industries",775,5127,228520624,0.01,0,0.01
+"7389","522320","Business services, n.e.c.","Financial Transactions Processing, Reserve, and Clearinghouse Activities",1776,50542,1838388308,0.02,0.04,0.06
+"7389","541199","Business services, n.e.c.","All Other Legal Services",2561,14119,383712220,0.02,0.01,0.01
+"7389","541340","Business services, n.e.c.","Drafting Services",3060,12366,395322312,0.03,0.01,0.01
+"7389","541350","Business services, n.e.c.","Building Inspection Services",3651,12899,342501685,0.03,0.01,0.01
+"7389","541370","Business services, n.e.c.","Surveying and Mapping (except Geophysical) Services",8404,49939,1414834748,0.07,0.04,0.05
+"7389","541410","Business services, n.e.c.","Interior Design Services",10362,33842,1028121075,0.09,0.03,0.03
+"7389","541420","Business services, n.e.c.","Industrial Design Services",1434,7508,270817964,0.01,0.01,0.01
+"7389","541490","Business services, n.e.c.","Other Specialized Design Services",1970,7899,257383927,0.02,0.01,0.01
+"7389","541890","Business services, n.e.c.","Other Services Related to Advertising",9272,65000,1535592406,0.08,0.06,0.05
+"7389","541930","Business services, n.e.c.","Translation and Interpretation Services",1233,6360,193960088,0.01,0.01,0.01
+"7389","541990","Business services, n.e.c.","All Other Professional, Scientific, and Technical Services",4725,33372,1217223323,0.04,0.03,0.04
+"7389","561421","Business services, n.e.c.","Telephone Answering Services",2705,47613,1067439126,0.02,0.04,0.04
+"7389","561422","Business services, n.e.c.","Telemarketing Bureaus",3805,237204,4414484173,0.03,0.21,0.15
+"7389","561431","Business services, n.e.c.","Private Mail Centers",4321,19009,384326558,0.04,0.02,0.01
+"7389","561491","Business services, n.e.c.","Repossession Services",994,9063,241318310,0.01,0.01,0.01
+"7389","561499","Business services, n.e.c.","All Other Business Support Services",5292,59336,1873440726,0.05,0.05,0.06
+"7389","561591","Business services, n.e.c.","Convention and Visitors Bureaus",724,7320,190696506,0.01,0.01,0.01
+"7389","561599","Business services, n.e.c.","All Other Travel Arrangement and Reservation Services",3654,70649,1746314279,0.03,0.06,0.06
+"7389","561790","Business services, n.e.c.","Other Services to Buildings and Dwellings",10413,69780,1408329352,0.09,0.06,0.05
+"7389","561910","Business services, n.e.c.","Packaging and Labeling Services",2313,53825,1178583891,0.02,0.05,0.04
+"7389","561920","Business services, n.e.c.","Convention and Trade Show Organizers",3987,47648,1370246558,0.04,0.04,0.05
+"7389","561990","Business services, n.e.c.","All Other Support Services",15524,177034,4470746982,0.14,0.15,0.15
+"7389","711410","Business services, n.e.c.","Agents and Managers for Artists, Athletes, Entertainers, and Other Public Figures",2951,15343,1084631108,0.03,0.01,0.04
+"7389","812990","Business services, n.e.c.","All Other Personal Services",5691,31040,649449337,0.05,0.03,0.02
+"7513","532120","Truck rental services, without drivers","Truck, Utility Trailer, and RV (Recreational Vehicle) Rental and Leasing",5365,56605,1807723321,1,1,1
+"7514","532111","Passenger car rental","Passenger Car Rental",6108,120425,2604102398,1,1,1
+"7515","532112","Passenger car leasing","Passenger Car Leasing",1192,10244,418216221,1,1,1
+"7519","532120","Utility trailer & recreational vehicle rental","Truck, Utility Trailer, and RV (Recreational Vehicle) Rental and Leasing",5365,56605,1807723321,1,1,1
+"7521","812930","Automobile parking","Parking Lots and Garages",6157,83504,1288045187,1,1,1
+"7532","811121","Top, body, & upholstery repair shops & paint shops","Automotive Body, Paint, and Interior Repair and Maintenance",37368,205728,5456724899,1,1,1
+"7533","811112","Automotive exhaust system repair shops","Automotive Exhaust System Repair",5263,26373,658334108,1,1,1
+"7534","326212","Tire retreading & repair shops","Tire Retreading",664,9248,246330416,0.2,0.35,0.41
+"7534","811198","Tire retreading & repair shops","All Other Automotive Repair and Maintenance",2673,17002,351586720,0.8,0.65,0.59
+"7536","811122","Automotive glass replacement shops","Automotive Glass Replacement Shops",5879,34146,932047092,1,1,1
+"7537","811113","Automotive transmission repair shops","Automotive Transmission Repair",6712,29382,743582180,1,1,1
+"7538","811111","General automotive repair shops","General Automotive Repair",74012,308150,7243684878,1,1,1
+"7539","811118","Automotive repair shops, n.e.c.","Other Automotive Mechanical and Electrical Repair and Maintenance",11905,55090,1311420065,1,1,1
+"7542","811192","Carwashes","Car Washes",13470,128111,1507910237,1,1,1
+"7549","488410","Automotive services, except repair & carwashes","Motor Vehicle Towing",6495,37540,777006907,0.43,0.35,0.4
+"7549","811191","Automotive services, except repair & carwashes","Automotive Oil Change and Lubrication Shops",6090,51402,807369738,0.4,0.49,0.42
+"7549","811198","Automotive services, except repair & carwashes","All Other Automotive Repair and Maintenance",2673,17002,351586720,0.18,0.16,0.18
+"7622","811211","Radio & television repair shops","Consumer Electronics Repair and Maintenance",4176,20726,515263718,0.69,0.54,0.45
+"7622","811213","Radio & television repair shops","Communication Equipment Repair and Maintenance",1916,17864,637197171,0.31,0.46,0.55
+"7623","811310","Refrigeration & airgconditioning service & repair shops","Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance",23690,148989,4539499551,0.84,0.85,0.86
+"7623","811412","Refrigeration & airgconditioning service & repair shops","Appliance Repair and Maintenance",4580,26525,709599757,0.16,0.15,0.14
+"7629","811212","Electrical & electronic repair shops,","Computer and Office Machine Repair and Maintenance",5768,48747,1874621962,0.33,0.41,0.45
+"7629","811213","Electrical & electronic repair shops,","Communication Equipment Repair and Maintenance",1916,17864,637197171,0.11,0.15,0.15
+"7629","811219","Electrical & electronic repair shops,","Other Electronic and Precision Equipment Repair and Maintenance",4325,22553,835986869,0.25,0.19,0.2
+"7629","811411","Electrical & electronic repair shops,","Home and Garden Equipment Repair and Maintenance",892,3079,71126646,0.05,0.03,0.02
+"7629","811412","Electrical & electronic repair shops,","Appliance Repair and Maintenance",4580,26525,709599757,0.26,0.22,0.17
+"7631","811490","Watch, clock, & jewelry repair","Other Personal and Household Goods Repair and Maintenance",8032,30015,645915522,1,1,1
+"7641","811420","Reupholstery & furniture repair","Reupholstery and Furniture Repair",6341,22292,437016828,1,1,1
+"7692","811490","Welding repair","Other Personal and Household Goods Repair and Maintenance",8032,30015,645915522,1,1,1
+"7694","335312","Armature rewinding shops","Motor and Generator Manufacturing",750,77687,2537903517,0.03,0.34,0.36
+"7694","811310","Armature rewinding shops","Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance",23690,148989,4539499551,0.97,0.66,0.64
+"7699","488390","Repair shops & related services, n.e.c.","Other Support Activities for Water Transportation",820,12149,426531515,0.01,0.03,0.04
+"7699","561622","Repair shops & related services, n.e.c.","Locksmiths",4043,15835,404419800,0.06,0.04,0.04
+"7699","561790","Repair shops & related services, n.e.c.","Other Services to Buildings and Dwellings",10413,69780,1408329352,0.15,0.18,0.12
+"7699","562991","Repair shops & related services, n.e.c.","Septic Tank and Related Services",3063,15846,409708672,0.05,0.04,0.04
+"7699","811212","Repair shops & related services, n.e.c.","Computer and Office Machine Repair and Maintenance",5768,48747,1874621962,0.09,0.12,0.16
+"7699","811219","Repair shops & related services, n.e.c.","Other Electronic and Precision Equipment Repair and Maintenance",4325,22553,835986869,0.06,0.06,0.07
+"7699","811310","Repair shops & related services, n.e.c.","Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance",23690,148989,4539499551,0.35,0.37,0.4
+"7699","811411","Repair shops & related services, n.e.c.","Home and Garden Equipment Repair and Maintenance",892,3079,71126646,0.01,0.01,0.01
+"7699","811412","Repair shops & related services, n.e.c.","Appliance Repair and Maintenance",4580,26525,709599757,0.07,0.07,0.06
+"7699","811430","Repair shops & related services, n.e.c.","Footwear and Leather Goods Repair",1897,4619,65813153,0.03,0.01,0.01
+"7699","811490","Repair shops & related services, n.e.c.","Other Personal and Household Goods Repair and Maintenance",8032,30015,645915522,0.12,0.08,0.06
+"7812","512110","Motion picture & video tape production","Motion Picture and Video Production",15262,202130,11079922431,1,1,1
+"7819","334612","Services allied to motion picture production","Prerecorded Compact Disc (except Software), Tape, and Record Reproducing",697,28007,866777375,0.02,0.05,0.05
+"7819","512191","Services allied to motion picture production","Teleproduction and Other Postproduction Services",1260,22366,1106784068,0.04,0.04,0.06
+"7819","512199","Services allied to motion picture production","Other Motion Picture and Video Industries",522,5098,292778556,0.01,0.01,0.02
+"7819","532220","Services allied to motion picture production","Formal Wear and Costume Rental",2614,16863,272590506,0.08,0.03,0.01
+"7819","532490","Services allied to motion picture production","Other Commercial and Industrial Machinery and Equipment Rental and Leasing",3245,29347,1053458253,0.09,0.06,0.06
+"7819","541214","Services allied to motion picture production","Payroll Services",4821,138298,6107596474,0.14,0.26,0.33
+"7819","561310","Services allied to motion picture production","Employment Placement Agencies",9262,258635,5865256002,0.27,0.49,0.32
+"7819","711510","Services allied to motion picture production","Independent Artists, Writers, and Performers",12383,33108,2878078792,0.36,0.06,0.16
+"7822","421990","Motion picture & video tape distribution","Other Miscellaneous Durable Goods Wholesalers",7936,51577,1907705092,0.9,0.81,0.77
+"7822","512120","Motion picture & video tape distribution","Motion Picture and Video Distribution",908,12312,580553156,0.1,0.19,0.23
+"7829","512199","Services allied to motion picture distribution","Other Motion Picture and Video Industries",522,5098,292778556,1,1,1
+"7832","512131","Motion picture theaters (except drivegins)","Motion Picture Theaters (except Drive-Ins)",5466,125565,1054462996,1,1,1
+"7833","512132","Drivegin motion picture theaters","Drive-In Motion Picture Theaters",344,3596,43870411,1,1,1
+"7841","532230","Video tape rental","Video Tape and Disc Rental",18719,159053,1560216187,1,1,1
+"7911","611610","Dance studios, schools, & halls","Fine Arts Schools",7111,42627,559875487,0.31,0.19,0.17
+"7911","713990","Dance studios, schools, & halls","All Other Amusement and Recreation Industries",15985,186762,2661083861,0.69,0.81,0.83
+"7922","512290","Theatrical producers (exc movie) & misc theatrical services","Other Sound Recording Industries",775,5127,228520624,0.03,0.01,0.02
+"7922","532490","Theatrical producers (exc movie) & misc theatrical services","Other Commercial and Industrial Machinery and Equipment Rental and Leasing",3245,29347,1053458253,0.12,0.06,0.08
+"7922","561310","Theatrical producers (exc movie) & misc theatrical services","Employment Placement Agencies",9262,258635,5865256002,0.34,0.49,0.45
+"7922","561599","Theatrical producers (exc movie) & misc theatrical services","All Other Travel Arrangement and Reservation Services",3654,70649,1746314279,0.13,0.13,0.13
+"7922","711110","Theatrical producers (exc movie) & misc theatrical services","Theater Companies and Dinner Theaters",3963,88809,1575927267,0.15,0.17,0.12
+"7922","711310","Theatrical producers (exc movie) & misc theatrical services","Promoters of Performing Arts, Sports, and Similar Events with Facilities",1605,46609,1069584781,0.06,0.09,0.08
+"7922","711320","Theatrical producers (exc movie) & misc theatrical services","Promoters of Performing Arts, Sports, and Similar Events without Facilities",1775,13831,385059141,0.07,0.03,0.03
+"7922","711410","Theatrical producers (exc movie) & misc theatrical services","Agents and Managers for Artists, Athletes, Entertainers, and Other Public Figures",2951,15343,1084631108,0.11,0.03,0.08
+"7929","711120","Bands, orchestras, actors, oth entertainers & entertainment group","Dance Companies",434,7789,231837290,0.02,0.09,0.05
+"7929","711130","Bands, orchestras, actors, oth entertainers & entertainment group","Musical Groups and Artists",5483,42413,1369031095,0.29,0.49,0.3
+"7929","711190","Bands, orchestras, actors, oth entertainers & entertainment group","Other Performing Arts Companies",598,3735,115975462,0.03,0.04,0.03
+"7929","711510","Bands, orchestras, actors, oth entertainers & entertainment group","Independent Artists, Writers, and Performers",12383,33108,2878078792,0.66,0.38,0.63
+"7933","713950","Bowling centers","Bowling Centers",5320,81911,859699292,1,1,1
+"7941","711211","Professional sports clubs, managers, promoters","Sports Teams and Clubs",1309,43839,4851506211,0.17,0.37,0.66
+"7941","711310","Professional sports clubs, managers, promoters","Promoters of Performing Arts, Sports, and Similar Events with Facilities",1605,46609,1069584781,0.21,0.39,0.14
+"7941","711320","Professional sports clubs, managers, promoters","Promoters of Performing Arts, Sports, and Similar Events without Facilities",1775,13831,385059141,0.23,0.12,0.05
+"7941","711410","Professional sports clubs, managers, promoters","Agents and Managers for Artists, Athletes, Entertainers, and Other Public Figures",2951,15343,1084631108,0.39,0.13,0.15
+"7948","711212","Racing, including track operation","Racetracks",1116,47549,806838786,0.25,0.68,0.6
+"7948","711219","Racing, including track operation","Other Spectator Sports",3360,22810,534052228,0.75,0.32,0.4
+"7991","713940","Physical fitness facilities","Fitness and Recreational Sports Centers",21549,423106,5388239285,1,1,1
+"7992","713910","Public golf courses","Golf Courses and Country Clubs",9559,244580,3876853769,1,1,1
+"7993","713120","Coingoperated amusement devices","Amusement Arcades",2197,20874,334547678,0.11,0.09,0.1
+"7993","713290","Coingoperated amusement devices","Other Gambling Industries",1460,26137,429422013,0.07,0.11,0.13
+"7993","713990","Coingoperated amusement devices","All Other Amusement and Recreation Industries",15985,186762,2661083861,0.81,0.8,0.78
+"7996","713110","Amusement parks","Amusement and Theme Parks",738,127858,2124508677,1,1,1
+"7997","713910","Membership sports & recreation clubs","Golf Courses and Country Clubs",9559,244580,3876853769,0.2,0.29,0.33
+"7997","713940","Membership sports & recreation clubs","Fitness and Recreational Sports Centers",21549,423106,5388239285,0.46,0.5,0.45
+"7997","713990","Membership sports & recreation clubs","All Other Amusement and Recreation Industries",15985,186762,2661083861,0.34,0.22,0.22
+"7999","487110","Amusement & recreation services, n.e.c.","Scenic and Sightseeing Transportation, Land",807,13362,271117130,0.01,0.01,0.02
+"7999","487210","Amusement & recreation services, n.e.c.","Scenic and Sightseeing Transportation, Water",2016,16910,308706183,0.03,0.02,0.02
+"7999","487990","Amusement & recreation services, n.e.c.","Scenic and Sightseeing Transportation, Other",306,4191,86038127,0,0,0
+"7999","532292","Amusement & recreation services, n.e.c.","Recreational Goods Rental",1856,10595,140408966,0.03,0.01,0.01
+"7999","561599","Amusement & recreation services, n.e.c.","All Other Travel Arrangement and Reservation Services",3654,70649,1746314279,0.06,0.06,0.1
+"7999","611620","Amusement & recreation services, n.e.c.","Sports and Recreation Instruction",6560,44527,539430267,0.1,0.04,0.03
+"7999","711190","Amusement & recreation services, n.e.c.","Other Performing Arts Companies",598,3735,115975462,0.01,0,0.01
+"7999","711219","Amusement & recreation services, n.e.c.","Other Spectator Sports",3360,22810,534052228,0.05,0.02,0.03
+"7999","711320","Amusement & recreation services, n.e.c.","Promoters of Performing Arts, Sports, and Similar Events without Facilities",1775,13831,385059141,0.03,0.01,0.02
+"7999","712190","Amusement & recreation services, n.e.c.","Nature Parks and Other Similar Institutions",1759,65484,1492072988,0.03,0.06,0.08
+"7999","713210","Amusement & recreation services, n.e.c.","Casinos (except Casino Hotels)",535,162849,3385604929,0.01,0.15,0.19
+"7999","713290","Amusement & recreation services, n.e.c.","Other Gambling Industries",1460,26137,429422013,0.02,0.02,0.02
+"7999","713920","Amusement & recreation services, n.e.c.","Skiing Facilities",336,29128,399382929,0.01,0.03,0.02
+"7999","713940","Amusement & recreation services, n.e.c.","Fitness and Recreational Sports Centers",21549,423106,5388239285,0.34,0.39,0.3
+"7999","713990","Amusement & recreation services, n.e.c.","All Other Amusement and Recreation Industries",15985,186762,2661083861,0.26,0.17,0.15
+"8011","621111","Offices & clinics of doctors of medicine","Offices of Physicians (except Mental Health Specialists)",175218,1614149,88050298911,0.92,0.9,0.92
+"8011","621112","Offices & clinics of doctors of medicine","Offices of Physicians, Mental Health Specialists",9423,39173,1920085586,0.05,0.02,0.02
+"8011","621491","Offices & clinics of doctors of medicine","HMO Medical Centers",1377,77701,3299730489,0.01,0.04,0.03
+"8011","621493","Offices & clinics of doctors of medicine","Freestanding Ambulatory Surgical and Emergency Centers",3605,53063,2428009401,0.02,0.03,0.03
+"8021","621210","Offices & clinics of dentists","Offices of Dentists",108731,630318,18355322297,1,1,1
+"8031","621111","Offices & clinics of doctors of osteopathy","Offices of Physicians (except Mental Health Specialists)",175218,1614149,88050298911,0.95,0.98,0.98
+"8031","621112","Offices & clinics of doctors of osteopathy","Offices of Physicians, Mental Health Specialists",9423,39173,1920085586,0.05,0.02,0.02
+"8041","621310","Offices & clinics of chiropractors","Offices of Chiropractors",28977,86256,1852279019,1,1,1
+"8042","621320","Offices & clinics of optometrists","Offices of Optometrists",16231,78430,1812591023,1,1,1
+"8043","621391","Offices & clinics of podiatrists","Offices of Podiatrists",7978,28612,772315065,1,1,1
+"8049","621330","Offices & clinics of health practitioners, n.e.c.","Offices of Mental Health Practitioners (except Physicians)",14133,54733,1526372399,0.42,0.23,0.21
+"8049","621340","Offices & clinics of health practitioners, n.e.c.","Offices of Physical, Occupational and Speech Therapists, and Audiologists",14597,159050,5037243757,0.43,0.66,0.69
+"8049","621399","Offices & clinics of health practitioners, n.e.c.","Offices of All Other Miscellaneous Health Practitioners",4877,25647,746630478,0.15,0.11,0.1
+"8062","622110","General medical & surgical hospitals","General Medical and Surgical Hospitals",6841,4511348,142781441924,1,1,1
+"8063","622210","Psychiatric hospitals","Psychiatric and Substance Abuse Hospitals",1819,270605,8162310561,1,1,1
+"8069","622110","Specialty hospitals, except psychiatric","General Medical and Surgical Hospitals",6841,4511348,142781441924,0.73,0.92,0.92
+"8069","622210","Specialty hospitals, except psychiatric","Psychiatric and Substance Abuse Hospitals",1819,270605,8162310561,0.19,0.05,0.05
+"8069","622310","Specialty hospitals, except psychiatric","Specialty (except Psychiatric and Substance Abuse) Hospitals",709,142567,4654384664,0.08,0.03,0.03
+"8071","621511","Medical laboratories","Medical Laboratories",4840,118294,4016973615,0.6,0.78,0.73
+"8071","621512","Medical laboratories","Diagnostic Imaging Centers",3264,34297,1477872157,0.4,0.22,0.27
+"8072","339116","Dental laboratories","Dental Laboratories",7824,43654,1106992809,1,1,1
+"8082","621610","Home health care services","Home Health Care Services",15984,749838,14181721946,1,1,1
+"8092","621492","Kidney dialysis centers","Kidney Dialysis Centers",1750,50895,1559581781,1,1,1
+"8093","621410","Specialty outpatient facilities, n.e.c.","Family Planning Centers",1547,25383,630957398,0.17,0.1,0.09
+"8093","621420","Specialty outpatient facilities, n.e.c.","Outpatient Mental Health and Substance Abuse Centers",5110,148847,3647858805,0.55,0.59,0.54
+"8093","621498","Specialty outpatient facilities, n.e.c.","All Other Outpatient Care Centers",2567,78174,2423563434,0.28,0.31,0.36
+"8099","541430","Health & allied services, n.e.c.","Graphic Design Services",14878,66325,2728980699,0.61,0.39,0.48
+"8099","541922","Health & allied services, n.e.c.","Commercial Photography",3943,13519,472787096,0.16,0.08,0.08
+"8099","621410","Health & allied services, n.e.c.","Family Planning Centers",1547,25383,630957398,0.06,0.15,0.11
+"8099","621991","Health & allied services, n.e.c.","Blood and Organ Banks",1212,41171,1122120527,0.05,0.24,0.2
+"8099","621999","Health & allied services, n.e.c.","All Other Miscellaneous Ambulatory Health Care Services",2659,24320,738579558,0.11,0.14,0.13
+"8111","541110","Legal services","Offices of Lawyers",162021,944453,47910467576,1,1,1
+"8231","514120","Legal services","Libraries and Archives",6173,143896,2901400530,1,1,1
+"8243","611420","Data processing schools","Computer Training",2628,23233,834965879,0.45,0.28,0.32
+"8243","611519","Data processing schools","Other Technical and Trade Schools",3228,59033,1736773923,0.55,0.72,0.68
+"8244","611410","Business & secretarial schools","Business and Secretarial Schools",530,13489,274561046,1,1,1
+"8249","611512","Vocational schools, n.e.c.","Flight Training",923,13695,381017270,0.18,0.17,0.16
+"8249","611513","Vocational schools, n.e.c.","Apprenticeship Training",1086,8500,209574941,0.21,0.1,0.09
+"8249","611519","Vocational schools, n.e.c.","Other Technical and Trade Schools",3228,59033,1736773923,0.62,0.73,0.75
+"8299","611430","Schools & educational services, n.e.c.","Professional and Management Development Training",5505,36789,1236520973,0.21,0.18,0.27
+"8299","611512","Schools & educational services, n.e.c.","Flight Training",923,13695,381017270,0.04,0.07,0.08
+"8299","611610","Schools & educational services, n.e.c.","Fine Arts Schools",7111,42627,559875487,0.27,0.21,0.12
+"8299","611630","Schools & educational services, n.e.c.","Language Schools",1019,12046,193641662,0.04,0.06,0.04
+"8299","611691","Schools & educational services, n.e.c.","Exam Preparation and Tutoring",2913,28037,389737722,0.11,0.14,0.09
+"8299","611692","Schools & educational services, n.e.c.","Automobile Driving Schools",1776,10093,145165272,0.07,0.05,0.03
+"8299","611699","Schools & educational services, n.e.c.","All Other Miscellaneous Schools and Instruction",2782,21449,483603504,0.11,0.11,0.11
+"8299","611710","Schools & educational services, n.e.c.","Educational Support Services",4195,36400,1157332312,0.16,0.18,0.25
+"8322","624110","Individual & family social services","Child and Youth Services",7189,144615,3099031942,0.18,0.17,0.19
+"8322","624120","Individual & family social services","Services for the Elderly and Persons with Disabilities",8695,267743,4168077249,0.22,0.32,0.26
+"8322","624190","Individual & family social services","Other Individual and Family Services",16484,316133,7072372808,0.41,0.38,0.44
+"8322","624210","Individual & family social services","Community Food Services",2775,27059,408216975,0.07,0.03,0.03
+"8322","624221","Individual & family social services","Temporary Shelters",2150,35855,624056789,0.05,0.04,0.04
+"8322","624229","Individual & family social services","Other Community Housing Services",1311,17270,341909360,0.03,0.02,0.02
+"8322","624230","Individual & family social services","Emergency and Other Relief Services",1510,24185,544134548,0.04,0.03,0.03
+"8331","624310","Job training & vocational rehabilitation services","Vocational Rehabilitation Services",10104,296688,5281500294,1,1,1
+"8351","624410","Child daycare services","Child Day Care Services",55347,594649,7281875870,1,1,1
+"8361","623220","Residential care","Residential Mental Health and Substance Abuse Facilities",4638,132980,2669572601,0.2,0.27,0.29
+"8361","623312","Residential care","Homes for the Elderly",12884,209540,3080674153,0.56,0.42,0.34
+"8361","623990","Residential care","Other Residential Care Facilities",5495,158486,3330773887,0.24,0.32,0.37
+"8399","813212","Social services, n.e.c.","Voluntary Health Organizations",2572,36616,1006698359,0.15,0.17,0.19
+"8399","813219","Social services, n.e.c.","Other Grantmaking and Giving Services",3505,51591,1405687639,0.2,0.23,0.26
+"8399","813311","Social services, n.e.c.","Human Rights Organizations",2942,39031,891360045,0.17,0.18,0.17
+"8399","813312","Social services, n.e.c.","Environment, Conservation and Wildlife Organizations",2519,23766,511023110,0.14,0.11,0.1
+"8399","813319","Social services, n.e.c.","Other Social Advocacy Organizations",5970,70755,1489723957,0.34,0.32,0.28
+"8412","712110","Museums & art galleries","Museums",2961,69625,1597879710,0.86,0.85,0.87
+"8412","712120","Museums & art galleries","Historical Sites",495,12054,234902162,0.14,0.15,0.13
+"8422","712130","Arboreta & botanical or zoological gardens","Zoos and Botanical Gardens",441,22769,447124379,0.2,0.26,0.23
+"8422","712190","Arboreta & botanical or zoological gardens","Nature Parks and Other Similar Institutions",1759,65484,1492072988,0.8,0.74,0.77
+"8611","813910","Business associations","Business Associations",19013,116369,4342538521,1,1,1
+"8621","813920","Professional membership organizations","Professional Organizations",5557,60781,2489095890,1,1,1
+"8641","624110","Civic, social, & fraternal associations","Child and Youth Services",7189,144615,3099031942,0.14,0.24,0.32
+"8641","813410","Civic, social, & fraternal associations","Civic and Social Organizations",30508,384804,5076406821,0.58,0.63,0.52
+"8641","813990","Civic, social, & fraternal associations","Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",14988,83090,1574834172,0.28,0.14,0.16
+"8699","561599","Membership organizations, n.e.c.","All Other Travel Arrangement and Reservation Services",3654,70649,1746314279,0.05,0.1,0.13
+"8699","813312","Membership organizations, n.e.c.","Environment, Conservation and Wildlife Organizations",2519,23766,511023110,0.04,0.04,0.04
+"8699","813410","Membership organizations, n.e.c.","Civic and Social Organizations",30508,384804,5076406821,0.43,0.57,0.38
+"8699","813910","Membership organizations, n.e.c.","Business Associations",19013,116369,4342538521,0.27,0.17,0.33
+"8699","813990","Membership organizations, n.e.c.","Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",14988,83090,1574834172,0.21,0.12,0.12
+"8711","541330","Engineering services","Engineering Services",51296,735568,36860349853,1,1,1
+"8712","541310","Architectural services","Architectural Services",20153,149671,6844736027,1,1,1
+"8713","541360","Surveying services","Geophysical Surveying and Mapping Services",1664,13130,506163966,0.17,0.21,0.26
+"8713","541370","Surveying services","Surveying and Mapping (except Geophysical) Services",8404,49939,1414834748,0.83,0.79,0.74
+"8721","541211","Accounting, auditing, & bookkeeping services","Offices of Certified Public Accountants",52762,357078,15163657005,0.58,0.49,0.51
+"8721","541214","Accounting, auditing, & bookkeeping services","Payroll Services",4821,138298,6107596474,0.05,0.19,0.21
+"8721","541219","Accounting, auditing, & bookkeeping services","Other Accounting Services",34049,227567,8379004932,0.37,0.31,0.28
+"8731","541710","Commercial physical & biological research","Research and Development in the Physical, Engineering, and Life Sciences",12709,426391,24533561819,1,1,1
+"8732","541720","Commercial economic, sociological, & educational research","Research and Development in the Social Sciences and Humanities",4285,67557,2674219821,0.47,0.38,0.44
+"8732","541910","Commercial economic, sociological, & educational research","Marketing Research and Public Opinion Polling",4757,112385,3447954296,0.53,0.62,0.56
+"8733","541710","Noncommercial research organizations","Research and Development in the Physical, Engineering, and Life Sciences",12709,426391,24533561819,0.75,0.86,0.9
+"8733","541720","Noncommercial research organizations","Research and Development in the Social Sciences and Humanities",4285,67557,2674219821,0.25,0.14,0.1
+"8734","541380","Testing laboratories","Testing Laboratories",7856,118329,5068363604,1,1,1
+"8741","233210","Management services","Single Family Housing Construction",129594,507956,14441267767.5,0.44,0.21,0.17
+"8741","233220","Management services","Multifamily Housing Construction",51164.3333333333,310186,10334451224.1667,0.18,0.13,0.12
+"8741","233310","Management services","Manufacturing and Industrial Building Construction",17488,241757.333333333,9169976791.66667,0.06,0.1,0.11
+"8741","233320","Management services","Commercial and Institutional Building Construction",14936.3333333333,178430,6665266271.66667,0.05,0.07,0.08
+"8741","234110","Management services","Highway and Street Construction",8572.5,202007.5,7097473978.5,0.03,0.08,0.08
+"8741","234120","Management services","Bridge and Tunnel Construction",13533.5,257474.5,9208312155,0.05,0.11,0.11
+"8741","234910","Management services","Water, Sewer, and Pipeline Construction",7836.5,117462.5,4067867575,0.03,0.05,0.05
+"8741","234920","Management services","Power and Communication Transmission Line Construction",3205,48926,1615674553,0.01,0.02,0.02
+"8741","234930","Management services","Industrial Nonbuilding Structure Construction",7033.66666666667,148951.833333333,5432897345,0.02,0.06,0.06
+"8741","234990","Management services","All Other Heavy Construction",14072.1666666667,199558.333333333,7370903999.5,0.05,0.08,0.09
+"8741","561110","Management services","Office Administrative Services",23810,207985,10294086848,0.08,0.09,0.12
+"8742","541611","Management consulting services","Administrative Management and General Management Consulting Services",35196,189659,11886547787,0.51,0.48,0.53
+"8742","541612","Management consulting services","Human Resources and Executive Search Consulting Services",12546,90106,4935546859,0.18,0.23,0.22
+"8742","541613","Management consulting services","Marketing Consulting Services",13361,60465,3108012684,0.2,0.15,0.14
+"8742","541614","Management consulting services","Process, Physical Distribution, and Logistics Consulting Services",7376,53850,2635729644,0.11,0.14,0.12
+"8743","541820","Public relations services","Public Relations Agencies",7490,45489,2557401731,1,1,1
+"8744","561210","Facilities support management services","Facilities Support Services",1593,91620,2849442666,1,1,1
+"8748","541618","Business consulting services, n.e.c.","Other Management Consulting Services",19908,73430,4069727810,0.43,0.23,0.37
+"8748","541690","Business consulting services, n.e.c.","Other Scientific and Technical Consulting Services",6610,29147,1349847117,0.14,0.09,0.12
+"8748","561990","Business consulting services, n.e.c.","All Other Support Services",15524,177034,4470746982,0.34,0.56,0.4
+"8748","611710","Business consulting services, n.e.c.","Educational Support Services",4195,36400,1157332312,0.09,0.12,0.1
+"8999","512210","Services, n.e.c.","Record Production",728,5358,300033333,0.02,0.02,0.02
+"8999","512220","Services, n.e.c.","Integrated Record Production/Distribution",338,6633,438991222,0.01,0.03,0.03
+"8999","512230","Services, n.e.c.","Music Publishers",850,5129,246565300,0.02,0.02,0.02
+"8999","514199","Services, n.e.c.","All Other Information Services",1424,26953,1084922990,0.03,0.11,0.08
+"8999","541612","Services, n.e.c.","Human Resources and Executive Search Consulting Services",12546,90106,4935546859,0.3,0.37,0.37
+"8999","541620","Services, n.e.c.","Environmental Consulting Services",7036,45274,1973132284,0.17,0.19,0.15
+"8999","541690","Services, n.e.c.","Other Scientific and Technical Consulting Services",6610,29147,1349847117,0.16,0.12,0.1
+"8999","711510","Services, n.e.c.","Independent Artists, Writers, and Performers",12383,33108,2878078792,0.3,0.14,0.22

@@ -1,133 +1,194 @@
-# Deployment: CI/CD and Terraform Auto-Apply
+# Deployment: CI/CD via AWS CDK
 
 This describes how code changes become running infrastructure across the four
 Euclidean repos (`AlphaModel`, `DataIngressModel`, `EuclideanInfra`,
-`UniverseModel`) and this outer workspace. There is no manual deploy step for
-any of them — a push to `main` is the entire deploy trigger.
+`UniverseModel`), the two newer repos (`ExecutionModel`,
+`PortfolioConstructionModel`), and this outer workspace. There is no manual
+deploy step for any of them — a push to `main` is the entire deploy trigger.
 
-## The two-track model
+**As of 2026-07-06, all six repos deploy via AWS CDK (Python), not Terraform
+Cloud.** Every live resource was adopted into CloudFormation with `cdk import`
+(zero recreation); all six Terraform Cloud workspaces are now emptied,
+auto-apply-disabled, and locked. See `cdk-migration/` at the workspace root
+for the migration tooling (import-mapping generator, import+converge recipe,
+TFC-release script) if you ever need to understand how the cutover was done.
 
-Every repo with infrastructure runs **two independent pipelines** off the same
-push, and both must succeed for a change to actually take effect:
+## The single-track model (replaces the old two-track TFC design)
 
-1. **GitHub Actions (code track)** — builds container images / packages Lambda
-   zips and pushes the *artifact* (ECR image tag, S3 zip). It never touches
-   AWS resource definitions (IAM roles, schedules, ECR repos themselves).
-2. **Terraform Cloud (infra track)** — a Terraform Cloud workspace is
-   VCS-connected directly to each repo (no `cloud {}`/backend block exists in
-   any repo's `.tf` files — the connection lives entirely in Terraform Cloud's
-   own workspace settings). Push to `main` triggers an auto-plan, and
-   auto-apply is enabled, so the plan applies without a human clicking
-   anything.
+Every repo with infrastructure runs **one linear GitHub Actions pipeline** per
+push to `main`:
 
-These two tracks are unordered relative to each other. That has one sharp
-edge, described below.
+1. **Build** — package the Lambda zip / build and push the container image to
+   ECR (unchanged from before).
+2. **`cdk deploy`** — synthesizes and applies the repo's `infra/` CDK app,
+   passing `-c imageTag=$GITHUB_SHA` so the freshly-pushed image tag flows
+   straight into the Lambda/ECS resource definitions in the same step.
 
-## The bootstrap race (first deploy of a new Lambda)
+Because build and deploy are now sequential steps in the *same* job (instead
+of two independently-triggered systems — GitHub Actions and a Terraform Cloud
+VCS-connected workspace), **the old "bootstrap race" (a Terraform apply
+running before the image existed) can no longer happen.** That failure mode
+documented in earlier revisions of this file is obsolete.
 
-Lambda resources are defined with `image_uri = "<ecr-repo>:latest"`. If
-Terraform Cloud's apply runs *before* CI has ever pushed an image to that ECR
-repo, `terraform apply` fails outright — you cannot create a Lambda function
-against a tag that doesn't exist yet. This is a known, expected failure mode
-the first time a new Lambda/image is introduced (e.g. when the IBES Lambda
-image was added in this session): push once, let CI build+push the image,
-then re-run (or wait for) the next Terraform Cloud apply. After that first
-successful apply, every subsequent push updates the same function in place and
-the race no longer applies (the function already exists; CI's
-`update-function-code` call keeps it warm independent of Terraform).
+## Per-repo CDK app layout (`infra/`)
+
+```
+<repo>/infra/
+  app.py                 # cdk.App(); instantiates the repo's stack(s)
+  cdk.json                # app = "python3 app.py"; context (account/region)
+  requirements.txt        # aws-cdk-lib, constructs
+  stacks/
+    <name>_stack.py       # one Stack subclass per stack
+  import/
+    mapping.json          # historical: used once for the cdk import cutover
+```
+
+`DataIngressModel` is the one exception worth knowing about: it's
+**spec-driven**. `infra/specs/*.json` holds the full live estate (extracted
+once from the old Terraform state by `infra/tools/extract_specs.py`), and five
+stacks loop over those specs instead of hardcoding each resource:
+
+| Stack | CFN stack name | Contents |
+|---|---|---|
+| `EuclideanDataIngressShared` | `euclidean-data-ingress-shared` | 6 ECR repos, 2 shared IAM roles, ECS log groups, 5 Fargate task defs |
+| `EuclideanDataIngressMarketData` | `euclidean-data-ingress-market-data` | ~44 dispatcher Lambdas + their EventBridge schedules |
+| `EuclideanDataIngressIbes` | `euclidean-data-ingress-ibes` | 15 IBES Lambdas + schedules |
+| `EuclideanDataIngressPredictors` | `euclidean-data-ingress-predictors-lambdas` | 133 predictor Lambdas |
+| `EuclideanDataIngressEdgar` | `euclidean-data-ingress-edgar` | poller/worker/aggregator Lambdas, SNS fan-out, SQS queues+DLQs, event-source mappings |
+
+Splitting across 5 stacks keeps each well under CloudFormation's 500-resource
+hard cap and shrinks blast radius per deploy. `deploy-ecs.yml`'s final step is
+`cdk deploy --all -c imageTag=$GITHUB_SHA`, which updates all five in one CI
+run.
+
+**Secrets** (FRED/FINRA/BEA/Refinitiv/OpenRouter API keys) never live in
+`specs/*.json` — each is a `{"__env__": "VAR_NAME"}` reference resolved from
+`os.environ` at synth time. In CI these come from GitHub Actions secrets; for
+a local `cdk diff`/`cdk deploy`, `source infra/specs/secrets.local.env`
+(gitignored) first. Synth fails fast with a clear error if a referenced
+secret is unset, rather than silently deploying a function with a blanked
+credential.
+
+## The CDK bootstrap role trust chain
+
+Every repo's CI runs as the `github-cicd` IAM user (access keys, not yet
+migrated to GitHub's OIDC provider — `AWS_ROLE_TO_ASSUME` is defined in the
+workflow but unset as a secret in every repo today). For `cdk deploy` and any
+synth-time SSM parameter lookup (`ssm.StringParameter.value_from_lookup`) to
+work, `github-cicd` must be able to assume the CDK bootstrap roles
+(`cdk-hnb659fds-{deploy,file-publishing,image-publishing,lookup,cfn-exec}-role-954976294836-us-east-1`).
+That permission is granted by a **standalone `AWS::IAM::ManagedPolicy`**
+(`euclidean-github-cicd-cdk-assume-roles`, defined in `EuclideanInfra`'s stack
+— `github-cicd`'s *inline* policy budget was already at IAM's 2048-byte cap
+from two older policies, hence the separate managed policy). Without this,
+every repo's `cdk deploy` fails at synth with `ssm:GetParameter ... not
+authorized` or `no credentials have been configured`.
 
 ## Per-repo breakdown
 
 ### DataIngressModel
 
-**GitHub Actions** (`.github/workflows/deploy-ecs.yml`, one job, several steps):
-- Builds and pushes 3 ECS Fargate images: `Shipping/ECS/data/Dockerfile`
-  (`euclidean/data-ingress-data`), `Shipping/ECS/refinitiv/Dockerfile`
-  (`euclidean/data-ingress-refinitiv`), `Shipping/ECS/predictors/Dockerfile`
-  (`euclidean/data-ingress-predictors`).
+**GitHub Actions** (`.github/workflows/deploy-ecs.yml`):
+- Builds and pushes 3 ECS Fargate images (`euclidean/data-ingress-data`,
+  `euclidean/data-ingress-refinitiv`, `euclidean/data-ingress-predictors`).
 - Builds and pushes the **market-data Lambda image** (`euclidean-market-data`):
-  stages a curated list of `DataDownloads/*.py` + `utils/*.py` + `config.py`
-  into `lambdas/market_data/` as the build context, builds, pushes, then loops
-  over every `euclidean-md-*` Lambda function calling
-  `aws lambda update-function-code` (tolerant of `ResourceNotFoundException`
-  for functions Terraform hasn't created yet).
-- Builds and pushes the **IBES Lambda image** (`euclidean-ibes`): same
-  stage/build/push/refresh pattern, scoped to the 5 IBES scripts.
-- Builds and pushes the **daily-predictor Lambda image**
-  (`euclidean-predictors`): stages `Predictors/`, `utils/`, `SignalMasterTable.py`,
-  `config.py`; pushes only if the ECR repo already exists (Terraform Cloud owns
-  creating it, CI can't); refreshes all 67 `euclidean-pred-*` functions.
-- Registers new ECS task-definition revisions for the 3 Fargate task families
-  (`euclidean-data-ingress-{downloads,compustat-annual,compustat-quarterly,refinitiv,predictors}`)
-  pointing at the freshly pushed image digests.
+  stages a curated list of `DataDownloads/*.py` + `utils/*.py` + `config.py`,
+  builds, pushes `:latest` + `:$GITHUB_SHA`, then loops over every
+  `euclidean-md-*` function calling `aws lambda update-function-code`
+  (tolerant of both `ResourceNotFoundException` — function not deployed yet —
+  and `AccessDeniedException` — a transient ECR-pull-permission propagation
+  race right after a fresh push).
+- Same pattern for the **IBES Lambda image** (`euclidean-ibes`) and the
+  **daily-predictor Lambda image** (`euclidean-predictors`).
+- **`cdk deploy --all -c imageTag=$GITHUB_SHA`** — applies all five CDK
+  stacks (see table above), which registers new ECS task-definition revisions
+  and wires the newly-pushed image tags into the CDK-managed Lambda resources.
 
-**Terraform Cloud**: creates/updates the ECR repos, the ~90 Lambda function
-resources across `market_data_lambdas.tf`, `ibes_lambdas.tf`,
-`predictor_lambdas.tf`, `edgar_ai_worker.tf`, `edgar_ai_aggregator.tf`,
-`edgar_filing_poller.tf`; their IAM roles; every EventBridge schedule; the ECS
-task definitions/execution+task roles; SQS queues + DLQs + redrive policies
-(`sqs.tf`, `edgar_fanout.tf`).
+Note the market-data/IBES functions are intentionally pinned to `:latest`
+(matching the pre-migration behavior and the parallel
+`update-function-code` loop), while the ECS task-definition images and the
+predictor Lambdas are pinned to the per-commit `$GITHUB_SHA` tag by the CDK
+stacks.
 
 ### AlphaModel
 
-Small repo, single Lambda. `.github/workflows/deploy-ecs.yml` (name is a
-holdover, it does not touch ECS) builds the root `Dockerfile` → pushes to
-`euclidean/alpha-model` → calls `aws lambda update-function-code` on the one
-function. Terraform (`lambda.tf`, `ecr.tf`, `iam.tf`) owns the function
-resource, its role, and the ECR repo. There is no EventBridge schedule here —
-this Lambda is invoked by the monthly decision Step Function
-(`EuclideanInfra/terraform/step_function.tf`), not on a cron of its own.
+Single Lambda. `.github/workflows/deploy-infra.yml` builds the root
+`Dockerfile` → pushes to `euclidean/alpha-model` → `cdk deploy
+-c imageTag=$GITHUB_SHA`, which points `DockerImageFunction` at the new tag
+and updates the function in the same step.
 
-*(Note: this repo also has an abandoned `Shipping/ECS/` subtree from an
-earlier planned ECS deployment target that was never wired to any Terraform
-resource or CI step — removed as dead code; see git history.)*
+### ExecutionModel
+
+Same shape as AlphaModel: one Lambda, `deploy-infra.yml`, `cdk deploy
+-c imageTag=$GITHUB_SHA`.
+
+### PortfolioConstructionModel
+
+One ECS Fargate task, invoked on-demand by the monthly decision Step Function
+(not on its own schedule). `deploy-infra.yml` builds the image, then
+`cdk deploy -c imageTag=$GITHUB_SHA -c alpaca_api_key=... -c
+alpaca_api_secret=...` registers a new task-definition revision under the
+same family — CDK deliberately does **not** import the task definition itself
+(immutable revisions; each converge creates a fresh one, no data loss, no
+disruption to the family other repos reference by name).
 
 ### UniverseModel
 
-Two Lambdas, both **zip-packaged** (`archive_file` data source +
-`filename`/`source_code_hash` on `aws_lambda_function`), not container images.
-This means there is **no CI build step at all** for these — Terraform Cloud
-zips the Python source directly from the repo checkout and uploads it on
-`terraform apply`. Push to `main` → Terraform Cloud applies → new code is live.
-Both functions are scheduled daily 05:30 UTC via `universe_lambda.tf`'s
-`aws_cloudwatch_event_rule`/`_target`.
-
-*(Note: this repo previously also had an ECS/Fargate task definition + a
-`build-and-push-ecr.yml` CI workflow for it, with no EventBridge/Step Function
-ever invoking that task — confirmed fully orphaned and removed.)*
+Two Lambdas, **zip-packaged** (`_lambda.Code.from_asset`), not container
+images — no image build step. `deploy-infra.yml` just runs `cdk deploy`,
+which zips `lambdas/<name>/` as a CDK asset and uploads it directly, same
+effect as Terraform's old `archive_file` + apply.
 
 ### EuclideanInfra
 
-No Lambdas or containers of its own — this is the shared substrate: VPC,
-subnets, security groups, the shared ECS cluster (`aws_ecs_cluster.main`), the
-monthly decision Step Function (`step_function.tf`), and cross-repo scheduled
-ECS RunTask triggers for task definitions that live in sibling repos (e.g.
-`usaspending_ecs.tf`, `ibes_eps_ecs.tf` — both reference DataIngressModel's
-task families by naming convention: `${var.project_name}-<name>${local.env_suffix}`,
-and grant `iam:PassRole`/`ecs:RunTask` scoped to that ARN pattern). No CI
-pipeline exists here — it's Terraform-only, auto-applied on push.
+The foundation: S3 data bucket, VPC/subnets/NAT/IGW/route-tables, the shared
+ECS cluster, the SNS notifications topic, the monthly decision Step Function
+(embedded verbatim from the live definition), CloudWatch-Logs→Firehose→S3
+archival, the `github-cicd` CDK-assume-roles policy (see above), and the 8
+SSM parameters that form the cross-repo contract. `deploy-infra.yml` is a
+plain `cdk deploy` — no image to build. **Left deliberately unmanaged in AWS**
+(documented in the stack's docstring): the SNS email/SMS subscriptions
+(CloudFormation cannot import a confirmed-out-of-band email subscription),
+routes + route-table associations, the IGW-to-VPC attachment, the 5 S3
+folder-marker objects, and the operator IAM user's policy attachment.
 
 ## Cross-repo naming convention
 
-Every repo constructs AWS resource names the same way:
-`${var.project_name}-<resource>${local.env_suffix}`, where `env_suffix` is
-empty for prod and `-<environment>` for any other `DEPLOY_ENVIRONMENT`. This is
-what lets `EuclideanInfra` (and the Step Function inside it) reference Lambda
-ARNs and ECS task families defined in sibling repos purely by string
-construction — there is no Terraform remote-state data source linking the
-repos together. **This is also the sharp edge from the memory note on
-cross-repo SSM-parameter ordering**: shared values (S3 bucket name/ARN, VPC id,
-subnet ids, security group id, SNS topic ARN) are published by
-`EuclideanInfra` as SSM parameters and read by the other repos via
-`data "aws_ssm_parameter"` — if `EuclideanInfra`'s apply hasn't run yet when a
-sibling repo's apply runs, the sibling's plan can fail or read a stale value.
-There's no ordering guarantee between the four Terraform Cloud workspaces.
+Unchanged from the Terraform era: every repo constructs AWS resource names as
+`euclidean-<resource>` (no more `-dev` suffix; single-environment now). This
+is what lets `EuclideanInfra`'s Step Function and EventBridge rules reference
+Lambda ARNs and ECS task families defined in sibling repos purely by string
+construction — there's still no CloudFormation cross-stack reference linking
+the repos together, same as there was no Terraform remote-state link before.
+
+**Cross-repo SSM contract** (unchanged in shape, now CDK-native): SSM
+`StringParameter`s written by `EuclideanInfra`
+(`/euclidean/{s3_bucket_name,s3_bucket_arn,vpc_id,private_subnet_ids,
+public_subnet_ids,ecs_cluster_arn,ecs_security_group_id,
+sns_notifications_arn}`), read by every other repo's stack via
+`ssm.StringParameter.value_from_lookup()`. That lookup is cached in each
+repo's `infra/cdk.context.json` (gitignored — re-read fresh on every synth,
+so this isn't a stale-cache risk the way a committed lockfile would be).
+Because these parameters are the **same physical SSM parameters that existed
+under Terraform** (imported, never recreated), the cross-repo contract never
+broke during the migration — repos could and did cut over in any order.
 
 ## This outer workspace repo
 
 `/workspaces/EuclideanWorkspace` itself is a separate git repo
-(`git@github.com:aepodrez/EuclideanWorkspace.git`) with the four repos above
-checked out as git submodules under `Euclidean/`. It has no CI/CD and no
-Terraform of its own — it's purely the local dev container + cross-cutting
-reference docs (this file included). Committing here does not trigger any
-deploy; the submodule pointers only move when someone explicitly bumps them.
+(`git@github.com:aepodrez/EuclideanWorkspace.git`) with the six repos above
+checked out as git submodules under `Euclidean/`. It has no CI/CD of its own —
+it's purely the local dev container + cross-cutting reference docs (this file
+included) + the one-time `cdk-migration/` tooling. Committing here does not
+trigger any deploy; the submodule pointers only move when someone explicitly
+bumps them.
+
+## Terraform Cloud (retired, not yet decommissioned)
+
+All six TFC workspaces are emptied (`terraform state rm` on every managed
+resource), `auto-apply` disabled, and locked — they cannot apply anything even
+if someone pushed to a workspace's connected branch. They have **not** been
+deleted, and the TFC subscription has not been cancelled — both are pending,
+low-urgency manual steps once you're confident the CDK cutover is fully
+stable. The TFC API token lives in `~/.terraform.d/credentials.tfrc.json` in
+the dev container; revoke it last, after cancelling the subscription.

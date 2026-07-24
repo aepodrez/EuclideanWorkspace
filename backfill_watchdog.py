@@ -23,6 +23,12 @@ WATCHDOG_LOG = Path("/tmp/backfill_watchdog.log")
 BACKFILL_PID_FILE = Path("/tmp/backfill_ollama.pid")
 WATCHDOG_PID_FILE = Path("/tmp/backfill_watchdog.pid")
 LOCK_FILE = Path("/tmp/backfill_watchdog.lock")
+RUN_STATE_FILE = Path(
+    os.environ.get(
+        "BACKFILL_RUN_STATE_FILE",
+        str(WORKSPACE / "local-runs/backfill_reprocess_state.json"),
+    )
+)
 
 MODEL = "mlx-community/Qwen3-8B-4bit"
 MLX_BASE_URL = "http://host.docker.internal:8080"
@@ -86,7 +92,15 @@ def _mlx_status() -> str:
 
 
 def _last_run_completed() -> bool:
-    """Return true when the most recent backfill log tail records completion."""
+    """Return true only when the checkpointed reprocess run is complete."""
+    if RUN_STATE_FILE.exists():
+        try:
+            state = json.loads(RUN_STATE_FILE.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return False
+        return state.get("status") == "complete"
+
+    # Backward-compatible fallback for non-checkpointed runs.
     if not BACKFILL_LOG.exists():
         return False
     try:

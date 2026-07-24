@@ -32,6 +32,7 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Optional
 
 import boto3
@@ -78,6 +79,10 @@ def _next_endpoint() -> str:
 PROGRESS_FILE  = "/tmp/backfill_progress.jsonl"
 QUEUE_CACHE    = "/tmp/backfill_queue.json"
 QUEUE_CACHE_S3 = "backfill/queue_cache.json"
+RUN_STATE_FILE = os.environ.get(
+    "BACKFILL_RUN_STATE_FILE",
+    str(Path(__file__).resolve().parent / "local-runs/backfill_reprocess_state.json"),
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -543,6 +548,96 @@ _SKIP_ACCESSIONS: set[str] = {
 # Used to overwrite the whole historical panel after a mapper schema change (new
 # fields). Default False keeps the resume-and-skip behaviour.
 _REPROCESS: bool = False
+_ACTIVE_RUN_ID: str = ""
+
+
+def _work_keys(company: dict, filing: dict) -> tuple[tuple[str, str, str], tuple[str, str, str]]:
+    """Return exact-accession and legacy report-date checkpoint keys."""
+    cik = str(company.get("cik", "")).lstrip("0") or "0"
+    form_type = str(filing.get("form_type", ""))
+    accession = str(filing.get("accession_number", ""))
+    report_date = str(filing.get("report_date", ""))
+    return (cik, form_type, accession), (cik, form_type, report_date)
+
+
+def _load_run_state() -> dict:
+    try:
+        with open(RUN_STATE_FILE, encoding="utf-8") as handle:
+            state = json.load(handle)
+    except FileNotFoundError:
+        return {}
+    if not isinstance(state, dict):
+        raise ValueError(f"Backfill run state must be a JSON object: {RUN_STATE_FILE}")
+    return state
+
+
+def _write_run_state(state: dict) -> None:
+    path = Path(RUN_STATE_FILE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    temporary.replace(path)
+
+
+def _parse_timestamp(value: str) -> datetime | None:
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _load_completed_checkpoints(state: dict) -> tuple[set[tuple[str, str, str]], set[tuple[str, str, str]]]:
+    """Load successful work from this reprocess run, including legacy progress rows."""
+    exact: set[tuple[str, str, str]] = set()
+    legacy: set[tuple[str, str, str]] = set()
+    started_at = _parse_timestamp(str(state.get("started_at", "")))
+    run_id = str(state.get("run_id", ""))
+    if not os.path.exists(PROGRESS_FILE):
+        return exact, legacy
+
+    with open(PROGRESS_FILE, encoding="utf-8") as handle:
+        for line in handle:
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if row.get("status") not in ("ok", "skipped"):
+                continue
+            row_time = _parse_timestamp(str(row.get("ts", "")))
+            if started_at and (not row_time or row_time < started_at):
+                continue
+            row_run_id = str(row.get("run_id", ""))
+            if row_run_id and run_id and row_run_id != run_id:
+                continue
+            cik = str(row.get("cik", "")).lstrip("0") or "0"
+            form_type = str(row.get("form_type", ""))
+            accession = str(row.get("accession", ""))
+            report_date = str(row.get("report_date", ""))
+            if accession:
+                exact.add((cik, form_type, accession))
+            elif report_date:
+                legacy.add((cik, form_type, report_date))
+    return exact, legacy
+
+
+def _deduplicate_work_items(
+    work_items: list[tuple[dict, dict]],
+) -> tuple[list[tuple[dict, dict]], int]:
+    """Keep one queue item per filing accession, preserving queue order."""
+    unique: list[tuple[dict, dict]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for company, filing in work_items:
+        exact_key, _ = _work_keys(company, filing)
+        if exact_key in seen:
+            continue
+        seen.add(exact_key)
+        unique.append((company, filing))
+    return unique, len(work_items) - len(unique)
 
 
 def _process_filing(company: dict, filing: dict) -> dict:
@@ -555,7 +650,11 @@ def _process_filing(company: dict, filing: dict) -> dict:
 
     if accession in _SKIP_ACCESSIONS:
         log.info("[%s] %s accession %s in skip list — skipping", ticker, form_type, accession)
-        return {"ticker": ticker, "cik": cik, "form_type": form_type, "status": "skipped"}
+        return {
+            "ticker": ticker, "cik": cik, "form_type": form_type,
+            "accession": accession, "report_date": filing.get("report_date", ""),
+            "status": "skipped",
+        }
 
     # If report_date is known (SQS messages include it), check S3 before calling LLM.
     # Skip only if the parquet exists AND the accession matches — if accession differs
@@ -571,7 +670,11 @@ def _process_filing(company: dict, filing: dict) -> dict:
                 existing_accession = ""
             if existing_accession == accession:
                 log.info("[%s] %s %s already in S3 (same accession) — skipping", ticker, form_type, report_date_known)
-                return {"ticker": ticker, "cik": cik, "form_type": form_type, "status": "skipped"}
+                return {
+                    "ticker": ticker, "cik": cik, "form_type": form_type,
+                    "accession": accession, "report_date": report_date_known,
+                    "status": "skipped",
+                }
             log.info("[%s] %s %s accession changed — reprocessing", ticker, form_type, report_date_known)
     # The mapper fetches metadata internally; we check S3 after building the key.
     t0 = time.time()
@@ -586,7 +689,11 @@ def _process_filing(company: dict, filing: dict) -> dict:
         )
     except Exception as exc:
         log.error("[%s] %s %s FAILED: %s", ticker, form_type, accession, exc)
-        return {"ticker": ticker, "cik": cik, "form_type": form_type, "status": "error", "error": str(exc)}
+        return {
+            "ticker": ticker, "cik": cik, "form_type": form_type,
+            "accession": accession, "report_date": filing.get("report_date", ""),
+            "status": "error", "error": str(exc),
+        }
 
     row["_accession"] = accession
     report_date = row.get("datadate", "unknown")
@@ -636,12 +743,19 @@ def _process_filing(company: dict, filing: dict) -> dict:
     except Exception as exc:
         log.warning("[%s] Failed to store mapping insight: %s", ticker, exc)
 
-    return {"ticker": ticker, "cik": cik, "form_type": form_type, "status": "ok", "report_date": report_date}
+    return {
+        "ticker": ticker, "cik": cik, "form_type": form_type,
+        "accession": accession, "status": "ok", "report_date": report_date,
+    }
 
 
 def _log_progress(result: dict) -> None:
     with open(PROGRESS_FILE, "a") as f:
-        f.write(json.dumps({**result, "ts": datetime.now().isoformat()}) + "\n")
+        f.write(json.dumps({
+            **result,
+            "run_id": _ACTIVE_RUN_ID,
+            "ts": datetime.now(timezone.utc).isoformat(),
+        }) + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -722,9 +836,30 @@ def main():
     args = parser.parse_args()
 
     global _REPROCESS
+    global _ACTIVE_RUN_ID
     _REPROCESS = args.reprocess
     if _REPROCESS:
         log.info("REPROCESS mode: existing parquets will be overwritten")
+        state = _load_run_state()
+        if state.get("status") == "active":
+            _ACTIVE_RUN_ID = str(state.get("run_id", ""))
+            log.info(
+                "RESUME mode: run_id=%s started_at=%s state=%s",
+                _ACTIVE_RUN_ID, state.get("started_at"), RUN_STATE_FILE,
+            )
+        else:
+            now = datetime.now(timezone.utc).isoformat()
+            _ACTIVE_RUN_ID = f"reprocess-{now}"
+            state = {
+                "version": 1,
+                "run_id": _ACTIVE_RUN_ID,
+                "started_at": now,
+                "status": "active",
+            }
+            _write_run_state(state)
+            log.info("Started checkpointed reprocess run_id=%s state=%s", _ACTIVE_RUN_ID, RUN_STATE_FILE)
+    else:
+        state = {}
 
     if args.from_sqs:
         _run_from_sqs(workers=args.workers)
@@ -807,6 +942,27 @@ def main():
                 filtered.append((company, filing))
         work_items = filtered
 
+    work_items, duplicate_count = _deduplicate_work_items(work_items)
+    if duplicate_count:
+        log.info("Queue deduplication: removed %d duplicate accession entries", duplicate_count)
+
+    if _REPROCESS:
+        exact_done, legacy_done = _load_completed_checkpoints(state)
+        original_count = len(work_items)
+        work_items = [
+            (company, filing)
+            for company, filing in work_items
+            if (
+                _work_keys(company, filing)[0] not in exact_done
+                and _work_keys(company, filing)[1] not in legacy_done
+            )
+        ]
+        resumed_count = original_count - len(work_items)
+        log.info(
+            "Checkpoint resume: %d completed filings skipped; %d filings remain",
+            resumed_count, len(work_items),
+        )
+
     nemotron_workers = getattr(args, "nemotron_workers", 0)
     total_workers    = args.workers + nemotron_workers
     if nemotron_workers and not OPENROUTER_API_KEY:
@@ -839,6 +995,8 @@ def main():
                     "ticker":    company["ticker"],
                     "cik":       company["cik"],
                     "form_type": filing["form_type"],
+                    "accession": filing.get("accession_number", ""),
+                    "report_date": filing.get("report_date", ""),
                     "status":    "error",
                     "error":     str(exc),
                 }
@@ -856,6 +1014,10 @@ def main():
 
     log.info("Done. Written=%d  Skipped=%d  Errors=%d", done, skipped, errors)
     log.info("Progress log: %s", PROGRESS_FILE)
+    if _REPROCESS and errors == 0:
+        state["status"] = "complete"
+        state["completed_at"] = datetime.now(timezone.utc).isoformat()
+        _write_run_state(state)
 
 
 if __name__ == "__main__":

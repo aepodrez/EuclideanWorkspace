@@ -11,17 +11,21 @@ from pathlib import Path
 import signal
 import subprocess
 import threading
+import time
 from datetime import datetime, timezone
 from urllib.request import urlopen
 
 
 WORKSPACE = Path(__file__).resolve().parent
 BACKFILL_SCRIPT = WORKSPACE / "backfill_ollama.py"
+REFLECTION_FEEDBACK_SCRIPT = WORKSPACE / "reflection_feedback.py"
 PROGRESS_FILE = Path("/tmp/backfill_progress.jsonl")
 BACKFILL_LOG = Path("/tmp/backfill_ollama.log")
 WATCHDOG_LOG = Path("/tmp/backfill_watchdog.log")
 BACKFILL_PID_FILE = Path("/tmp/backfill_ollama.pid")
 WATCHDOG_PID_FILE = Path("/tmp/backfill_watchdog.pid")
+MLX_PID_FILE = Path("/tmp/mlx_lm_server.pid")
+MLX_LOG = Path("/tmp/mlx_lm_server.log")
 LOCK_FILE = Path("/tmp/backfill_watchdog.lock")
 RUN_STATE_FILE = Path(
     os.environ.get(
@@ -30,8 +34,8 @@ RUN_STATE_FILE = Path(
     )
 )
 
-MODEL = "mlx-community/Qwen3-8B-4bit"
-MLX_BASE_URL = "http://host.docker.internal:8080"
+MODEL = os.environ.get("LLM_MODEL", "mlx-community/Qwen3-8B-4bit")
+MLX_BASE_URL = os.environ.get("MLX_BASE_URL", "http://127.0.0.1:8080")
 INTERVAL_SECONDS = 6 * 60 * 60
 
 
@@ -46,16 +50,33 @@ def _log(message: str) -> None:
 def _backfill_pids() -> list[int]:
     """Find live Python processes running this workspace's backfill script."""
     matches: list[int] = []
-    for proc_dir in Path("/proc").glob("[0-9]*"):
-        try:
-            argv = (proc_dir / "cmdline").read_bytes().split(b"\0")
-        except (FileNotFoundError, PermissionError, ProcessLookupError):
+    proc_root = Path("/proc")
+    if proc_root.is_dir():
+        for proc_dir in proc_root.glob("[0-9]*"):
+            try:
+                argv = (proc_dir / "cmdline").read_bytes().split(b"\0")
+            except (FileNotFoundError, PermissionError, ProcessLookupError):
+                continue
+            args = [part.decode(errors="replace") for part in argv if part]
+            if not args or "python" not in Path(args[0]).name.lower():
+                continue
+            if any(Path(arg).name == BACKFILL_SCRIPT.name for arg in args[1:]):
+                matches.append(int(proc_dir.name))
+        return sorted(matches)
+
+    # macOS has no /proc; inspect the process table without matching this watchdog.
+    result = subprocess.run(
+        ["ps", "-axo", "pid=,command="],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    for line in result.stdout.splitlines():
+        pid_text, _, command = line.strip().partition(" ")
+        if not pid_text.isdigit() or BACKFILL_SCRIPT.name not in command:
             continue
-        args = [part.decode(errors="replace") for part in argv if part]
-        if not args or "python" not in Path(args[0]).name.lower():
-            continue
-        if any(Path(arg).name == BACKFILL_SCRIPT.name for arg in args[1:]):
-            matches.append(int(proc_dir.name))
+        if "python" in command.lower():
+            matches.append(int(pid_text))
     return sorted(matches)
 
 
@@ -89,6 +110,45 @@ def _mlx_status() -> str:
         return "mlx=ready" if MODEL in models else "mlx=reachable_model_missing"
     except Exception as exc:  # health reporting must not prevent a restart
         return f"mlx=unreachable({type(exc).__name__})"
+
+
+def _restart_mlx() -> int:
+    log_handle = MLX_LOG.open("a", encoding="utf-8")
+    try:
+        process = subprocess.Popen(
+            [
+                "mlx_lm.server",
+                "--model",
+                MODEL,
+                "--port",
+                MLX_BASE_URL.rsplit(":", 1)[-1],
+            ],
+            cwd=WORKSPACE,
+            stdin=subprocess.DEVNULL,
+            stdout=log_handle,
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+        )
+    finally:
+        log_handle.close()
+    MLX_PID_FILE.write_text(f"{process.pid}\n", encoding="utf-8")
+    return process.pid
+
+
+def _ensure_mlx_ready() -> str:
+    status = _mlx_status()
+    if status == "mlx=ready":
+        return status
+
+    pid = _restart_mlx()
+    _log(f"mlx_restarted pid={pid}")
+    deadline = time.monotonic() + 120
+    while time.monotonic() < deadline:
+        status = _mlx_status()
+        if status == "mlx=ready":
+            return status
+        time.sleep(2)
+    return status
 
 
 def _last_run_completed() -> bool:
@@ -144,9 +204,26 @@ def _restart_backfill() -> int:
 
 
 def _check() -> None:
+    try:
+        feedback = subprocess.run(
+            ["python3", str(REFLECTION_FEEDBACK_SCRIPT)],
+            cwd=WORKSPACE,
+            capture_output=True,
+            text=True,
+            timeout=300,
+            check=False,
+        )
+        summary = (feedback.stdout or feedback.stderr).strip().splitlines()[-1]
+        _log(summary if feedback.returncode == 0 else f"reflection_feedback_failed {summary}")
+    except Exception as exc:
+        _log(f"reflection_feedback_failed {type(exc).__name__}: {exc}")
+
     pids = _backfill_pids()
     progress = _progress_summary()
-    mlx = _mlx_status()
+    mlx = _ensure_mlx_ready()
+    if mlx != "mlx=ready":
+        _log(f"blocked {mlx} {progress}")
+        return
     if pids:
         BACKFILL_PID_FILE.write_text(f"{pids[0]}\n", encoding="utf-8")
         _log(f"healthy pids={','.join(map(str, pids))} {mlx} {progress}")

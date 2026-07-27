@@ -312,6 +312,23 @@ Ground every observation in the lists above — do NOT claim a tag or field is
 if it is in the DERIVED list and its inputs were mapped. Write a short markdown
 reflection using EXACTLY these four sections (keep it concise — a few bullets each):
 
+An Accuracy Issue must identify an UNUSED tag that is semantically equivalent
+to the Compustat field's authoritative definition, not merely related to it.
+Never recommend a component as an aggregate, an aggregate as a component, a
+cash-flow change as an income-statement expense, or a balance-sheet balance as
+an income-statement flow. In particular:
+- IncomeTaxesPaidNet is cash flow, never txp (taxes payable).
+- IncreaseDecreaseInDeferredIncomeTaxes is cash flow, never txdi (deferred tax expense).
+- IncomeTaxExpenseBenefit is total tax expense, never txdi, txfed, or txfo.
+- AccumulatedOtherComprehensiveIncomeLossNetOfTax is equity, never txditc.
+- OperatingLeaseLiabilityNoncurrent is never dltt_finlease.
+- NoninterestExpense is a bank aggregate, not general-company xsga.
+- InterestExpenseDeposits or InterestExpenseBorrowings is a component, not total xint
+  when a broader InterestExpense tag is already mapped.
+- ShareBasedCompensation and ProfessionalFees are never xrd.
+If only a related or component tag exists, report the field under Unmapped Gaps
+rather than inventing an Accuracy Issue.
+
 ## Assumptions
 2-3 key assumptions you made (e.g. how you handled ambiguous tags, whether you preferred aggregate vs component tags).
 

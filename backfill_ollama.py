@@ -720,6 +720,17 @@ def _process_filing(company: dict, filing: dict) -> dict:
             "status": "error", "error": str(exc),
         }
 
+    if row.get("_xbrl_status") == "no_facts" and form_type.endswith("/A"):
+        log.info(
+            "[%s] Ignoring no-facts amendment %s; preserving original period row",
+            ticker, accession,
+        )
+        return {
+            "ticker": ticker, "cik": cik, "form_type": form_type,
+            "accession": accession, "status": "skipped",
+            "report_date": filing.get("report_date", ""),
+        }
+
     row["_accession"] = accession
     filing_date = filing.get("filing_date") or row.get("rdq")
     if not filing_date:

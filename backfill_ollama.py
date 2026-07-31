@@ -92,6 +92,10 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 s3 = boto3.client("s3")
+pit_sqs = boto3.client("sqs", region_name="us-east-1")
+PIT_QUEUE_URL = (
+    "https://sqs.us-east-1.amazonaws.com/954976294836/euclidean-edgar-pit-raw"
+)
 
 # Serialise all local MLX calls so at most one inference request is in-flight
 # at a time. Workers can still run concurrently for EDGAR/S3 I/O; only the LLM
@@ -744,7 +748,19 @@ def _process_filing(company: dict, filing: dict) -> dict:
     # it locally to drive the reflection pass below.
     xbrl_facts = row.pop("_xbrl_facts", {}) or {}
     key = _s3_key(form_type, cik, report_date)
+    is_new_period = not _parquet_exists(key)
     _write_parquet(row, key)
+    if is_new_period:
+        form_base = "annual" if form_type.startswith(("10-K", "20-F")) else "quarterly"
+        pit_sqs.send_message(
+            QueueUrl=PIT_QUEUE_URL,
+            MessageBody=json.dumps({
+                "cik": cik,
+                "accession_number": accession,
+                "form_base": form_base,
+            }),
+        )
+        log.info("[%s] Enqueued new period for PIT archival: %s", ticker, accession)
     elapsed = time.time() - t0
     log.info("[%s] %s %s → s3://%s/%s (%.1fs)", ticker, form_type, report_date, S3_BUCKET, key, elapsed)
 

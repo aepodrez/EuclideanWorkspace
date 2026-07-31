@@ -187,7 +187,6 @@ def _restart_backfill() -> int:
                 str(BACKFILL_SCRIPT),
                 "--workers",
                 "2",
-                "--rescan",
                 "--reprocess",
             ],
             cwd=WORKSPACE,

@@ -498,6 +498,7 @@ def _latest_filings(cik: str, forms: tuple[str, ...]) -> list[dict]:
             "form_type":        form,
             "accession_number": acc,
             "report_date":      report_date,
+            "filing_date":      filed_date,
         })
 
     # Sort newest-first, return ALL filings in the window
@@ -546,12 +547,19 @@ def _write_parquet(row: dict, key: str) -> None:
     buf.seek(0)
     xbrl_status = row.get("_xbrl_status", "ok")
     accession   = row.get("_accession", "")
+    filing_date = row.get("rdq")
+    if not filing_date:
+        raise RuntimeError(f"missing authoritative filing date for {accession}")
     s3.put_object(
         Bucket=S3_BUCKET,
         Key=key,
         Body=buf.read(),
         ContentType="application/octet-stream",
-        Metadata={"xbrl_status": xbrl_status, "accession": accession},
+        Metadata={
+            "xbrl_status": xbrl_status,
+            "accession": accession,
+            "filing_date": str(filing_date),
+        },
     )
 
 
@@ -713,6 +721,12 @@ def _process_filing(company: dict, filing: dict) -> dict:
         }
 
     row["_accession"] = accession
+    filing_date = filing.get("filing_date") or row.get("rdq")
+    if not filing_date:
+        raise RuntimeError(
+            f"missing authoritative filing date for {ticker} {accession}"
+        )
+    row["rdq"] = filing_date
     report_date = row.get("datadate", "unknown")
     # Pop the raw XBRL facts off the row BEFORE writing parquet — it's a large
     # non-scalar dict that must not become a stringified parquet column. We hold
@@ -805,7 +819,8 @@ def _run_from_sqs(workers: int) -> None:
                 body = json.loads(msg["Body"])
                 company = {"cik": body["cik"], "ticker": body["ticker"], "sic": body.get("sic", "")}
                 filing  = {"form_type": body["form_type"], "accession_number": body["accession_number"],
-                           "report_date": body.get("report_date", "")}
+                           "report_date": body.get("report_date", ""),
+                           "filing_date": body.get("filing_date", "")}
                 futs[pool.submit(_process_filing, company, filing)] = msg["ReceiptHandle"]
 
             for fut in as_completed(futs):

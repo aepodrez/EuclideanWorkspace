@@ -33,6 +33,9 @@ RUN_STATE_FILE = Path(
         str(WORKSPACE / "local-runs/backfill_reprocess_state.json"),
     )
 )
+HISTORY_RUN_STATE_FILE = WORKSPACE / "local-runs/backfill_history_2010_state.json"
+HISTORY_QUEUE_CACHE = Path("/tmp/backfill_history_2010_queue.json")
+HISTORY_QUEUE_CACHE_S3 = "backfill/history_2010_queue_cache.json"
 
 MODEL = os.environ.get("LLM_MODEL", "mlx-community/Qwen3-8B-4bit")
 MLX_BASE_URL = os.environ.get("MLX_BASE_URL", "http://127.0.0.1:8080")
@@ -170,7 +173,7 @@ def _last_run_completed() -> bool:
     return any(" INFO Done." in line for line in lines[-5:])
 
 
-def _restart_backfill() -> int:
+def _restart_backfill(*, historical: bool = False) -> int:
     env = os.environ.copy()
     env.update(
         {
@@ -178,17 +181,27 @@ def _restart_backfill() -> int:
             "LLM_BASE_URL": f"{MLX_BASE_URL}/v1/chat/completions",
         }
     )
+    command = [
+        "python3",
+        "-u",
+        str(BACKFILL_SCRIPT),
+        "--workers",
+        "2",
+        "--reprocess",
+    ]
+    if historical:
+        env.update(
+            {
+                "BACKFILL_RUN_STATE_FILE": str(HISTORY_RUN_STATE_FILE),
+                "BACKFILL_QUEUE_CACHE": str(HISTORY_QUEUE_CACHE),
+                "BACKFILL_QUEUE_CACHE_S3": HISTORY_QUEUE_CACHE_S3,
+            }
+        )
+        command.extend(["--history-start-year", "2010", "--rescan"])
     log_handle = BACKFILL_LOG.open("a", encoding="utf-8")
     try:
         process = subprocess.Popen(
-            [
-                "python3",
-                "-u",
-                str(BACKFILL_SCRIPT),
-                "--workers",
-                "2",
-                "--reprocess",
-            ],
+            command,
             cwd=WORKSPACE,
             env=env,
             stdin=subprocess.DEVNULL,
@@ -202,10 +215,27 @@ def _restart_backfill() -> int:
     return process.pid
 
 
+def _history_run_completed() -> bool:
+    if not HISTORY_RUN_STATE_FILE.exists():
+        return False
+    try:
+        state = json.loads(HISTORY_RUN_STATE_FILE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return state.get("status") == "complete"
+
+
 def _check() -> None:
     try:
         feedback = subprocess.run(
-            ["python3", str(REFLECTION_FEEDBACK_SCRIPT)],
+            [
+                "python3",
+                str(REFLECTION_FEEDBACK_SCRIPT),
+                "--max-reflections",
+                "2000",
+                "--max-validations",
+                "500",
+            ],
             cwd=WORKSPACE,
             capture_output=True,
             text=True,
@@ -228,7 +258,11 @@ def _check() -> None:
         _log(f"healthy pids={','.join(map(str, pids))} {mlx} {progress}")
         return
     if _last_run_completed():
-        _log(f"completed no_restart {mlx} {progress}")
+        if _history_run_completed():
+            _log(f"completed_current_and_history no_restart {mlx} {progress}")
+            return
+        pid = _restart_backfill(historical=True)
+        _log(f"history_2010_started pid={pid} {mlx} {progress}")
         return
     pid = _restart_backfill()
     _log(f"restarted pid={pid} {mlx} {progress}")

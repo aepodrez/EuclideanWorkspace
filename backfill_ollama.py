@@ -76,9 +76,9 @@ def _next_endpoint() -> str:
     with _endpoint_lock:
         return _LLM_ENDPOINTS[next(_endpoint_idx)]
 
-PROGRESS_FILE  = "/tmp/backfill_progress.jsonl"
-QUEUE_CACHE    = "/tmp/backfill_queue.json"
-QUEUE_CACHE_S3 = "backfill/queue_cache.json"
+PROGRESS_FILE  = os.environ.get("BACKFILL_PROGRESS_FILE", "/tmp/backfill_progress.jsonl")
+QUEUE_CACHE    = os.environ.get("BACKFILL_QUEUE_CACHE", "/tmp/backfill_queue.json")
+QUEUE_CACHE_S3 = os.environ.get("BACKFILL_QUEUE_CACHE_S3", "backfill/queue_cache.json")
 RUN_STATE_FILE = os.environ.get(
     "BACKFILL_RUN_STATE_FILE",
     str(Path(__file__).resolve().parent / "local-runs/backfill_reprocess_state.json"),
@@ -464,11 +464,34 @@ def _get_json(url: str) -> dict:
             time.sleep(2 * attempt)
 
 
-def _latest_filings(cik: str, forms: tuple[str, ...]) -> list[dict]:
+def _submission_rows(payload: dict) -> list[dict]:
+    accessions = payload.get("accessionNumber", [])
+    return [
+        {
+            "accession_number": accession,
+            "form_type": form,
+            "report_date": report_date,
+            "filing_date": filing_date,
+        }
+        for accession, form, report_date, filing_date in zip(
+            accessions,
+            payload.get("form", []),
+            payload.get("reportDate", []),
+            payload.get("filingDate", []),
+        )
+    ]
+
+
+def _latest_filings(
+    cik: str,
+    forms: tuple[str, ...],
+    *,
+    start_date: str | None = None,
+    before_date: str | None = None,
+) -> list[dict]:
     """
-    Return the most recent filing per form-family (annual / quarterly)
-    that was filed within the last LOOKBACK_DAYS and whose accession
-    belongs to this CIK (not a parent filer).
+    Return every matching filing in the requested point-in-time window whose
+    accession belongs to this CIK (not a parent filer).
     """
     cik_padded = str(int(cik)).zfill(10)
     try:
@@ -477,27 +500,50 @@ def _latest_filings(cik: str, forms: tuple[str, ...]) -> list[dict]:
         log.warning("EDGAR submissions fetch failed for CIK %s: %s", cik, e)
         return []
 
-    recent      = data.get("filings", {}).get("recent", {})
-    accessions  = recent.get("accessionNumber", [])
-    form_list   = recent.get("form", [])
-    report_dates = recent.get("reportDate", [])
-    filed_dates  = recent.get("filingDate", [])
+    filings = data.get("filings", {})
+    rows = _submission_rows(filings.get("recent", {}))
+    if start_date is not None:
+        for historical in filings.get("files", []):
+            name = historical.get("name")
+            if not name:
+                continue
+            if historical.get("filingTo", "9999-12-31") < start_date:
+                continue
+            if before_date and historical.get("filingFrom", "0000-01-01") >= before_date:
+                continue
+            rows.extend(
+                _submission_rows(
+                    _get_json(f"https://data.sec.gov/submissions/{name}")
+                )
+            )
 
-    cutoff  = (datetime.now(timezone.utc).replace(tzinfo=None) -
-               __import__("datetime").timedelta(days=LOOKBACK_DAYS)).strftime("%Y-%m-%d")
+    cutoff = start_date or (
+        datetime.now(timezone.utc).replace(tzinfo=None)
+        - __import__("datetime").timedelta(days=LOOKBACK_DAYS)
+    ).strftime("%Y-%m-%d")
     cik_int = str(int(cik))
 
     results: list[dict] = []
-    for acc, form, report_date, filed_date in zip(accessions, form_list, report_dates, filed_dates):
+    seen_accessions: set[str] = set()
+    for row in rows:
+        acc = row["accession_number"]
+        form = row["form_type"]
+        report_date = row["report_date"]
+        filed_date = row["filing_date"]
         if form not in forms:
             continue
         if filed_date < cutoff:
             continue
+        if before_date is not None and filed_date >= before_date:
+            continue
         if not report_date or not acc:
+            continue
+        if acc in seen_accessions:
             continue
         filer_cik = acc.split("-")[0].lstrip("0") or "0"
         if filer_cik != cik_int:
             continue
+        seen_accessions.add(acc)
         results.append({
             "form_type":        form,
             "accession_number": acc,
@@ -892,6 +938,16 @@ def main():
     parser.add_argument("--nemotron-workers", type=int, default=0, metavar="N",
                         help="Number of additional workers that call OpenRouter Nemotron instead "
                              "of the local LLM (requires OPENROUTER_API_KEY env var).")
+    parser.add_argument(
+        "--history-start-year",
+        type=int,
+        default=0,
+        help=(
+            "Load SEC historical submissions beginning January 1 of this year and "
+            "stop where the normal five-year window begins. Uses separate state/cache "
+            "paths when launched by the watchdog."
+        ),
+    )
     args = parser.parse_args()
 
     global _REPROCESS
@@ -961,7 +1017,19 @@ def main():
         for i, company in enumerate(universe):
             if args.limit and len({c["cik"] for c, _ in work_items}) >= args.limit:
                 break
-            filings = _latest_filings(company["cik"], forms)
+            if args.history_start_year:
+                historical_end = (
+                    datetime.now(timezone.utc).replace(tzinfo=None)
+                    - __import__("datetime").timedelta(days=LOOKBACK_DAYS)
+                ).strftime("%Y-%m-%d")
+                filings = _latest_filings(
+                    company["cik"],
+                    forms,
+                    start_date=f"{args.history_start_year:04d}-01-01",
+                    before_date=historical_end,
+                )
+            else:
+                filings = _latest_filings(company["cik"], forms)
             for filing in filings:
                 key = _s3_key(filing["form_type"], company["cik"], filing["report_date"])
                 if _parquet_exists(key) and not _REPROCESS:

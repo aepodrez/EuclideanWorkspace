@@ -31,26 +31,67 @@ CONTEXT_PREFIX = "mapper-context/approved"
 STATE_PATH = WORKSPACE / "local-runs/reflection_feedback_state.json"
 REPORT_PATH = WORKSPACE / "local-runs/reflection_feedback_report.json"
 CONTEXT_PATH = WORKSPACE / "local-runs/approved_mapper_context.json"
+FEEDBACK_SCHEMA_VERSION = 3
 
-# Auto-promotion is deliberately narrower than the model's free-form advice.
-# Each pair mirrors the checked-in Compustat field definition.
-PROMOTABLE_FIELD_TAGS = {
-    "am": {
-        "AmortizationOfIntangibleAssets",
-        "FiniteLivedIntangibleAssetsAmortizationExpense",
+# Exact-accession SEC facts compared with official Compustat on CIK + fiscal date.
+# Only pairs with strong value agreement after Compustat's million-unit scaling may
+# influence parser instructions. Other observations remain available for audit but
+# are not promoted merely because the tag exists and sounds semantically plausible.
+COMPUSTAT_VALIDATED_FIELD_TAGS: set[tuple[str, str]] = {
+    ("ap", "AccountsPayableCurrent"),
+    ("at", "Assets"),
+    ("ceq", "StockholdersEquity"),
+    ("dltis", "ProceedsFromIssuanceOfLongTermDebt"),
+    ("drc", "ContractWithCustomerLiabilityCurrent"),
+    ("drc", "DeferredRevenueCurrent"),
+    ("gdwl", "Goodwill"),
+    ("lt", "Liabilities"),
+    ("seq", "StockholdersEquity"),
+    ("txdi", "DeferredIncomeTaxExpenseBenefit"),
+    ("txt", "IncomeTaxExpenseBenefit"),
+}
+
+# Every checked-in Compustat field is eligible for evidence-backed promotion.
+# Most canonical tags are named directly in COMPUSTAT_FIELDS. These aliases fill
+# the few terse legacy definitions that describe a concept without spelling its
+# XBRL name. This remains a semantic allowlist, not unrestricted model advice.
+FIELD_TAG_ALIASES: dict[str, set[str]] = {
+    "at": {"Assets"},
+    "act": {"AssetsCurrent"},
+    "rect": {
+        "AccountsReceivableNetCurrent",
+        "LoansAndLeasesReceivableNetReportedAmount",
     },
-    "dltt_finlease": {"FinanceLeaseLiabilityNoncurrent"},
-    "dp": {
-        "DepreciationDepletionAndAmortization",
-        "DepreciationAmortizationAndAccretionNet",
-    },
-    "txdi": {
-        "DeferredIncomeTaxExpenseBenefit",
-        "DeferredFederalStateAndLocalTaxExpenseBenefit",
-    },
-    "txp": {"AccruedIncomeTaxesCurrent", "TaxesPayableCurrent"},
+    "invt": {"InventoryNet"},
+    "ivst": {"ShortTermInvestments", "MarketableSecuritiesCurrent"},
+    "xpp": {"PrepaidExpenseCurrent", "PrepaidExpensesCurrent"},
+    "aco": {"OtherAssetsCurrent"},
+    "intan": {"FiniteLivedIntangibleAssetsNet", "IntangibleAssetsNetExcludingGoodwill"},
+    "gdwl": {"Goodwill"},
+    "ivao": {"LongTermInvestments", "OtherInvestmentsNoncurrent"},
+    "lt": {"Liabilities"},
+    "lct": {"LiabilitiesCurrent"},
+    "lt_noncurrent": {"LiabilitiesNoncurrent"},
+    "lo": {"OtherLiabilitiesNoncurrent"},
+    "dlc": {"ShortTermBorrowings", "LongTermDebtCurrent"},
+    "ap": {"AccountsPayableCurrent", "AccountsPayableTradeCurrent"},
     "xacc": {"AccruedLiabilitiesCurrent", "OtherAccruedLiabilitiesCurrent"},
-    "xint": {"InterestExpense", "InterestExpenseOperating", "InterestExpenseNonoperating"},
+    "re": {"RetainedEarningsAccumulatedDeficit"},
+    "revt_interest": {"InterestAndDividendIncomeOperating"},
+    "revt_noninterest": {"NoninterestIncome"},
+    "xsga": {"SellingGeneralAndAdministrativeExpense"},
+    "xrd": {"ResearchAndDevelopmentExpense"},
+    "xad": {"AdvertisingExpense"},
+    "nopi": {"NonoperatingIncomeExpense", "OtherNonoperatingIncomeExpense"},
+    "oibdp": {"OperatingIncomeBeforeDepreciationAndAmortization"},
+    "sale": {"Revenue", "Revenues"},
+    "txt": {"IncomeTaxExpenseBenefit"},
+    "scstkc": {"ProceedsFromIssuanceOfCommonStock", "ProceedsFromStockOptionsExercised"},
+    "dltis": {"ProceedsFromIssuanceOfLongTermDebt"},
+    "dltr": {"RepaymentsOfLongTermDebt"},
+    "ni": {"NetIncomeLoss", "ProfitLoss"},
+    "deposits": {"Deposits"},
+    "fatl": {"Land"},
 }
 
 REJECTED_ADVICE = {
@@ -60,8 +101,54 @@ REJECTED_ADVICE = {
     "aoci_as_deferred_tax_balance": r"AccumulatedOtherComprehensiveIncomeLossNetOfTax.{0,100}txditc",
 }
 
-FIELD_RE = re.compile(r"[`\"']?([a-z][a-z0-9_]{1,24})[`\"']?")
+FIELD_RE = re.compile(
+    r"(?<![a-z0-9_])(?:[`\"'])?("
+    + "|".join(sorted(map(re.escape, mapper.COMPUSTAT_FIELDS), key=len, reverse=True))
+    + r")(?:[`\"'])?(?![a-z0-9_])"
+)
 TAG_RE = re.compile(r"\b[A-Z][A-Za-z0-9]{5,}\b")
+NEGATIVE_SEMANTIC_MARKER_RE = re.compile(
+    r"\b(?:forbidden|never|do not|don't|not|excludes?|excluding|different from)\b",
+    flags=re.IGNORECASE,
+)
+
+
+def _definition_supports_tag(field: str, tag: str) -> bool:
+    """Return whether the authoritative field definition endorses this exact tag."""
+    if tag in FIELD_TAG_ALIASES.get(field, set()):
+        return True
+    if tag.isupper() or sum(character.isupper() for character in tag) < 2:
+        return False
+    definition = mapper.COMPUSTAT_FIELDS.get(field, "")
+    for match in re.finditer(rf"(?<![A-Za-z0-9]){re.escape(tag)}(?![A-Za-z0-9])", definition):
+        # A definition may name both preferred and explicitly forbidden tags.
+        # Inspect only the sentence/clause leading into this occurrence.
+        clause_start = max(
+            definition.rfind(".", 0, match.start()),
+            definition.rfind("\n", 0, match.start()),
+        )
+        prefix = definition[clause_start + 1:match.start()]
+        if not NEGATIVE_SEMANTIC_MARKER_RE.search(prefix):
+            return True
+    return False
+
+
+def _is_promotable(field: str, tag: str) -> bool:
+    """Require both semantic compatibility and official Compustat agreement."""
+    return (
+        (field, tag) in COMPUSTAT_VALIDATED_FIELD_TAGS
+        and _definition_supports_tag(field, tag)
+    )
+
+
+def _survives_mapper_guards(field: str, tag: str, facts: dict[str, float]) -> bool:
+    """Exercise the production sanitizer before retaining reflection evidence."""
+    mapping = {field: tag}
+    try:
+        values = mapper.extract_values(facts, mapping)
+    except (KeyError, TypeError, ValueError):
+        return False
+    return mapping.get(field) == tag and field in values
 
 
 def _load_json(path: Path, default: dict) -> dict:
@@ -102,10 +189,8 @@ def _candidate_pairs(text: str) -> set[tuple[str, str]]:
         if not field_match:
             continue
         field = field_match.group(1)
-        allowed = PROMOTABLE_FIELD_TAGS.get(field, set())
         for tag in TAG_RE.findall(bullet):
-            if tag in allowed:
-                candidates.add((field, tag))
+            candidates.add((field, tag))
     return candidates
 
 
@@ -153,10 +238,16 @@ def _validate_reflection(s3, key: str, text: str) -> dict:
     for field, tag in sorted(candidates):
         existing = mapping.get(field)
         existing_tags = set(existing if isinstance(existing, list) else [existing])
-        if tag in existing_tags:
+        if not _definition_supports_tag(field, tag):
+            rejected.append({"field": field, "tag": tag, "reason": "unsupported_by_field_definition"})
+        elif not _is_promotable(field, tag):
+            rejected.append({"field": field, "tag": tag, "reason": "not_validated_against_compustat"})
+        elif tag in existing_tags:
             rejected.append({"field": field, "tag": tag, "reason": "already_mapped"})
         elif tag not in facts:
             rejected.append({"field": field, "tag": tag, "reason": "absent_from_sec_facts"})
+        elif not _survives_mapper_guards(field, tag, facts):
+            rejected.append({"field": field, "tag": tag, "reason": "rejected_by_mapper_guards"})
         else:
             accepted.append({
                 "field": field,
@@ -243,7 +334,11 @@ def main() -> None:
     args = parser.parse_args()
 
     state = _load_json(STATE_PATH, {})
-    observations = state.get("observations", {})
+    observations = {
+        pair: item
+        for pair, item in state.get("observations", {}).items()
+        if "|" in pair and _is_promotable(*pair.split("|", 1))
+    }
     s3 = boto3.client("s3", region_name="us-east-1")
     all_objects = []
     for page in s3.get_paginator("list_objects_v2").paginate(
@@ -259,7 +354,13 @@ def main() -> None:
     else:
         new_objects = all_objects[-args.max_reflections:]
 
-    pending_keys = [] if args.rebuild else state.get("pending_reflections", [])
+    schema_upgrade = state.get("feedback_schema_version") != FEEDBACK_SCHEMA_VERSION
+    if args.rebuild or schema_upgrade:
+        # Candidate eligibility changed, so previously ignored reflections must
+        # be replayed. Bounded processing below keeps each watchdog pass cheap.
+        pending_keys = [item["Key"] for item in all_objects]
+    else:
+        pending_keys = state.get("pending_reflections", [])
     available_keys = list(dict.fromkeys(
         [key for key in pending_keys if key in objects_by_key]
         + [item["Key"] for item in new_objects]
@@ -324,6 +425,8 @@ def main() -> None:
     now = datetime.now(timezone.utc).isoformat()
     report = {
         "generated_at": now,
+        "feedback_schema_version": FEEDBACK_SCHEMA_VERSION,
+        "eligible_fields": len(mapper.COMPUSTAT_FIELDS),
         "new_reflections": len(objects),
         "candidate_reflections": len(candidate_texts),
         "validation_attempts": len(validation_results),
@@ -336,7 +439,8 @@ def main() -> None:
         "context_version": context["version"],
         "context_changed": changed,
         "promotion_policy": (
-            "exact accession SEC fact + stored mapping omission + semantic allowlist + "
+            "official Compustat value agreement + authoritative definition + mapper hard "
+            "guards + exact accession SEC fact + stored mapping omission + "
             "recurrence across filings and issuers"
         ),
     }
@@ -352,6 +456,7 @@ def main() -> None:
             {
                 "last_modified": latest,
                 "checked_at": now,
+                "feedback_schema_version": FEEDBACK_SCHEMA_VERSION,
                 "observations": observations,
                 "pending_reflections": sorted(set(pending_next)),
                 "context_version": context["version"],

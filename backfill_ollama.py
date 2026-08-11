@@ -446,6 +446,17 @@ def _parquet_exists(key: str) -> bool:
         raise
 
 
+def _pit_archive_exists(form_base: str, cik: str, accession: str) -> bool:
+    key = f"data-ingress/pit/xbrl/{form_base}/{cik}/{accession}.xml"
+    try:
+        s3.head_object(Bucket=S3_BUCKET, Key=key)
+        return True
+    except ClientError as exc:
+        if exc.response["Error"]["Code"] in ("404", "NoSuchKey"):
+            return False
+        raise
+
+
 def _get_json(url: str) -> dict:
     req = urllib.request.Request(
         url, headers={"User-Agent": EDGAR_IDENTITY, "Accept-Encoding": "gzip"}
@@ -796,8 +807,8 @@ def _process_filing(company: dict, filing: dict) -> dict:
     key = _s3_key(form_type, cik, report_date)
     is_new_period = not _parquet_exists(key)
     _write_parquet(row, key)
-    if is_new_period:
-        form_base = "annual" if form_type.startswith(("10-K", "20-F")) else "quarterly"
+    form_base = "annual" if form_type.startswith(("10-K", "20-F")) else "quarterly"
+    if not _pit_archive_exists(form_base, cik, accession):
         pit_sqs.send_message(
             QueueUrl=PIT_QUEUE_URL,
             MessageBody=json.dumps({
@@ -806,7 +817,12 @@ def _process_filing(company: dict, filing: dict) -> dict:
                 "form_base": form_base,
             }),
         )
-        log.info("[%s] Enqueued new period for PIT archival: %s", ticker, accession)
+        log.info(
+            "[%s] Enqueued %s period for PIT archival: %s",
+            ticker,
+            "new" if is_new_period else "reprocessed",
+            accession,
+        )
     elapsed = time.time() - t0
     log.info("[%s] %s %s → s3://%s/%s (%.1fs)", ticker, form_type, report_date, S3_BUCKET, key, elapsed)
 

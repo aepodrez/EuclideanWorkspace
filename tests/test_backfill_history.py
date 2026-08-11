@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import backfill_ollama
+from botocore.exceptions import ClientError
 
 
 def _filings(accessions, forms, reports, filed):
@@ -73,3 +74,19 @@ def test_irrelevant_historical_submission_files_are_not_fetched(monkeypatch):
         "1", ("10-K",), start_date="2010-01-01", before_date="2021-08-01"
     ) == []
     assert calls == [recent_url]
+
+
+def test_pit_archive_exists_distinguishes_missing_object(monkeypatch):
+    class FakeS3:
+        def head_object(self, **kwargs):
+            if kwargs["Key"].endswith("missing.xml"):
+                raise ClientError(
+                    {"Error": {"Code": "404", "Message": "missing"}},
+                    "HeadObject",
+                )
+            return {}
+
+    monkeypatch.setattr(backfill_ollama, "s3", FakeS3())
+
+    assert backfill_ollama._pit_archive_exists("annual", "0001", "present")
+    assert not backfill_ollama._pit_archive_exists("annual", "0001", "missing")

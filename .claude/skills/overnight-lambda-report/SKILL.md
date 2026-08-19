@@ -1,13 +1,18 @@
 ---
 name: overnight-lambda-report
-description: Report on recent scheduled and triggered AWS activity across the Euclidean pipeline, including every market-data, IBES, universe, EDGAR, and other invoked Euclidean Lambda plus scheduled ECS/Fargate and Step Functions work. Identify exactly which overnight runs require reruns and which failures already recovered. Use for overnight/daily status, what ran, missed schedules, failures, rerun/redrive decisions, 13F health, or pipeline output counts.
+description: Audit recent Euclidean overnight AWS processing from the deployed report through underlying logs, queues, immutable publications, AI data-quality reviews, and schedules. Identify real failures, recovered attempts, data errors, and the minimum safe reruns. Use for overnight/daily reports, recent-run investigations, readiness checks, or deciding what to fix and rerun.
 ---
 
 # Overnight Euclidean AWS Activity Report
 
-Produce an evidence-based health report for the previous processing window. Discover the
-live topology every time: deployed functions and schedules change, and a static inventory
+Produce an evidence-based health report for the requested processing window. Start from the
+deployed overnight report, then verify its conclusions against source AWS evidence. Discover
+the live topology every time: deployed functions and schedules change, and a static inventory
 must never define the scope.
+
+The report is an audit, not merely a Lambda error count. Confirm whether trustworthy data was
+published, whether downstream consumers saw it, and whether AI/deterministic warnings are
+supported by the real data. Prefer a small, exact rerun set over broad pipeline reruns.
 
 ## Environment
 
@@ -17,10 +22,34 @@ must never define the scope.
 - Lambda logs: `/aws/lambda/<function-name>`
 - EventBridge cron expressions use UTC unless EventBridge Scheduler specifies a timezone.
 
-Use read-only AWS calls. Start with `aws sts get-caller-identity`; never print credentials or
-secret values. Default to the last 24 hours so the window includes evening option jobs as
-well as the 05:00-12:00 UTC pipeline. State the exact UTC start and end. Honor a user-supplied
-window instead.
+Use read-only AWS calls unless the user explicitly asks to fix, deploy, rerun, redrive, or
+otherwise mutate production. Start with `aws sts get-caller-identity`; never print function
+environment maps, credentials, API keys, or secret values. Default to the last 24 hours so
+the window includes evening option jobs as well as the 05:00-12:00 UTC pipeline. For “past
+two days,” inspect both calendar runs independently rather than collapsing them into one
+aggregate. State the exact UTC start and end. Honor a user-supplied window instead.
+
+## Fast path and evidence order
+
+1. Read or invoke `euclidean-md-overnight-report` to obtain the canonical baseline and exact
+   job labels. If invocation would send SNS/email, mention that effect before doing it unless
+   the user explicitly requested that the report be run.
+2. Verify every reported failure, recovery, warning, missed job, and suspicious zero against
+   CloudWatch, EventBridge, SQS, and immutable S3 pointers. Do not repeat the email as fact
+   without this verification.
+3. Expand discovery only where needed to catch jobs absent from the static report inventory,
+   newly deployed schedules, indirect workers, ECS work, and Step Functions children.
+4. Conclude with real failures, data-quality findings, required reruns, and readiness for the
+   next scheduled window. Keep healthy fleets compact.
+
+Use this evidence precedence when signals conflict:
+
+1. sealed output manifest plus monotonic `current.json` pointer;
+2. deterministic quality contract and canonical-key checks;
+3. terminal Lambda/ECS/Step Functions result and output evidence;
+4. queue/DLQ state and expected-work receipts;
+5. AI review (advisory unless explicitly enforced);
+6. aggregate CloudWatch error metrics.
 
 ## Scope: discover, do not assume
 
@@ -100,6 +129,10 @@ Classify each Lambda:
 Do not call an unscheduled worker missed. Do not call a monthly/quarterly job healthy merely
 because it had zero errors; classify it by whether its schedule was due.
 
+For weekend reports, evaluate the actual cron and market calendar. Daily public-web/SEC/ATS
+collection may intentionally run on weekends, while market-close and weekday-vendor jobs may
+be correctly not due. Never infer weekend expectations from the word `daily` alone.
+
 ### 3. Inspect logs for every invoked Lambda
 
 Use `logs filter-log-events` over the whole window, not only the newest stream. Collect every
@@ -149,6 +182,12 @@ Known signatures:
 - SSM `TooManyUpdates` on `PutParameter`: concurrent cursor writes; transient for the service,
   but the affected item was not processed. Recommend serialization, backoff, or idempotency.
 
+Also inspect SQS source and DLQ depths for every event-source worker. A successful finalizer
+cannot prove a run complete when expected receipts remain absent. Conversely, old DLQ entries
+do not invalidate a newer sealed publication unless they belong to its expected-work set.
+For idempotent workers, distinguish duplicate deliveries, byte-identical retries, terminal
+unavailable/failed-quality receipts, and true idempotency conflicts.
+
 ### 5. Inspect ECS/Fargate launches and results
 
 For every in-scope scheduled ECS target that was due, and every Euclidean ECS task actually
@@ -190,6 +229,18 @@ Cross-check these sources before reporting:
 
 CloudWatch metrics can lag several minutes. If the report ends close to a scheduled firing,
 label the job `pending/metric lag possible` and inspect logs before declaring it missed.
+
+For every dataset that publishes immutable runs, read `current.json`, verify its referenced
+manifest is complete and hash-consistent, and compare `created_at`, `as_of`, source period,
+row/entity counts, canonical-key uniqueness, and quality status. A later valid pointer is the
+decisive evidence that earlier failed attempts recovered. Never treat an upload to a legacy
+compatibility key alone as proof of successful publication.
+
+CIK is the canonical company key. Flag null/invalid CIKs, duplicate `(cik, date/month)` rows,
+security-to-company fan-out without a documented primary-security rule, future-dated rows,
+and unexplained coverage collapses. No synthetic, mock, placeholder, or fabricated zero is
+acceptable. A zero is valid only when the source was completely observed and the dataset
+contract explicitly defines zero for that construction.
 
 ### 8. Determine required reruns
 
@@ -247,6 +298,80 @@ Do not send raw dataset rows elsewhere during reporting. The manifest already co
 pseudonymized evidence that was sent to the LLM; quote only the minimum evidence necessary
 to explain an anomaly.
 
+Do not accept or dismiss an AI warning solely from its prose. Recompute the cited statistic,
+inspect the actual rows and run-over-run distribution, verify units/sign/date/key semantics,
+and compare with the authoritative upstream source. For SEC/EDGAR mapping warnings, open the
+real filing and cited facts/contexts when feasible; compare to official Compustat only as a
+benchmark, never as future production input. Classify each warning as:
+
+- `confirmed data error`;
+- `confirmed source incompleteness`;
+- `legitimate observation/outlier`;
+- `known historical/backfill debt`;
+- `false or poorly worded warning`; or
+- `unverified`, with the exact missing evidence.
+
+Review both AI false negatives and false positives. Check samples beyond the AI evidence for
+period, scale, sign, unit, identity, stale-source, duplicate-key, coverage, and cross-field
+accounting errors. When a warning reveals a recurring pattern, recommend both a deterministic
+contract/check and improved AI context; do not rely on prompt wording alone.
+
+### 10. Predictor availability and alternative data
+
+Predictors are monthly. Report the latest completed model month at or before the report month,
+not an empty current-calendar-month bucket when predictors are not yet due. Reconcile the
+consolidated `predictor_availability.parquet` with per-predictor `_availability/current/*.json`.
+Every contracted predictor must have exactly one state: `active`, `inactive_zero_variance`,
+`pending_history`, `unavailable_upstream`, or `failed_quality`. Missing records are a real
+catalog/publication gap, not zero-output predictors.
+
+For ATS, FTD, federal labor, and future alternative-data families, report the current run ID,
+source revision/period, rows, distinct CIKs, coverage-state counts, mapping coverage, expected
+versus terminal receipts, source/DLQ queue depth, duplicate deliveries, byte-identical retries,
+and idempotency violations. `unavailable` must never be reported as observed zero. Confirm old
+runs cannot regress the current pointer.
+
+### 11. If fixes or reruns are requested
+
+Reporting alone remains read-only. When the user also requests remediation:
+
+1. reproduce and root-cause the failure before editing;
+2. fix the cause and add a regression test, not merely suppress the warning or loosen a gate;
+3. preserve ACID-like publication: immutable attempts, complete validation before promotion,
+   monotonic pointers, deterministic work IDs, and retry-safe writes;
+4. deploy upstream producers before mergers/finalizers and consumers;
+5. rerun only the affected dependency chain in order;
+6. wait for terminal logs, empty relevant queues/DLQs, and a complete manifest;
+7. rerun the overnight report and require earlier errors to appear as recovered;
+8. leave production concurrency/schedules at their intended values after temporary recovery.
+
+If a limit is reached, verify the configured quota before proposing more memory, timeout, or
+ephemeral storage. Prefer streaming/chunked algorithms over permanently raising resources.
+Never rerun predictors automatically merely because ingress was repaired; identify which are
+due and obtain explicit scope when the rerun is expensive or changes portfolio inputs.
+
+### 12. Durable lessons from overnight recovery
+
+- Collector identity is a two-layer control. Scheduled WARN and federal-labor events carry
+  explicit non-secret `job` and `source` values, while Lambda environment configuration repeats
+  them. Accept either source when only one exists, but fail before source access if both exist
+  and disagree. Verify payload, handler command, and required identity-key presence after deploy.
+- SQS/Lambda throttling can consume receive attempts without a successful handler receipt and
+  move an otherwise healthy item to a DLQ. Compare reserved concurrency with event-source
+  maximum concurrency, leave control/retry headroom, and correlate the exact DLQ work ID and CIK
+  with the immutable expected-work manifest before a one-item redrive. Do not raise
+  `maxReceiveCount` to conceal throttling.
+- Predictor catalog assembly is not an authority to overwrite producer truth. Reconcile sealed,
+  hash-valid, quality-pass predictor outputs one at a time; validate CIK/month keys, potency,
+  coverage, history, and future leakage; then publish the complete catalog. Never replace an
+  active record with `missing_availability_record` merely because assembly ran separately.
+- An unresolved CRSP split-basis seam is a deterministic correctness failure. Require adjacent
+  observed prices, corporate-action evidence, and unambiguous security lineage. Retain prior
+  verified history for an existing security or quarantine a new unresolved security with CIK,
+  dates, evidence, source revisions, and reason in shard quality metadata. Never fabricate a
+  return, infer zero, apply an ambiguous ticker-only action, or let one recorded quarantine block
+  unrelated valid shard observations while aggregate coverage still passes its contract.
+
 ## Reporting format
 
 Lead with an overall status and a **Real failures** section; never bury failures below healthy
@@ -285,3 +410,8 @@ do not flood the main tables with them. End with **Action items** ranked by seve
 Always quote concrete counts and affected output keys. Distinguish raw shard artifacts from a
 successful final merged product. Include the same **Reruns required** section in both the
 interactive report and the scheduled SNS/email report.
+
+Keep the interactive summary and SNS/email semantically consistent: same headline status,
+failed/missed/recovered counts, AI counts, predictor month/states, and rerun decisions. Avoid
+truncated explanations that reverse meaning. End with a concise readiness statement for the
+next run and explicitly name any residual data-quality or deployment risk.

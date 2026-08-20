@@ -371,6 +371,30 @@ due and obtain explicit scope when the rerun is expensive or changes portfolio i
   dates, evidence, source revisions, and reason in shard quality metadata. Never fabricate a
   return, infer zero, apply an ambiguous ticker-only action, or let one recorded quarantine block
   unrelated valid shard observations while aggregate coverage still passes its contract.
+- A company-web snapshot finalizer must consume the immutable run identity selected by dispatch,
+  not recompute it from the currently deployed parser or wall-clock time. Verify the per-date
+  dispatch index, expected-object hash, frozen retrieval time, collector/parser versions, registry
+  and universe hashes, exact work IDs, CIKs, and nested parser provenance. A deployment between
+  dispatch and finalization must not retarget the run. Quarantine mixed-provenance attempts with an
+  immutable finding and create a fresh recovery run; never rewrite or promote the contaminated run.
+- A federal-labor panel run identity includes the finalizer output-algorithm version as well as all
+  source lineage. Before rebuilding, validate the current pointer, canonical manifest hash,
+  completion state, required output set, output version, and source revisions. Return
+  `already_complete` without rewriting outputs or moving the pointer when they match. A
+  `SealedRun` byte mismatch for the same identity is a determinism defect, not permission to
+  overwrite the sealed attempt or weaken mapping coverage.
+- Treat transport-library warnings such as an undersized S3 connection pool or benign Pandas
+  parsing warnings as operational findings only after confirming the worker set completed and the
+  publication manifest passed. For ATS, retain item-level unavailable and `failed_quality` counts,
+  affected CIKs, expected/terminal receipt totals, and DLQ state; do not coerce failed items to zero
+  or replay the whole fleet when the complete publication contract allows explicit item failures.
+- Attribute resource ceilings to the compute service that actually ran. For USAspending, discover
+  whether the publication came from ECS, Lambda, or a manual recovery, and verify the exact task
+  definition or Lambda configuration before naming a limit. ECS `cpu: 1024` means CPU units, not
+  1,024 MB; report task/container memory separately. A hash-valid complete manifest with
+  deterministic quality pass/warn and advisory AI `unavailable` is a successful ingestion with
+  reliability warnings, not a failed publication. Preserve the warning and prefer streaming or
+  chunking when measured memory headroom is unsafe; do not rerun solely to obtain an AI review.
 
 ## Reporting format
 
